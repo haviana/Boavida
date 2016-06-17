@@ -1,21 +1,25 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1466095503,
-    'checksum' => 'a0407e8a33f5dad8c83dad8b61dd1644',
+    'timestamp' => 1466194455,
+    'checksum' => 'd23bfb427435a56d298e487605532616',
     'files' => [
         'user/config' => [
+            'plugins/form' => [
+                'file' => 'user/config/plugins/form.yaml',
+                'modified' => 1466162221
+            ],
             'security' => [
                 'file' => 'user/config/security.yaml',
                 'modified' => 1466004141
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1466095501
+                'modified' => 1466194453
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1466090798
+                'modified' => 1466163002
             ]
         ],
         'system/config' => [
@@ -48,6 +52,10 @@ return [
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
                 'modified' => 1461744472
+            ],
+            'plugins/form' => [
+                'file' => 'user/plugins/form/form.yaml',
+                'modified' => 1466161779
             ]
         ]
     ],
@@ -65,6 +73,16 @@ return [
                 'enabled' => true,
                 'routes' => [
                     404 => '/error'
+                ]
+            ],
+            'form' => [
+                'enabled' => true,
+                'files' => [
+                    'multiple' => false,
+                    'destination' => '@self',
+                    'accept' => [
+                        0 => 'image/*'
+                    ]
                 ]
             ]
         ],
@@ -350,7 +368,7 @@ return [
                     'url' => '#about'
                 ],
                 3 => [
-                    'title' => 'Produtores',
+                    'title' => 'Mestres Cervejeiros',
                     'url' => '#team'
                 ]
             ],

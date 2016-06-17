@@ -3,7 +3,7 @@ title: Header
 menu: Top
 buttons:
     - text: Pedir informaçoes
-      url: '#Gula'
+      url: 'mailto:cefisys@gmail.com?Subject=Info'
       primary: true
 featured: header.jpg
 ---

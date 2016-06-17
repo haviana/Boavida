@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledLanguages',
-    'timestamp' => 1466094028,
-    'checksum' => '2ead004fe9a83172c61dbd0e50ced86a',
+    'timestamp' => 1466191071,
+    'checksum' => '9ef1ac32973fee626a65444645bba9ef',
     'files' => [
         'system/languages' => [
             'cs' => [
@@ -87,10 +87,659 @@ return [
             ]
         ],
         'user/plugins' => [
-            
+            'plugins/form' => [
+                'file' => 'user/plugins/form/languages.yaml',
+                'modified' => 1466161779
+            ]
         ]
     ],
     'data' => [
+        'en' => [
+            'PLUGIN_FORM' => [
+                'NOT_VALIDATED' => 'Form not validated. One or more required fields are missing.',
+                'NONCE_NOT_VALIDATED' => 'Oops there was a problem, please check your input and submit the form again.',
+                'FILES' => 'Files Upload',
+                'ALLOW_MULTIPLE' => 'Allow More than one file',
+                'ALLOW_MULTIPLE_HELP' => 'Allows to select more than one file for upload.',
+                'DESTINATION' => 'Destination',
+                'DESTINATION_HELP' => 'The location where the files should be uploaded to',
+                'ACCEPT' => 'Allowed MIME Types',
+                'ACCEPT_HELP' => 'A list of MIME Types that are allowed for upload',
+                'ERROR_VALIDATING_CAPTCHA' => 'Error validating the Captcha'
+            ],
+            'FRONTMATTER_ERROR_PAGE' => '---
+title: %1$s
+---
+
+# Error: Invalid Frontmatter
+
+Path: `%2$s`
+
+**%3$s**
+
+```
+%4$s
+```',
+            'INFLECTOR_PLURALS' => [
+                '/(quiz)$/i' => '\\1zes',
+                '/^(ox)$/i' => '\\1en',
+                '/([m|l])ouse$/i' => '\\1ice',
+                '/(matr|vert|ind)ix|ex$/i' => '\\1ices',
+                '/(x|ch|ss|sh)$/i' => '\\1es',
+                '/([^aeiouy]|qu)ies$/i' => '\\1y',
+                '/([^aeiouy]|qu)y$/i' => '\\1ies',
+                '/(hive)$/i' => '\\1s',
+                '/(?:([^f])fe|([lr])f)$/i' => '\\1\\2ves',
+                '/sis$/i' => 'ses',
+                '/([ti])um$/i' => '\\1a',
+                '/(buffal|tomat)o$/i' => '\\1oes',
+                '/(bu)s$/i' => '\\1ses',
+                '/(alias|status)/i' => '\\1es',
+                '/(octop|vir)us$/i' => '\\1i',
+                '/(ax|test)is$/i' => '\\1es',
+                '/s$/i' => 's',
+                '/$/' => 's'
+            ],
+            'INFLECTOR_SINGULAR' => [
+                '/(quiz)zes$/i' => '\\1',
+                '/(matr)ices$/i' => '\\1ix',
+                '/(vert|ind)ices$/i' => '\\1ex',
+                '/^(ox)en/i' => '\\1',
+                '/(alias|status)es$/i' => '\\1',
+                '/([octop|vir])i$/i' => '\\1us',
+                '/(cris|ax|test)es$/i' => '\\1is',
+                '/(shoe)s$/i' => '\\1',
+                '/(o)es$/i' => '\\1',
+                '/(bus)es$/i' => '\\1',
+                '/([m|l])ice$/i' => '\\1ouse',
+                '/(x|ch|ss|sh)es$/i' => '\\1',
+                '/(m)ovies$/i' => '\\1ovie',
+                '/(s)eries$/i' => '\\1eries',
+                '/([^aeiouy]|qu)ies$/i' => '\\1y',
+                '/([lr])ves$/i' => '\\1f',
+                '/(tive)s$/i' => '\\1',
+                '/(hive)s$/i' => '\\1',
+                '/([^f])ves$/i' => '\\1fe',
+                '/(^analy)ses$/i' => '\\1sis',
+                '/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/i' => '\\1\\2sis',
+                '/([ti])a$/i' => '\\1um',
+                '/(n)ews$/i' => '\\1ews',
+                '/s$/i' => ''
+            ],
+            'INFLECTOR_UNCOUNTABLE' => [
+                0 => 'equipment',
+                1 => 'information',
+                2 => 'rice',
+                3 => 'money',
+                4 => 'species',
+                5 => 'series',
+                6 => 'fish',
+                7 => 'sheep'
+            ],
+            'INFLECTOR_IRREGULAR' => [
+                'person' => 'people',
+                'man' => 'men',
+                'child' => 'children',
+                'sex' => 'sexes',
+                'move' => 'moves'
+            ],
+            'INFLECTOR_ORDINALS' => [
+                'default' => 'th',
+                'first' => 'st',
+                'second' => 'nd',
+                'third' => 'rd'
+            ],
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'No date provided',
+                'BAD_DATE' => 'Bad date',
+                'AGO' => 'ago',
+                'FROM_NOW' => 'from now',
+                'SECOND' => 'second',
+                'MINUTE' => 'minute',
+                'HOUR' => 'hour',
+                'DAY' => 'day',
+                'WEEK' => 'week',
+                'MONTH' => 'month',
+                'YEAR' => 'year',
+                'DECADE' => 'decade',
+                'SEC' => 'sec',
+                'MIN' => 'min',
+                'HR' => 'hr',
+                'WK' => 'wk',
+                'MO' => 'mo',
+                'YR' => 'yr',
+                'DEC' => 'dec',
+                'SECOND_PLURAL' => 'seconds',
+                'MINUTE_PLURAL' => 'minutes',
+                'HOUR_PLURAL' => 'hours',
+                'DAY_PLURAL' => 'days',
+                'WEEK_PLURAL' => 'weeks',
+                'MONTH_PLURAL' => 'months',
+                'YEAR_PLURAL' => 'years',
+                'DECADE_PLURAL' => 'decades',
+                'SEC_PLURAL' => 'secs',
+                'MIN_PLURAL' => 'mins',
+                'HR_PLURAL' => 'hrs',
+                'WK_PLURAL' => 'wks',
+                'MO_PLURAL' => 'mos',
+                'YR_PLURAL' => 'yrs',
+                'DEC_PLURAL' => 'decs'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>Validation failed:</b>',
+                'INVALID_INPUT' => 'Invalid input in',
+                'MISSING_REQUIRED_FIELD' => 'Missing required field:'
+            ],
+            'MONTHS_OF_THE_YEAR' => [
+                0 => 'January',
+                1 => 'February',
+                2 => 'March',
+                3 => 'April',
+                4 => 'May',
+                5 => 'June',
+                6 => 'July',
+                7 => 'August',
+                8 => 'September',
+                9 => 'October',
+                10 => 'November',
+                11 => 'December'
+            ],
+            'DAYS_OF_THE_WEEK' => [
+                0 => 'Monday',
+                1 => 'Tuesday',
+                2 => 'Wednesday',
+                3 => 'Thursday',
+                4 => 'Friday',
+                5 => 'Saturday',
+                6 => 'Sunday'
+            ]
+        ],
+        'es' => [
+            'PLUGIN_FORM' => [
+                'NOT_VALIDATED' => 'Falló la validación del formulario. Uno o más campos obligatorios no fueron capturados.',
+                'NONCE_NOT_VALIDATED' => 'Oops, hay un problema, por favor revice la información capturada e intente enviar el formulario otra vez.'
+            ],
+            'INFLECTOR_UNCOUNTABLE' => [
+                0 => 'equipo',
+                1 => 'información',
+                3 => 'dinero',
+                5 => 'series',
+                6 => 'pescado',
+                7 => 'oveja'
+            ],
+            'INFLECTOR_IRREGULAR' => [
+                'man' => 'hombres',
+                'child' => 'niños',
+                'sex' => 'sexos'
+            ],
+            'INFLECTOR_ORDINALS' => [
+                'first' => 'ro',
+                'second' => 'do',
+                'third' => 'ro'
+            ],
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'No se proporcionó fecha',
+                'BAD_DATE' => 'Fecha erronea',
+                'AGO' => 'antes',
+                'FROM_NOW' => 'desde ahora',
+                'SECOND' => 'segundo',
+                'MINUTE' => 'minuto',
+                'HOUR' => 'hora',
+                'DAY' => 'día',
+                'WEEK' => 'semana',
+                'MONTH' => 'mes',
+                'YEAR' => 'año',
+                'DECADE' => 'década',
+                'SEC' => 'seg',
+                'MIN' => 'min',
+                'HR' => 'h',
+                'WK' => 'sem',
+                'MO' => 'mes',
+                'YR' => 'año',
+                'DEC' => 'dec',
+                'SECOND_PLURAL' => 'segundos',
+                'MINUTE_PLURAL' => 'minutos',
+                'HOUR_PLURAL' => 'horas',
+                'DAY_PLURAL' => 'días',
+                'WEEK_PLURAL' => 'semanas',
+                'MONTH_PLURAL' => 'meses',
+                'YEAR_PLURAL' => 'años',
+                'DECADE_PLURAL' => 'décadas',
+                'SEC_PLURAL' => 'segs',
+                'MIN_PLURAL' => 'mins',
+                'HR_PLURAL' => 'hs',
+                'WK_PLURAL' => 'sem',
+                'MO_PLURAL' => 'mes',
+                'YR_PLURAL' => 'años',
+                'DEC_PLURAL' => 'décadas'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>Falló la validación. </b>',
+                'INVALID_INPUT' => 'Dato inválido en: ',
+                'MISSING_REQUIRED_FIELD' => 'Falta el campo requerido: '
+            ],
+            'MONTHS_OF_THE_YEAR' => [
+                0 => 'Enero',
+                1 => 'Febrero',
+                2 => 'Marzo',
+                3 => 'Abril',
+                4 => 'Mayo',
+                5 => 'Junio',
+                6 => 'Julio',
+                7 => 'Agosto',
+                8 => 'Septiembre',
+                9 => 'Octubre',
+                10 => 'Noviembre',
+                11 => 'Diciembre'
+            ],
+            'DAYS_OF_THE_WEEK' => [
+                0 => 'Lunes',
+                1 => 'Martes',
+                2 => 'Miércoles',
+                3 => 'Jueves',
+                4 => 'Viernes',
+                5 => 'Sábado',
+                6 => 'Domingo'
+            ]
+        ],
+        'fr' => [
+            'PLUGIN_FORM' => [
+                'NOT_VALIDATED' => 'Formulaire non validé. Un ou plusieurs champs obligatoires sont manquants.',
+                'NONCE_NOT_VALIDATED' => 'Oups, un problème est survenu. Veuillez vérifier votre saisie et soumettre à nouveau le formulaire.',
+                'FILES' => 'Fichiers chargés',
+                'ALLOW_MULTIPLE' => 'Autoriser plus d\'un fichier',
+                'ALLOW_MULTIPLE_HELP' => 'Permet la sélection de plusieurs fichiers pour chargement.',
+                'DESTINATION' => 'Destination',
+                'DESTINATION_HELP' => 'L\'emplacement où les fichiers doivent être chargés.',
+                'ACCEPT' => 'Autoriser les Types MIME',
+                'ACCEPT_HELP' => 'Liste des Types MIME autorisés au chargement',
+                'ERROR_VALIDATING_CAPTCHA' => 'Erreur lors de la validation du Captcha'
+            ],
+            'FRONTMATTER_ERROR_PAGE' => '---
+title: %1$s
+---
+
+# Erreur : Frontmatter invalide
+
+Path: `%2$s`
+
+**%3$s**
+
+```
+%4$s
+```
+',
+            'INFLECTOR_PLURALS' => [
+                '/(quiz)$/i' => '\\1zes',
+                '/^(ox)$/i' => '\\1en',
+                '/([m|l])ouse$/i' => '\\1ice',
+                '/(matr|vert|ind)ix|ex$/i' => '\\1ices',
+                '/(x|ch|ss|sh)$/i' => '\\1es',
+                '/([^aeiouy]|qu)ies$/i' => '\\1y',
+                '/([^aeiouy]|qu)y$/i' => '\\1ies',
+                '/(hive)$/i' => '\\1s',
+                '/(?:([^f])fe|([lr])f)$/i' => '\\1\\2ves',
+                '/sis$/i' => 'ses',
+                '/([ti])um$/i' => '\\1a',
+                '/(buffal|tomat)o$/i' => '\\1oes',
+                '/(bu)s$/i' => '\\1ses',
+                '/(alias|status)/i' => '\\1es',
+                '/(octop|vir)us$/i' => '\\1i',
+                '/(ax|test)is$/i' => '\\1es',
+                '/s$/i' => 's',
+                '/$/' => 's'
+            ],
+            'INFLECTOR_SINGULAR' => [
+                '/(quiz)zes$/i' => '\\1',
+                '/(matr)ices$/i' => '\\1ix',
+                '/(vert|ind)ices$/i' => '\\1ex',
+                '/^(ox)en/i' => '\\1',
+                '/(alias|status)es$/i' => '\\1',
+                '/([octop|vir])i$/i' => '\\1us',
+                '/(cris|ax|test)es$/i' => '\\1is',
+                '/(shoe)s$/i' => '\\1',
+                '/(o)es$/i' => '\\1',
+                '/(bus)es$/i' => '\\1',
+                '/([m|l])ice$/i' => '\\1ouse',
+                '/(x|ch|ss|sh)es$/i' => '\\1',
+                '/(m)ovies$/i' => '\\1ovie',
+                '/(s)eries$/i' => '\\1eries',
+                '/([^aeiouy]|qu)ies$/i' => '\\1y',
+                '/([lr])ves$/i' => '\\1f',
+                '/(tive)s$/i' => '\\1',
+                '/(hive)s$/i' => '\\1',
+                '/([^f])ves$/i' => '\\1fe',
+                '/(^analy)ses$/i' => '\\1sis',
+                '/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/i' => '\\1\\2sis',
+                '/([ti])a$/i' => '\\1um',
+                '/(n)ews$/i' => '\\1ews'
+            ],
+            'INFLECTOR_UNCOUNTABLE' => [
+                0 => 'équipement',
+                1 => 'informations',
+                2 => 'riz',
+                3 => 'argent',
+                4 => 'espèces',
+                5 => 'séries',
+                6 => 'poisson',
+                7 => 'mouton'
+            ],
+            'INFLECTOR_IRREGULAR' => [
+                'person' => 'personnes',
+                'man' => 'hommes',
+                'child' => 'enfants',
+                'sex' => 'sexes',
+                'move' => 'déplacements'
+            ],
+            'INFLECTOR_ORDINALS' => [
+                'default' => 'ème',
+                'first' => 'er',
+                'second' => 'ème',
+                'third' => 'ème'
+            ],
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'Aucune date fournie',
+                'BAD_DATE' => 'Date erronée',
+                'AGO' => 'plus tôt',
+                'FROM_NOW' => 'à partir de maintenant',
+                'SECOND' => 'seconde',
+                'MINUTE' => 'minute',
+                'HOUR' => 'heure',
+                'DAY' => 'jour',
+                'WEEK' => 'semaine',
+                'MONTH' => 'mois',
+                'YEAR' => 'année',
+                'DECADE' => 'décennie',
+                'SEC' => 's',
+                'MIN' => 'm',
+                'HR' => 'h',
+                'WK' => 'sem',
+                'MO' => 'm',
+                'YR' => 'an',
+                'DEC' => 'déc',
+                'SECOND_PLURAL' => 'secondes',
+                'MINUTE_PLURAL' => 'minutes',
+                'HOUR_PLURAL' => 'heures',
+                'DAY_PLURAL' => 'jours',
+                'WEEK_PLURAL' => 'semaines',
+                'MONTH_PLURAL' => 'mois',
+                'YEAR_PLURAL' => 'années',
+                'DECADE_PLURAL' => 'décennies',
+                'SEC_PLURAL' => 's',
+                'MIN_PLURAL' => 'm',
+                'HR_PLURAL' => 'h',
+                'WK_PLURAL' => 'sem',
+                'MO_PLURAL' => 'mois',
+                'YR_PLURAL' => 'a',
+                'DEC_PLURAL' => 'décs'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>La validation a échoué :</b>',
+                'INVALID_INPUT' => 'Saisie non valide',
+                'MISSING_REQUIRED_FIELD' => 'Champ obligatoire manquant :'
+            ],
+            'MONTHS_OF_THE_YEAR' => [
+                0 => 'Janvier',
+                1 => 'Février',
+                2 => 'Mars',
+                3 => 'Avril',
+                4 => 'Mai',
+                5 => 'Juin',
+                6 => 'Juillet',
+                7 => 'Août',
+                8 => 'Septembre',
+                9 => 'Octobre',
+                10 => 'Novembre',
+                11 => 'Décembre'
+            ],
+            'DAYS_OF_THE_WEEK' => [
+                0 => 'Lundi',
+                1 => 'Mardi',
+                2 => 'Mercredi',
+                3 => 'Jeudi',
+                4 => 'Vendredi',
+                5 => 'Samedi',
+                6 => 'Dimanche'
+            ]
+        ],
+        'hr' => [
+            'PLUGIN_FORM' => [
+                'NOT_VALIDATED' => 'Formular nije validiran. Jedan ili više traženih polja nedostaju.',
+                'NONCE_NOT_VALIDATED' => 'Ups, došlo je do problema, molimo provjerite svoj unos i pokušajte opet.',
+                'FILES' => 'Upload Fajlova',
+                'ALLOW_MULTIPLE' => 'Dopusti više od jednog fajla',
+                'DESTINATION' => 'Destinacija',
+                'DESTINATION_HELP' => 'Lokacija gdje bi fajlovi trebali biti uploadani',
+                'ACCEPT' => 'Dopušteni MIME Tipovi',
+                'ACCEPT_HELP' => 'Lista dopuštenih MIME Tipova koji su dozvoljeni za upload',
+                'ERROR_VALIDATING_CAPTCHA' => 'Greška pri validiranju Captcha'
+            ],
+            'INFLECTOR_UNCOUNTABLE' => [
+                0 => 'oprema',
+                1 => 'informacije',
+                2 => 'riža',
+                3 => 'novac',
+                4 => 'vrsta',
+                5 => 'serija',
+                6 => 'riba',
+                7 => 'ovca'
+            ],
+            'INFLECTOR_IRREGULAR' => [
+                'person' => 'osobe',
+                'man' => 'ljudi',
+                'child' => 'djeca',
+                'sex' => 'spolovi',
+                'move' => 'Pomakni'
+            ],
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'Datum nije upisan',
+                'BAD_DATE' => 'Pogrešan datum',
+                'AGO' => 'prije',
+                'FROM_NOW' => 'od sada',
+                'SECOND' => 'sekunda',
+                'MINUTE' => 'minuta',
+                'HOUR' => 'sat',
+                'DAY' => 'dan',
+                'WEEK' => 'tjedan',
+                'MONTH' => 'mjesec',
+                'YEAR' => 'godina',
+                'DECADE' => 'desetljeće',
+                'SEC' => 'sek',
+                'HR' => 'sat',
+                'WK' => 't',
+                'MO' => 'm',
+                'YR' => 'g',
+                'DEC' => 'des',
+                'SECOND_PLURAL' => 'sekundi',
+                'MINUTE_PLURAL' => 'minuta',
+                'HOUR_PLURAL' => 'sati',
+                'DAY_PLURAL' => 'dan',
+                'WEEK_PLURAL' => 'tjedana',
+                'MONTH_PLURAL' => 'mjeseci',
+                'YEAR_PLURAL' => 'godina',
+                'DECADE_PLURAL' => 'desetljeća',
+                'SEC_PLURAL' => 'sek',
+                'MIN_PLURAL' => 'min',
+                'HR_PLURAL' => 'sat',
+                'WK_PLURAL' => 't',
+                'MO_PLURAL' => 'm',
+                'YR_PLURAL' => 'g',
+                'DEC_PLURAL' => 'des'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>Validacija nije uspjela:</b>',
+                'INVALID_INPUT' => 'Pogrešan unos u',
+                'MISSING_REQUIRED_FIELD' => 'Nedostaje obavezno polje:'
+            ],
+            'MONTHS_OF_THE_YEAR' => [
+                0 => 'Siječanj',
+                1 => 'Veljača',
+                2 => 'Ožujak',
+                3 => 'Travanj',
+                4 => 'Svibanj',
+                5 => 'Lipanj',
+                6 => 'Srpanj',
+                7 => 'Kolovoz',
+                8 => 'Rujan',
+                9 => 'Listopad',
+                10 => 'Studeni',
+                11 => 'Prosinac'
+            ],
+            'DAYS_OF_THE_WEEK' => [
+                0 => 'Ponedjeljak',
+                1 => 'Utorak',
+                2 => 'Srijeda',
+                3 => 'Četvrtak',
+                4 => 'Petak',
+                5 => 'Subota',
+                6 => 'Nedjelja'
+            ]
+        ],
+        'hu' => [
+            'PLUGIN_FORM' => [
+                'NOT_VALIDATED' => 'Érvénytelen az űrlap. Egy vagy több kötelező mező nincs kitöltve.',
+                'NONCE_NOT_VALIDATED' => 'Upsz, van egy kis probléma, kérlek nézd át az űrlapot, majd küld el újra.',
+                'FILES' => 'Fájlok Feltöltése',
+                'ALLOW_MULTIPLE' => 'Több fájl feltöltése',
+                'ALLOW_MULTIPLE_HELP' => 'Engedélyezi egyszerre több állomány felöltését.',
+                'DESTINATION' => 'Feltöltés Helye',
+                'DESTINATION_HELP' => 'Ide lesznek feltöltve az állományok',
+                'ACCEPT' => 'Engedélyezett MIME-típusok',
+                'ACCEPT_HELP' => 'A feltölthető állományok MIME-típusainak listája',
+                'ERROR_VALIDATING_CAPTCHA' => 'Hiba lépett fel a Captcha validálása során'
+            ],
+            'FRONTMATTER_ERROR_PAGE' => '---
+cím: %1$s
+---
+
+# Hiba: Érvénytelen Frontmatter
+
+Elérési út: `%2$s`
+
+**%3$s**
+
+```
+%4$s
+```
+',
+            'INFLECTOR_IRREGULAR' => [
+                'person' => 'személyek',
+                'man' => 'férfiak',
+                'child' => 'gyerekek',
+                'sex' => 'nemek',
+                'move' => 'lépések'
+            ],
+            'INFLECTOR_ORDINALS' => [
+                'default' => '.',
+                'first' => '.',
+                'second' => '.',
+                'third' => '.'
+            ],
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'Nincs dátum megadva',
+                'BAD_DATE' => 'Hibás dátum',
+                'AGO' => 'elteltével',
+                'FROM_NOW' => 'mostantól',
+                'SECOND' => 'másodperc',
+                'MINUTE' => 'perc',
+                'HOUR' => 'óra',
+                'DAY' => 'nap',
+                'WEEK' => 'hét',
+                'MONTH' => 'hónap',
+                'YEAR' => 'év',
+                'DECADE' => 'évtized',
+                'SEC' => 'mp',
+                'MIN' => 'p',
+                'HR' => 'ó',
+                'WK' => 'hét',
+                'MO' => 'hó',
+                'YR' => 'év',
+                'DEC' => 'évt',
+                'SECOND_PLURAL' => 'másodperc',
+                'MINUTE_PLURAL' => 'perc',
+                'HOUR_PLURAL' => 'óra',
+                'DAY_PLURAL' => 'nap',
+                'WEEK_PLURAL' => 'hét',
+                'MONTH_PLURAL' => 'hónap',
+                'YEAR_PLURAL' => 'év',
+                'DECADE_PLURAL' => 'évtized',
+                'SEC_PLURAL' => 'mp',
+                'MIN_PLURAL' => 'perc',
+                'HR_PLURAL' => 'ó',
+                'WK_PLURAL' => 'hét',
+                'MO_PLURAL' => 'hó',
+                'YR_PLURAL' => 'év',
+                'DEC_PLURAL' => 'évt'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>A validáció hibát talált:</b>',
+                'INVALID_INPUT' => 'Az itt megadott érték érvénytelen:',
+                'MISSING_REQUIRED_FIELD' => 'Ez a kötelező mező nincs kitöltve:'
+            ]
+        ],
+        'it' => [
+            'PLUGIN_FORM' => [
+                'NOT_VALIDATED' => 'Il Form risulta invalido. Uno o più campi risultano omessi.',
+                'NONCE_NOT_VALIDATED' => 'Oops è stato riscontrato un errore, si prega di ricontrollare i dati inseriti e provare di nuovo.',
+                'FILES' => 'Invio dei Files',
+                'ALLOW_MULTIPLE' => 'Consenti più di un file',
+                'ALLOW_MULTIPLE_HELP' => 'Permette la selezione di più di un file per l\'upload',
+                'DESTINATION' => 'Destinazione',
+                'DESTINATION_HELP' => 'La destinazione dove i files vengono uploadati',
+                'ACCEPT' => 'Tipi di MIME Concessi',
+                'ACCEPT_HELP' => 'Una lista di tipi di MIME che sono permessi per l\'upload',
+                'ERROR_VALIDATING_CAPTCHA' => 'Errore durante la validazione del Captcha'
+            ],
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'Nessuna data fornita',
+                'BAD_DATE' => 'Data errata',
+                'AGO' => 'fa',
+                'FROM_NOW' => 'da adesso',
+                'SECOND' => 'secondo',
+                'MINUTE' => 'minuto',
+                'HOUR' => 'ora',
+                'DAY' => 'giorno',
+                'WEEK' => 'settimana',
+                'MONTH' => 'mese',
+                'YEAR' => 'anno',
+                'SECOND_PLURAL' => 'secondi',
+                'MINUTE_PLURAL' => 'minuti',
+                'HOUR_PLURAL' => 'ore',
+                'DAY_PLURAL' => 'giorni',
+                'WEEK_PLURAL' => 'settimane',
+                'MONTH_PLURAL' => 'mesi',
+                'YEAR_PLURAL' => 'anni',
+                'DECADE_PLURAL' => 'decadi'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>Validazione fallita:</b>',
+                'INVALID_INPUT' => 'Input invalido in',
+                'MISSING_REQUIRED_FIELD' => 'Campo richiesto mancante:'
+            ],
+            'MONTHS_OF_THE_YEAR' => [
+                0 => 'Gennaio',
+                1 => 'Febbraio',
+                2 => 'Marzo',
+                3 => 'Aprile',
+                4 => 'Maggio',
+                5 => 'Giugno',
+                6 => 'Luglio',
+                7 => 'Agosto',
+                8 => 'Settembre',
+                9 => 'Ottobre',
+                10 => 'Novembre',
+                11 => 'Dicembre'
+            ],
+            'DAYS_OF_THE_WEEK' => [
+                0 => 'Lunedi',
+                1 => 'Martedi',
+                2 => 'Mercoledi',
+                3 => 'Giovedi',
+                4 => 'Venerdi',
+                5 => 'Sabato',
+                6 => 'Domenica'
+            ]
+        ],
         'cs' => [
             'INFLECTOR_UNCOUNTABLE' => [
                 0 => 'vybavení',
@@ -292,589 +941,6 @@ Pfad: `%2$s`
                 4 => 'Παρασκευή',
                 5 => 'Σαββάτο',
                 6 => 'Κυριακή'
-            ]
-        ],
-        'en' => [
-            'FRONTMATTER_ERROR_PAGE' => '---
-title: %1$s
----
-
-# Error: Invalid Frontmatter
-
-Path: `%2$s`
-
-**%3$s**
-
-```
-%4$s
-```',
-            'INFLECTOR_PLURALS' => [
-                '/(quiz)$/i' => '\\1zes',
-                '/^(ox)$/i' => '\\1en',
-                '/([m|l])ouse$/i' => '\\1ice',
-                '/(matr|vert|ind)ix|ex$/i' => '\\1ices',
-                '/(x|ch|ss|sh)$/i' => '\\1es',
-                '/([^aeiouy]|qu)ies$/i' => '\\1y',
-                '/([^aeiouy]|qu)y$/i' => '\\1ies',
-                '/(hive)$/i' => '\\1s',
-                '/(?:([^f])fe|([lr])f)$/i' => '\\1\\2ves',
-                '/sis$/i' => 'ses',
-                '/([ti])um$/i' => '\\1a',
-                '/(buffal|tomat)o$/i' => '\\1oes',
-                '/(bu)s$/i' => '\\1ses',
-                '/(alias|status)/i' => '\\1es',
-                '/(octop|vir)us$/i' => '\\1i',
-                '/(ax|test)is$/i' => '\\1es',
-                '/s$/i' => 's',
-                '/$/' => 's'
-            ],
-            'INFLECTOR_SINGULAR' => [
-                '/(quiz)zes$/i' => '\\1',
-                '/(matr)ices$/i' => '\\1ix',
-                '/(vert|ind)ices$/i' => '\\1ex',
-                '/^(ox)en/i' => '\\1',
-                '/(alias|status)es$/i' => '\\1',
-                '/([octop|vir])i$/i' => '\\1us',
-                '/(cris|ax|test)es$/i' => '\\1is',
-                '/(shoe)s$/i' => '\\1',
-                '/(o)es$/i' => '\\1',
-                '/(bus)es$/i' => '\\1',
-                '/([m|l])ice$/i' => '\\1ouse',
-                '/(x|ch|ss|sh)es$/i' => '\\1',
-                '/(m)ovies$/i' => '\\1ovie',
-                '/(s)eries$/i' => '\\1eries',
-                '/([^aeiouy]|qu)ies$/i' => '\\1y',
-                '/([lr])ves$/i' => '\\1f',
-                '/(tive)s$/i' => '\\1',
-                '/(hive)s$/i' => '\\1',
-                '/([^f])ves$/i' => '\\1fe',
-                '/(^analy)ses$/i' => '\\1sis',
-                '/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/i' => '\\1\\2sis',
-                '/([ti])a$/i' => '\\1um',
-                '/(n)ews$/i' => '\\1ews',
-                '/s$/i' => ''
-            ],
-            'INFLECTOR_UNCOUNTABLE' => [
-                0 => 'equipment',
-                1 => 'information',
-                2 => 'rice',
-                3 => 'money',
-                4 => 'species',
-                5 => 'series',
-                6 => 'fish',
-                7 => 'sheep'
-            ],
-            'INFLECTOR_IRREGULAR' => [
-                'person' => 'people',
-                'man' => 'men',
-                'child' => 'children',
-                'sex' => 'sexes',
-                'move' => 'moves'
-            ],
-            'INFLECTOR_ORDINALS' => [
-                'default' => 'th',
-                'first' => 'st',
-                'second' => 'nd',
-                'third' => 'rd'
-            ],
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'No date provided',
-                'BAD_DATE' => 'Bad date',
-                'AGO' => 'ago',
-                'FROM_NOW' => 'from now',
-                'SECOND' => 'second',
-                'MINUTE' => 'minute',
-                'HOUR' => 'hour',
-                'DAY' => 'day',
-                'WEEK' => 'week',
-                'MONTH' => 'month',
-                'YEAR' => 'year',
-                'DECADE' => 'decade',
-                'SEC' => 'sec',
-                'MIN' => 'min',
-                'HR' => 'hr',
-                'WK' => 'wk',
-                'MO' => 'mo',
-                'YR' => 'yr',
-                'DEC' => 'dec',
-                'SECOND_PLURAL' => 'seconds',
-                'MINUTE_PLURAL' => 'minutes',
-                'HOUR_PLURAL' => 'hours',
-                'DAY_PLURAL' => 'days',
-                'WEEK_PLURAL' => 'weeks',
-                'MONTH_PLURAL' => 'months',
-                'YEAR_PLURAL' => 'years',
-                'DECADE_PLURAL' => 'decades',
-                'SEC_PLURAL' => 'secs',
-                'MIN_PLURAL' => 'mins',
-                'HR_PLURAL' => 'hrs',
-                'WK_PLURAL' => 'wks',
-                'MO_PLURAL' => 'mos',
-                'YR_PLURAL' => 'yrs',
-                'DEC_PLURAL' => 'decs'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>Validation failed:</b>',
-                'INVALID_INPUT' => 'Invalid input in',
-                'MISSING_REQUIRED_FIELD' => 'Missing required field:'
-            ],
-            'MONTHS_OF_THE_YEAR' => [
-                0 => 'January',
-                1 => 'February',
-                2 => 'March',
-                3 => 'April',
-                4 => 'May',
-                5 => 'June',
-                6 => 'July',
-                7 => 'August',
-                8 => 'September',
-                9 => 'October',
-                10 => 'November',
-                11 => 'December'
-            ],
-            'DAYS_OF_THE_WEEK' => [
-                0 => 'Monday',
-                1 => 'Tuesday',
-                2 => 'Wednesday',
-                3 => 'Thursday',
-                4 => 'Friday',
-                5 => 'Saturday',
-                6 => 'Sunday'
-            ]
-        ],
-        'es' => [
-            'INFLECTOR_UNCOUNTABLE' => [
-                0 => 'equipo',
-                1 => 'información',
-                3 => 'dinero',
-                5 => 'series',
-                6 => 'pescado',
-                7 => 'oveja'
-            ],
-            'INFLECTOR_IRREGULAR' => [
-                'man' => 'hombres',
-                'child' => 'niños',
-                'sex' => 'sexos'
-            ],
-            'INFLECTOR_ORDINALS' => [
-                'first' => 'ro',
-                'second' => 'do',
-                'third' => 'ro'
-            ],
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'No se proporcionó fecha',
-                'BAD_DATE' => 'Fecha erronea',
-                'AGO' => 'antes',
-                'FROM_NOW' => 'desde ahora',
-                'SECOND' => 'segundo',
-                'MINUTE' => 'minuto',
-                'HOUR' => 'hora',
-                'DAY' => 'día',
-                'WEEK' => 'semana',
-                'MONTH' => 'mes',
-                'YEAR' => 'año',
-                'DECADE' => 'década',
-                'SEC' => 'seg',
-                'MIN' => 'min',
-                'HR' => 'h',
-                'WK' => 'sem',
-                'MO' => 'mes',
-                'YR' => 'año',
-                'DEC' => 'dec',
-                'SECOND_PLURAL' => 'segundos',
-                'MINUTE_PLURAL' => 'minutos',
-                'HOUR_PLURAL' => 'horas',
-                'DAY_PLURAL' => 'días',
-                'WEEK_PLURAL' => 'semanas',
-                'MONTH_PLURAL' => 'meses',
-                'YEAR_PLURAL' => 'años',
-                'DECADE_PLURAL' => 'décadas',
-                'SEC_PLURAL' => 'segs',
-                'MIN_PLURAL' => 'mins',
-                'HR_PLURAL' => 'hs',
-                'WK_PLURAL' => 'sem',
-                'MO_PLURAL' => 'mes',
-                'YR_PLURAL' => 'años',
-                'DEC_PLURAL' => 'décadas'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>Falló la validación. </b>',
-                'INVALID_INPUT' => 'Dato inválido en: ',
-                'MISSING_REQUIRED_FIELD' => 'Falta el campo requerido: '
-            ],
-            'MONTHS_OF_THE_YEAR' => [
-                0 => 'Enero',
-                1 => 'Febrero',
-                2 => 'Marzo',
-                3 => 'Abril',
-                4 => 'Mayo',
-                5 => 'Junio',
-                6 => 'Julio',
-                7 => 'Agosto',
-                8 => 'Septiembre',
-                9 => 'Octubre',
-                10 => 'Noviembre',
-                11 => 'Diciembre'
-            ],
-            'DAYS_OF_THE_WEEK' => [
-                0 => 'Lunes',
-                1 => 'Martes',
-                2 => 'Miércoles',
-                3 => 'Jueves',
-                4 => 'Viernes',
-                5 => 'Sábado',
-                6 => 'Domingo'
-            ]
-        ],
-        'fr' => [
-            'FRONTMATTER_ERROR_PAGE' => '---
-title: %1$s
----
-
-# Erreur : Frontmatter invalide
-
-Path: `%2$s`
-
-**%3$s**
-
-```
-%4$s
-```
-',
-            'INFLECTOR_PLURALS' => [
-                '/(quiz)$/i' => '\\1zes',
-                '/^(ox)$/i' => '\\1en',
-                '/([m|l])ouse$/i' => '\\1ice',
-                '/(matr|vert|ind)ix|ex$/i' => '\\1ices',
-                '/(x|ch|ss|sh)$/i' => '\\1es',
-                '/([^aeiouy]|qu)ies$/i' => '\\1y',
-                '/([^aeiouy]|qu)y$/i' => '\\1ies',
-                '/(hive)$/i' => '\\1s',
-                '/(?:([^f])fe|([lr])f)$/i' => '\\1\\2ves',
-                '/sis$/i' => 'ses',
-                '/([ti])um$/i' => '\\1a',
-                '/(buffal|tomat)o$/i' => '\\1oes',
-                '/(bu)s$/i' => '\\1ses',
-                '/(alias|status)/i' => '\\1es',
-                '/(octop|vir)us$/i' => '\\1i',
-                '/(ax|test)is$/i' => '\\1es',
-                '/s$/i' => 's',
-                '/$/' => 's'
-            ],
-            'INFLECTOR_SINGULAR' => [
-                '/(quiz)zes$/i' => '\\1',
-                '/(matr)ices$/i' => '\\1ix',
-                '/(vert|ind)ices$/i' => '\\1ex',
-                '/^(ox)en/i' => '\\1',
-                '/(alias|status)es$/i' => '\\1',
-                '/([octop|vir])i$/i' => '\\1us',
-                '/(cris|ax|test)es$/i' => '\\1is',
-                '/(shoe)s$/i' => '\\1',
-                '/(o)es$/i' => '\\1',
-                '/(bus)es$/i' => '\\1',
-                '/([m|l])ice$/i' => '\\1ouse',
-                '/(x|ch|ss|sh)es$/i' => '\\1',
-                '/(m)ovies$/i' => '\\1ovie',
-                '/(s)eries$/i' => '\\1eries',
-                '/([^aeiouy]|qu)ies$/i' => '\\1y',
-                '/([lr])ves$/i' => '\\1f',
-                '/(tive)s$/i' => '\\1',
-                '/(hive)s$/i' => '\\1',
-                '/([^f])ves$/i' => '\\1fe',
-                '/(^analy)ses$/i' => '\\1sis',
-                '/((a)naly|(b)a|(d)iagno|(p)arenthe|(p)rogno|(s)ynop|(t)he)ses$/i' => '\\1\\2sis',
-                '/([ti])a$/i' => '\\1um',
-                '/(n)ews$/i' => '\\1ews'
-            ],
-            'INFLECTOR_UNCOUNTABLE' => [
-                0 => 'équipement',
-                1 => 'informations',
-                2 => 'riz',
-                3 => 'argent',
-                4 => 'espèces',
-                5 => 'séries',
-                6 => 'poisson',
-                7 => 'mouton'
-            ],
-            'INFLECTOR_IRREGULAR' => [
-                'person' => 'personnes',
-                'man' => 'hommes',
-                'child' => 'enfants',
-                'sex' => 'sexes',
-                'move' => 'déplacements'
-            ],
-            'INFLECTOR_ORDINALS' => [
-                'default' => 'ème',
-                'first' => 'er',
-                'second' => 'ème',
-                'third' => 'ème'
-            ],
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'Aucune date fournie',
-                'BAD_DATE' => 'Date erronée',
-                'AGO' => 'plus tôt',
-                'FROM_NOW' => 'à partir de maintenant',
-                'SECOND' => 'seconde',
-                'MINUTE' => 'minute',
-                'HOUR' => 'heure',
-                'DAY' => 'jour',
-                'WEEK' => 'semaine',
-                'MONTH' => 'mois',
-                'YEAR' => 'année',
-                'DECADE' => 'décennie',
-                'SEC' => 's',
-                'MIN' => 'm',
-                'HR' => 'h',
-                'WK' => 'sem',
-                'MO' => 'm',
-                'YR' => 'an',
-                'DEC' => 'déc',
-                'SECOND_PLURAL' => 'secondes',
-                'MINUTE_PLURAL' => 'minutes',
-                'HOUR_PLURAL' => 'heures',
-                'DAY_PLURAL' => 'jours',
-                'WEEK_PLURAL' => 'semaines',
-                'MONTH_PLURAL' => 'mois',
-                'YEAR_PLURAL' => 'années',
-                'DECADE_PLURAL' => 'décennies',
-                'SEC_PLURAL' => 's',
-                'MIN_PLURAL' => 'm',
-                'HR_PLURAL' => 'h',
-                'WK_PLURAL' => 'sem',
-                'MO_PLURAL' => 'mois',
-                'YR_PLURAL' => 'a',
-                'DEC_PLURAL' => 'décs'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>La validation a échoué :</b>',
-                'INVALID_INPUT' => 'Saisie non valide',
-                'MISSING_REQUIRED_FIELD' => 'Champ obligatoire manquant :'
-            ],
-            'MONTHS_OF_THE_YEAR' => [
-                0 => 'Janvier',
-                1 => 'Février',
-                2 => 'Mars',
-                3 => 'Avril',
-                4 => 'Mai',
-                5 => 'Juin',
-                6 => 'Juillet',
-                7 => 'Août',
-                8 => 'Septembre',
-                9 => 'Octobre',
-                10 => 'Novembre',
-                11 => 'Décembre'
-            ],
-            'DAYS_OF_THE_WEEK' => [
-                0 => 'Lundi',
-                1 => 'Mardi',
-                2 => 'Mercredi',
-                3 => 'Jeudi',
-                4 => 'Vendredi',
-                5 => 'Samedi',
-                6 => 'Dimanche'
-            ]
-        ],
-        'hr' => [
-            'INFLECTOR_UNCOUNTABLE' => [
-                0 => 'oprema',
-                1 => 'informacije',
-                2 => 'riža',
-                3 => 'novac',
-                4 => 'vrsta',
-                5 => 'serija',
-                6 => 'riba',
-                7 => 'ovca'
-            ],
-            'INFLECTOR_IRREGULAR' => [
-                'person' => 'osobe',
-                'man' => 'ljudi',
-                'child' => 'djeca',
-                'sex' => 'spolovi',
-                'move' => 'Pomakni'
-            ],
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'Datum nije upisan',
-                'BAD_DATE' => 'Pogrešan datum',
-                'AGO' => 'prije',
-                'FROM_NOW' => 'od sada',
-                'SECOND' => 'sekunda',
-                'MINUTE' => 'minuta',
-                'HOUR' => 'sat',
-                'DAY' => 'dan',
-                'WEEK' => 'tjedan',
-                'MONTH' => 'mjesec',
-                'YEAR' => 'godina',
-                'DECADE' => 'desetljeće',
-                'SEC' => 'sek',
-                'HR' => 'sat',
-                'WK' => 't',
-                'MO' => 'm',
-                'YR' => 'g',
-                'DEC' => 'des',
-                'SECOND_PLURAL' => 'sekundi',
-                'MINUTE_PLURAL' => 'minuta',
-                'HOUR_PLURAL' => 'sati',
-                'DAY_PLURAL' => 'dan',
-                'WEEK_PLURAL' => 'tjedana',
-                'MONTH_PLURAL' => 'mjeseci',
-                'YEAR_PLURAL' => 'godina',
-                'DECADE_PLURAL' => 'desetljeća',
-                'SEC_PLURAL' => 'sek',
-                'MIN_PLURAL' => 'min',
-                'HR_PLURAL' => 'sat',
-                'WK_PLURAL' => 't',
-                'MO_PLURAL' => 'm',
-                'YR_PLURAL' => 'g',
-                'DEC_PLURAL' => 'des'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>Validacija nije uspjela:</b>',
-                'INVALID_INPUT' => 'Pogrešan unos u',
-                'MISSING_REQUIRED_FIELD' => 'Nedostaje obavezno polje:'
-            ],
-            'MONTHS_OF_THE_YEAR' => [
-                0 => 'Siječanj',
-                1 => 'Veljača',
-                2 => 'Ožujak',
-                3 => 'Travanj',
-                4 => 'Svibanj',
-                5 => 'Lipanj',
-                6 => 'Srpanj',
-                7 => 'Kolovoz',
-                8 => 'Rujan',
-                9 => 'Listopad',
-                10 => 'Studeni',
-                11 => 'Prosinac'
-            ],
-            'DAYS_OF_THE_WEEK' => [
-                0 => 'Ponedjeljak',
-                1 => 'Utorak',
-                2 => 'Srijeda',
-                3 => 'Četvrtak',
-                4 => 'Petak',
-                5 => 'Subota',
-                6 => 'Nedjelja'
-            ]
-        ],
-        'hu' => [
-            'FRONTMATTER_ERROR_PAGE' => '---
-cím: %1$s
----
-
-# Hiba: Érvénytelen Frontmatter
-
-Elérési út: `%2$s`
-
-**%3$s**
-
-```
-%4$s
-```
-',
-            'INFLECTOR_IRREGULAR' => [
-                'person' => 'személyek',
-                'man' => 'férfiak',
-                'child' => 'gyerekek',
-                'sex' => 'nemek',
-                'move' => 'lépések'
-            ],
-            'INFLECTOR_ORDINALS' => [
-                'default' => '.',
-                'first' => '.',
-                'second' => '.',
-                'third' => '.'
-            ],
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'Nincs dátum megadva',
-                'BAD_DATE' => 'Hibás dátum',
-                'AGO' => 'elteltével',
-                'FROM_NOW' => 'mostantól',
-                'SECOND' => 'másodperc',
-                'MINUTE' => 'perc',
-                'HOUR' => 'óra',
-                'DAY' => 'nap',
-                'WEEK' => 'hét',
-                'MONTH' => 'hónap',
-                'YEAR' => 'év',
-                'DECADE' => 'évtized',
-                'SEC' => 'mp',
-                'MIN' => 'p',
-                'HR' => 'ó',
-                'WK' => 'hét',
-                'MO' => 'hó',
-                'YR' => 'év',
-                'DEC' => 'évt',
-                'SECOND_PLURAL' => 'másodperc',
-                'MINUTE_PLURAL' => 'perc',
-                'HOUR_PLURAL' => 'óra',
-                'DAY_PLURAL' => 'nap',
-                'WEEK_PLURAL' => 'hét',
-                'MONTH_PLURAL' => 'hónap',
-                'YEAR_PLURAL' => 'év',
-                'DECADE_PLURAL' => 'évtized',
-                'SEC_PLURAL' => 'mp',
-                'MIN_PLURAL' => 'perc',
-                'HR_PLURAL' => 'ó',
-                'WK_PLURAL' => 'hét',
-                'MO_PLURAL' => 'hó',
-                'YR_PLURAL' => 'év',
-                'DEC_PLURAL' => 'évt'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>A validáció hibát talált:</b>',
-                'INVALID_INPUT' => 'Az itt megadott érték érvénytelen:',
-                'MISSING_REQUIRED_FIELD' => 'Ez a kötelező mező nincs kitöltve:'
-            ]
-        ],
-        'it' => [
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'Nessuna data fornita',
-                'BAD_DATE' => 'Data errata',
-                'AGO' => 'fa',
-                'FROM_NOW' => 'da adesso',
-                'SECOND' => 'secondo',
-                'MINUTE' => 'minuto',
-                'HOUR' => 'ora',
-                'DAY' => 'giorno',
-                'WEEK' => 'settimana',
-                'MONTH' => 'mese',
-                'YEAR' => 'anno',
-                'SECOND_PLURAL' => 'secondi',
-                'MINUTE_PLURAL' => 'minuti',
-                'HOUR_PLURAL' => 'ore',
-                'DAY_PLURAL' => 'giorni',
-                'WEEK_PLURAL' => 'settimane',
-                'MONTH_PLURAL' => 'mesi',
-                'YEAR_PLURAL' => 'anni',
-                'DECADE_PLURAL' => 'decadi'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>Validazione fallita:</b>',
-                'INVALID_INPUT' => 'Input invalido in',
-                'MISSING_REQUIRED_FIELD' => 'Campo richiesto mancante:'
-            ],
-            'MONTHS_OF_THE_YEAR' => [
-                0 => 'Gennaio',
-                1 => 'Febbraio',
-                2 => 'Marzo',
-                3 => 'Aprile',
-                4 => 'Maggio',
-                5 => 'Giugno',
-                6 => 'Luglio',
-                7 => 'Agosto',
-                8 => 'Settembre',
-                9 => 'Ottobre',
-                10 => 'Novembre',
-                11 => 'Dicembre'
-            ],
-            'DAYS_OF_THE_WEEK' => [
-                0 => 'Lunedi',
-                1 => 'Martedi',
-                2 => 'Mercoledi',
-                3 => 'Giovedi',
-                4 => 'Venerdi',
-                5 => 'Sabato',
-                6 => 'Domenica'
             ]
         ],
         'ja' => [
@@ -1514,6 +1580,6 @@ Path: `%2$s`
                 'DEC_PLURAL' => 'onyl'
             ]
         ],
-        'checksum' => '2ead004fe9a83172c61dbd0e50ced86a'
+        'checksum' => '9ef1ac32973fee626a65444645bba9ef'
     ]
 ];

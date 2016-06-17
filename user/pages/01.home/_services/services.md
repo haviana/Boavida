@@ -3,16 +3,16 @@ title: Services
 menu: Services
 class: small
 services:
-    - header: diversao
+    - header: Qualidade
       icon: star
-      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+      text: Prova todos os pecados que a Boavida tem para oferecer.
     - header: Alegria
       icon: smile-o
-      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+      text: Aumenta a tua alegria a cada Boavida que bebes.
     - header: Festa
       icon: beer
-      text: Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.
+      text: Festa nao e festa sem os pecados da Boavida. 
 ---
 
-## O que oferece-mos
-### Lorem ipsum dolor sit amet consectetur
+## Motivos
+### Estes sao os motivos que temos para pecarmos.

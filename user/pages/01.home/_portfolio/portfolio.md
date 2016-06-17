@@ -40,5 +40,5 @@ portfolios:
       description: Cerveja de cor negra e opaca, com forte sabor a chocolate, café e malte torrado e aveia. Cerveja com corpo bastante espesso e sabor suave, que faz lembrar um bom chocolate quente ou um café com natas.
 ---
 
-## Pecados Boavida
+## Os Pecados da Boavida
 ### Lorem ipsum dolor sit amet consectetur.

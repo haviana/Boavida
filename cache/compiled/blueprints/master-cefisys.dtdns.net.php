@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1466090806,
-    'checksum' => '17cb0155e551a6887e08d2533c31e92a',
+    'timestamp' => 1466163008,
+    'checksum' => '416ee28b5e364268f4a1cada2eedb8ae',
     'files' => [
         'system/blueprints/config' => [
             'media' => [
@@ -34,6 +34,10 @@ return [
             'plugins/error' => [
                 'file' => 'user/plugins/error/blueprints.yaml',
                 'modified' => 1461744472
+            ],
+            'plugins/form' => [
+                'file' => 'user/plugins/form/blueprints.yaml',
+                'modified' => 1466161779
             ]
         ]
     ],
@@ -135,6 +139,64 @@ return [
                 'label' => '404 Route',
                 'default' => '/error',
                 'name' => 'plugins.error.routes.404'
+            ],
+            'plugins.form' => [
+                'type' => '_parent',
+                'name' => 'plugins.form'
+            ],
+            'plugins.form.enabled' => [
+                'type' => 'hidden',
+                'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.form.enabled'
+            ],
+            'plugins.form.files' => [
+                'type' => '_parent',
+                'name' => 'plugins.form.files'
+            ],
+            'plugins.form.files.multiple' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_FORM.ALLOW_MULTIPLE',
+                'help' => 'PLUGIN_FORM.ALLOW_MULTIPLE_HELP',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.ENABLED',
+                    0 => 'PLUGIN_ADMIN.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.form.files.multiple'
+            ],
+            'plugins.form.files.destination' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_FORM.DESTINATION',
+                'help' => 'PLUGIN_FORM.DESTINATION_HELP',
+                'default' => '@self',
+                'name' => 'plugins.form.files.destination'
+            ],
+            'plugins.form.files.accept' => [
+                'type' => 'selectize',
+                'size' => 'large',
+                'label' => 'PLUGIN_FORM.ACCEPT',
+                'help' => 'PLUGIN_FORM.ACCEPT_HELP',
+                'classes' => 'fancy',
+                'default' => [
+                    0 => 'image/*'
+                ],
+                'validate' => [
+                    'type' => 'commalist'
+                ],
+                'name' => 'plugins.form.files.accept'
             ],
             'site' => [
                 'type' => '_parent',
@@ -1388,6 +1450,14 @@ return [
                     'enabled' => 'plugins.error.enabled',
                     'routes' => [
                         404 => 'plugins.error.routes.404'
+                    ]
+                ],
+                'form' => [
+                    'enabled' => 'plugins.form.enabled',
+                    'files' => [
+                        'multiple' => 'plugins.form.files.multiple',
+                        'destination' => 'plugins.form.files.destination',
+                        'accept' => 'plugins.form.files.accept'
                     ]
                 ]
             ],
