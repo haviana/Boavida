@@ -1,5 +1,5 @@
 ---
-title: Agency
+title: Boavida
 menu: Home
 onpage_menu: true
 content:
@@ -10,7 +10,7 @@ content:
         custom:
             - _header
             - _services
-            - _portfolio
+            - _pecados
             - _boasvidas
             - _team
 ---

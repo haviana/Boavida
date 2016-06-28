@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1466194455,
-    'checksum' => 'd23bfb427435a56d298e487605532616',
+    'timestamp' => 1467142226,
+    'checksum' => 'e50e8c7af62686a319a0ca89cea6e874',
     'files' => [
         'user/config' => [
             'plugins/form' => [
@@ -15,11 +15,11 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1466194453
+                'modified' => 1467142223
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1466163002
+                'modified' => 1466950562
             ]
         ],
         'system/config' => [
@@ -332,14 +332,14 @@ return [
             'title' => 'cervejaBoavida',
             'author' => [
                 'name' => 'cefisys',
-                'email' => 'cefisys@gmail .com'
+                'email' => 'cefisys@gmail.com'
             ],
             'taxonomies' => [
                 0 => 'category',
                 1 => 'tag'
             ],
             'metadata' => [
-                'description' => 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+                'description' => 'Cerveja Boavida artesanalmente portuguesa'
             ],
             'summary' => [
                 'enabled' => true,
@@ -352,23 +352,22 @@ return [
             'blog' => [
                 'route' => '/blog'
             ],
-            'email' => 'your-email@domain.com',
-            'description' => 'Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.',
+            'email' => 'geral@cervejaBoavida.com',
             'links' => [
                 0 => [
                     'title' => 'Oferta',
-                    'url' => '#services'
+                    'url' => '#oferta'
                 ],
                 1 => [
                     'title' => 'Pecados',
-                    'url' => '#portfolio'
+                    'url' => '#pecados'
                 ],
                 2 => [
                     'title' => 'Servicos',
-                    'url' => '#about'
+                    'url' => '#servicos'
                 ],
                 3 => [
-                    'title' => 'Mestres Cervejeiros',
+                    'title' => 'Cervejeiros',
                     'url' => '#team'
                 ]
             ],
@@ -392,24 +391,6 @@ return [
                 4 => [
                     'title' => 'github',
                     'url' => 'http://github.com/jekyll'
-                ]
-            ],
-            'address' => [
-                0 => [
-                    'line' => '3481 Melrose Place'
-                ],
-                1 => [
-                    'line' => 'Beverly Hills, CA 90210'
-                ]
-            ],
-            'quicklinks' => [
-                0 => [
-                    'title' => 'Privacy Policy',
-                    'url' => '#'
-                ],
-                1 => [
-                    'title' => 'Terms of Use',
-                    'url' => '#'
                 ]
             ]
         ],
@@ -552,15 +533,15 @@ return [
                 ]
             ],
             'errors' => [
-                'display' => true,
+                'display' => false,
                 'log' => true
             ],
             'debugger' => [
-                'enabled' => true,
+                'enabled' => false,
                 'shutdown' => [
-                    'close_connection' => true
+                    'close_connection' => false
                 ],
-                'twig' => true
+                'twig' => false
             ],
             'images' => [
                 'default_image_quality' => 85,

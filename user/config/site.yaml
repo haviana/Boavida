@@ -1,25 +1,25 @@
 title: cervejaBoavida
 author:
   name: cefisys
-  email: 'cefisys@gmail .com'
+  email: 'cefisys@gmail.com'
 metadata:
-    description: 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+    description: 'Cerveja Boavida artesanalmente portuguesa'
     
 # Site settings
-title: Awesome Title
-email: your-email@domain.com
-description: "Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description."
+title: cervejaBoavida
+email: geral@cervejaBoavida.com
+
 
 # Links to include in footer navigation
 # For external links add external: true
 links:
   - title: Oferta
-    url: '#services'
+    url: '#oferta'
   - title: Pecados
-    url: '#portfolio'
+    url: '#pecados'
   - title: Servicos
-    url: '#about'
-  - title: Mestres Cervejeiros
+    url: '#servicos'
+  - title: 'Cervejeiros'
     url: '#team'            
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
@@ -35,13 +35,3 @@ social:
   - title: github
     url: http://github.com/jekyll
 
-# Postal address (add as many lines as necessary)
-address:
-  - line: 3481 Melrose Place
-  - line: Beverly Hills, CA 90210
-
-quicklinks:
-  - title: Privacy Policy
-    url: '#'
-  - title: Terms of Use
-    url: '#'

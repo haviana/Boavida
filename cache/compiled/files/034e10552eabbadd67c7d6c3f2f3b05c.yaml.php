@@ -2,33 +2,32 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/site.yaml',
-    'modified' => 1466194453,
+    'modified' => 1467142223,
     'data' => [
         'title' => 'cervejaBoavida',
         'author' => [
             'name' => 'cefisys',
-            'email' => 'cefisys@gmail .com'
+            'email' => 'cefisys@gmail.com'
         ],
         'metadata' => [
-            'description' => 'Grav is an easy to use, yet powerful, open source flat-file CMS'
+            'description' => 'Cerveja Boavida artesanalmente portuguesa'
         ],
-        'email' => 'your-email@domain.com',
-        'description' => 'Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.',
+        'email' => 'geral@cervejaBoavida.com',
         'links' => [
             0 => [
                 'title' => 'Oferta',
-                'url' => '#services'
+                'url' => '#oferta'
             ],
             1 => [
                 'title' => 'Pecados',
-                'url' => '#portfolio'
+                'url' => '#pecados'
             ],
             2 => [
                 'title' => 'Servicos',
-                'url' => '#about'
+                'url' => '#servicos'
             ],
             3 => [
-                'title' => 'Mestres Cervejeiros',
+                'title' => 'Cervejeiros',
                 'url' => '#team'
             ]
         ],
@@ -52,24 +51,6 @@ return [
             4 => [
                 'title' => 'github',
                 'url' => 'http://github.com/jekyll'
-            ]
-        ],
-        'address' => [
-            0 => [
-                'line' => '3481 Melrose Place'
-            ],
-            1 => [
-                'line' => 'Beverly Hills, CA 90210'
-            ]
-        ],
-        'quicklinks' => [
-            0 => [
-                'title' => 'Privacy Policy',
-                'url' => '#'
-            ],
-            1 => [
-                'title' => 'Terms of Use',
-                'url' => '#'
             ]
         ]
     ]

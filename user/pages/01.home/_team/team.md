@@ -51,4 +51,4 @@ people:
           url: '#'     
 ---
 
-## Equipa
+## Mestres Cervejeiros
