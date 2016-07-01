@@ -7,6 +7,3 @@ buttons:
       primary: true
 featured: header.jpg
 ---
-
-# Bem vindo a Nossa Cervejaria
-## Orgulhosamente Portuguesa

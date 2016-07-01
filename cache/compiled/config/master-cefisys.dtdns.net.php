@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1467142226,
-    'checksum' => 'e50e8c7af62686a319a0ca89cea6e874',
+    'timestamp' => 1467403379,
+    'checksum' => 'afed6c1e9bdb919414826c8681d15175',
     'files' => [
         'user/config' => [
             'plugins/form' => [
@@ -15,7 +15,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1467142223
+                'modified' => 1467403375
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
@@ -29,7 +29,7 @@ return [
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1461744472
+                'modified' => 1467402362
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
@@ -374,23 +374,19 @@ return [
             'social' => [
                 0 => [
                     'title' => 'twitter',
-                    'url' => 'http://twitter.com/jekyllrb'
+                    'url' => NULL
                 ],
                 1 => [
                     'title' => 'facebook',
-                    'url' => NULL
+                    'url' => 'https://www.facebook.com/boavidacervejaartesanal/'
                 ],
                 2 => [
-                    'title' => 'stack-overflow',
-                    'url' => 'http://stackoverflow.com/questions/tagged/jekyll'
+                    'title' => 'instagram',
+                    'url' => 'https://www.instagram.com/boavidacervejaartesanal/'
                 ],
                 3 => [
-                    'title' => 'bitbucket',
-                    'url' => 'http://bitbucket.org/jekyll'
-                ],
-                4 => [
                     'title' => 'github',
-                    'url' => 'http://github.com/jekyll'
+                    'url' => 'https://github.com/haviana/Boavida'
                 ]
             ]
         ],

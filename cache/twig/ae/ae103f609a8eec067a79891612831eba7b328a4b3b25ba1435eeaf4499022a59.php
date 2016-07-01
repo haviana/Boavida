@@ -23,7 +23,7 @@ class __TwigTemplate_599e561abbba8da328ba1a2ec87ac54d49aff24227706f993f7bdd1db6f
                 <span class=\"copyright\">Copyright &copy; ";
         // line 5
         echo $this->getAttribute((isset($context["site"]) ? $context["site"] : null), "title", array());
-        echo " 2014</span>
+        echo " 2016</span>
             </div>
             <div class=\"col-md-4\">
                 <ul class=\"list-inline social-buttons\">
@@ -93,7 +93,7 @@ class __TwigTemplate_599e561abbba8da328ba1a2ec87ac54d49aff24227706f993f7bdd1db6f
 /*     <div class="container">*/
 /*         <div class="row">*/
 /*             <div class="col-md-4">*/
-/*                 <span class="copyright">Copyright &copy; {{ site.title }} 2014</span>*/
+/*                 <span class="copyright">Copyright &copy; {{ site.title }} 2016</span>*/
 /*             </div>*/
 /*             <div class="col-md-4">*/
 /*                 <ul class="list-inline social-buttons">*/

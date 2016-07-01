@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/site.yaml',
-    'modified' => 1467142223,
+    'modified' => 1467403375,
     'data' => [
         'title' => 'cervejaBoavida',
         'author' => [
@@ -34,23 +34,19 @@ return [
         'social' => [
             0 => [
                 'title' => 'twitter',
-                'url' => 'http://twitter.com/jekyllrb'
+                'url' => NULL
             ],
             1 => [
                 'title' => 'facebook',
-                'url' => NULL
+                'url' => 'https://www.facebook.com/boavidacervejaartesanal/'
             ],
             2 => [
-                'title' => 'stack-overflow',
-                'url' => 'http://stackoverflow.com/questions/tagged/jekyll'
+                'title' => 'instagram',
+                'url' => 'https://www.instagram.com/boavidacervejaartesanal/'
             ],
             3 => [
-                'title' => 'bitbucket',
-                'url' => 'http://bitbucket.org/jekyll'
-            ],
-            4 => [
                 'title' => 'github',
-                'url' => 'http://github.com/jekyll'
+                'url' => 'https://github.com/haviana/Boavida'
             ]
         ]
     ]

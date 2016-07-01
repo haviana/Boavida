@@ -6,19 +6,14 @@ portfolios:
       subtitle: Boavida
       layout: default
       modalid: 1
-      date: 2014-07-18
       img: gula.jpg
       thumbnail: thumbnail-gula.jpg
       alt: image-alt
-      projectdate: April 2014
-      client: Start Bootstrap
-      category: Web Development
-      description: Cerveja de características belgas com uma coloração amarelo a dourado, com teor alcoólico que pode chegar aos 9 graus, saborosa e balanceada evidenciado a sua alta graduação alcoólica. Os aromas e os sabores são complexos com um ligeiro sabor a fruta que lhe pode conferir um paladar adocicado. 
+      description: De beber e chorar por mais. a nossa Gula é uma cerveja de estilo belga, de cor dourada e sabor intenso. Uma cerveja muito rica e equilibrada devido ao uso criterioso de lúpulos e leveduras. O seu excepcional sabor e aroma tornam a Gula numa cerveja completamente irresistível e fácil de beber. Convém salientar que é uma cerveja com algum grau alcoólico, e por tal não nos responsabilizando por qualquer tipo de piadas que o consumidor possa vir a tentar fazer.  
     - title: Inveja
       subtitle: Boavida
       layout: default
       modalid: 2
-      date: 2014-07-17
       img: inveja.jpg
       thumbnail: thumbnail-inveja.jpg
       alt: image-alt
@@ -34,4 +29,4 @@ portfolios:
 ---
 
 ## Os Pecados da Boavida
-### Lorem ipsum dolor sit amet consectetur.
+###
