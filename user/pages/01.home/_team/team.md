@@ -41,5 +41,5 @@ people:
           url: 'https://plus.google.com/u/0/117881830482230335540'      
 ---
 
-## Os produtores de pecados
+## Os Cervejeiros
 ###

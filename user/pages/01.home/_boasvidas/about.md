@@ -5,7 +5,7 @@ abouts:
     - img: 33.jpg
       heading: Garrafa de 33CL
       subheading: Para os mais garganeiros.
-      body: Temos &#224; tua disposi&#231;&#227;o a venda de garrafas de 0.33L de modo a poder degustares da tua cerveja sem a teres que partilhar.
+      body: Temos &#224; tua disposi&#231;&#227;o a venda de garrafas de 0.33L de modo a poderes degustares da tua cerveja sem a teres que partilhar.
       align: image
 
     - img: barril.jpg

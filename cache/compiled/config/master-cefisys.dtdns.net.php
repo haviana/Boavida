@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1467403379,
-    'checksum' => 'afed6c1e9bdb919414826c8681d15175',
+    'timestamp' => 1467831616,
+    'checksum' => 'ff8ef4ece2c0891f8a400f35a3a0cc1d',
     'files' => [
         'user/config' => [
             'plugins/form' => [
@@ -15,7 +15,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1467403375
+                'modified' => 1467831533
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
@@ -329,7 +329,7 @@ return [
             ]
         ],
         'site' => [
-            'title' => 'cervejaBoavida',
+            'title' => 'CervejaBoavida',
             'author' => [
                 'name' => 'cefisys',
                 'email' => 'cefisys@gmail.com'
@@ -356,25 +356,29 @@ return [
             'links' => [
                 0 => [
                     'title' => 'Oferta',
-                    'url' => '#oferta'
+                    'url' => '#services'
                 ],
                 1 => [
                     'title' => 'Pecados',
-                    'url' => '#pecados'
+                    'url' => '#portfolio'
                 ],
                 2 => [
                     'title' => 'Servicos',
-                    'url' => '#servicos'
+                    'url' => '#about'
                 ],
                 3 => [
                     'title' => 'Cervejeiros',
                     'url' => '#team'
+                ],
+                4 => [
+                    'title' => 'Contactos',
+                    'url' => '#contact'
                 ]
             ],
             'social' => [
                 0 => [
                     'title' => 'twitter',
-                    'url' => NULL
+                    'url' => 'https://twitter.com/boavidacervejaa?edit=true'
                 ],
                 1 => [
                     'title' => 'facebook',

@@ -27,10 +27,7 @@ class __TwigTemplate_d8e6e40e62e6f7f25ff5d3d3cb14f21f7c0e86ccca56c17f94efe9abd2d
                 <span class=\"icon-bar\"></span>
                 <span class=\"icon-bar\"></span>
             </button>
-            <a class=\"navbar-brand page-scroll\" href=\"#page-top\">";
-        // line 12
-        echo $this->getAttribute((isset($context["site"]) ? $context["site"] : null), "title", array());
-        echo "</a>
+            <a class=\"navbar-brand page-scroll\" href=\"#page-top\" ><img src=\"/Boavida/images/canecas.png\" style=\"margin: -16px\" alt=\"\"></a>
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
@@ -87,7 +84,8 @@ class __TwigTemplate_d8e6e40e62e6f7f25ff5d3d3cb14f21f7c0e86ccca56c17f94efe9abd2d
                     <!-- /.navbar-collapse -->
                 </div>
                 <!-- /.container-fluid -->
-            </nav>";
+            </nav>
+";
     }
 
     public function getTemplateName()
@@ -102,7 +100,7 @@ class __TwigTemplate_d8e6e40e62e6f7f25ff5d3d3cb14f21f7c0e86ccca56c17f94efe9abd2d
 
     public function getDebugInfo()
     {
-        return array (  85 => 31,  69 => 29,  66 => 28,  63 => 27,  60 => 26,  57 => 25,  54 => 24,  51 => 23,  48 => 22,  44 => 21,  32 => 12,  19 => 1,);
+        return array (  82 => 31,  66 => 29,  63 => 28,  60 => 27,  57 => 26,  54 => 25,  51 => 24,  48 => 23,  45 => 22,  41 => 21,  19 => 1,);
     }
 }
 /* <!-- Navigation -->*/
@@ -116,7 +114,7 @@ class __TwigTemplate_d8e6e40e62e6f7f25ff5d3d3cb14f21f7c0e86ccca56c17f94efe9abd2d
 /*                 <span class="icon-bar"></span>*/
 /*                 <span class="icon-bar"></span>*/
 /*             </button>*/
-/*             <a class="navbar-brand page-scroll" href="#page-top">{{site.title}}</a>*/
+/*             <a class="navbar-brand page-scroll" href="#page-top" ><img src="/Boavida/images/canecas.png" style="margin: -16px" alt=""></a>*/
 /*         </div>*/
 /* */
 /*         <!-- Collect the nav links, forms, and other content for toggling -->*/
@@ -141,3 +139,4 @@ class __TwigTemplate_d8e6e40e62e6f7f25ff5d3d3cb14f21f7c0e86ccca56c17f94efe9abd2d
 /*                 </div>*/
 /*                 <!-- /.container-fluid -->*/
 /*             </nav>*/
+/* */

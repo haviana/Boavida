@@ -1,4 +1,4 @@
-title: cervejaBoavida
+title: CervejaBoavida
 author:
   name: cefisys
   email: 'cefisys@gmail.com'
@@ -14,18 +14,20 @@ email: geral@cervejaBoavida.com
 # For external links add external: true
 links:
   - title: Oferta
-    url: '#oferta'
+    url: '#services'
   - title: Pecados
-    url: '#pecados'
+    url: '#portfolio'
   - title: Servicos
-    url: '#servicos'
-  - title: 'Cervejeiros'
-    url: '#team'            
+    url: '#about'
+  - title: Cervejeiros
+    url: '#team'
+  - title: Contactos
+    url: '#contact'            
 
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: twitter
-    url: 
+    url: https://twitter.com/boavidacervejaa?edit=true
   - title: facebook
     url: https://www.facebook.com/boavidacervejaartesanal/
   - title: instagram
