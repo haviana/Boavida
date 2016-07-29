@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1469561131,
-    'checksum' => 'f2b61e1a0310b116cd2d8ed1c73a2038',
+    'timestamp' => 1469822007,
+    'checksum' => '6bef96de1039e3f64e820a44dbe67b7b',
     'files' => [
         'user/config' => [
             'plugins/form' => [
@@ -15,7 +15,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1467831533
+                'modified' => 1469822006
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
@@ -346,7 +346,7 @@ return [
                 1 => 'tag'
             ],
             'metadata' => [
-                'description' => 'Cerveja Boavida artesanalmente portuguesa'
+                'description' => 'Cerveja Boavida artesanal portuguesa'
             ],
             'summary' => [
                 'enabled' => true,

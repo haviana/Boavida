@@ -3,7 +3,7 @@ author:
   name: cefisys
   email: 'cefisys@gmail.com'
 metadata:
-    description: 'Cerveja Boavida artesanalmente portuguesa'
+    description: 'Cerveja Boavida artesanal portuguesa'
     
 # Site settings
 title: cervejaBoavida
@@ -35,3 +35,6 @@ social:
   - title: github
     url: https://github.com/haviana/Boavida
 
+routes:
+#  /something/else: '/blog/sample-3'         # Alias for /blog/sample-3
+#  /new/(.*): '/blog/$1'                     # Regex any /new/my-page URL to /blog/my-page Route

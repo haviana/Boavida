@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/site.yaml',
-    'modified' => 1467831533,
+    'modified' => 1469822006,
     'data' => [
         'title' => 'CervejaBoavida',
         'author' => [
@@ -10,7 +10,7 @@ return [
             'email' => 'cefisys@gmail.com'
         ],
         'metadata' => [
-            'description' => 'Cerveja Boavida artesanalmente portuguesa'
+            'description' => 'Cerveja Boavida artesanal portuguesa'
         ],
         'email' => 'geral@cervejaBoavida.com',
         'links' => [
@@ -52,6 +52,7 @@ return [
                 'title' => 'github',
                 'url' => 'https://github.com/haviana/Boavida'
             ]
-        ]
+        ],
+        'routes' => NULL
     ]
 ];

@@ -30,22 +30,22 @@ class __TwigTemplate_63890e1671e6880591f0a6d5463c73833346ac7bb68ce8c4a2c418c96ed
         // line 7
         echo "    <div class=\"col-md-6\">
         <div class=\"form-group\">
-            <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Name\" required class=\"form-control\" />
+            <input type=\"text\" name=\"name\" id=\"name\" placeholder=\"Nome\" required class=\"form-control\" />
         </div>
         <div class=\"form-group\">
-            <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"name@example.com\" required class=\"form-control\" />
+            <input type=\"email\" name=\"email\" id=\"email\" placeholder=\"nome@exemplo.pt\" required class=\"form-control\" />
         </div>
     </div>
     <div class=\"col-md-6\">
         <div class=\"form-group\">
-            <textarea name=\"message\" rows=\"8\" id=\"message\" placeholder=\"Your message here\" required class=\"form-control\"></textarea>
+            <textarea name=\"message\" rows=\"8\" id=\"message\" placeholder=\"Introduza a sua mensagem\" required class=\"form-control\"></textarea>
             ";
         // line 19
         echo "        </div>
     </div>
     <div class=\"col-lg-12 text-center\">
         <div class=\"form-group\">
-            <button class=\"btn btn-primary btn-lg\">Submit</button>
+            <button class=\"btn btn-primary btn-lg\">Enviar</button>
         </div>
     </div>
 </form>
@@ -75,21 +75,21 @@ class __TwigTemplate_63890e1671e6880591f0a6d5463c73833346ac7bb68ce8c4a2c418c96ed
 /*     {# START: input form here #}*/
 /*     <div class="col-md-6">*/
 /*         <div class="form-group">*/
-/*             <input type="text" name="name" id="name" placeholder="Name" required class="form-control" />*/
+/*             <input type="text" name="name" id="name" placeholder="Nome" required class="form-control" />*/
 /*         </div>*/
 /*         <div class="form-group">*/
-/*             <input type="email" name="email" id="email" placeholder="name@example.com" required class="form-control" />*/
+/*             <input type="email" name="email" id="email" placeholder="nome@exemplo.pt" required class="form-control" />*/
 /*         </div>*/
 /*     </div>*/
 /*     <div class="col-md-6">*/
 /*         <div class="form-group">*/
-/*             <textarea name="message" rows="8" id="message" placeholder="Your message here" required class="form-control"></textarea>*/
+/*             <textarea name="message" rows="8" id="message" placeholder="Introduza a sua mensagem" required class="form-control"></textarea>*/
 /*             {# END: input form here #}*/
 /*         </div>*/
 /*     </div>*/
 /*     <div class="col-lg-12 text-center">*/
 /*         <div class="form-group">*/
-/*             <button class="btn btn-primary btn-lg">Submit</button>*/
+/*             <button class="btn btn-primary btn-lg">Enviar</button>*/
 /*         </div>*/
 /*     </div>*/
 /* </form>*/
