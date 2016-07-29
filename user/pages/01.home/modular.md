@@ -13,4 +13,5 @@ content:
             - _pecados
             - _boasvidas
             - _team
+            - _contact
 ---

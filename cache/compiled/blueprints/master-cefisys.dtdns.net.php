@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1466163008,
-    'checksum' => '416ee28b5e364268f4a1cada2eedb8ae',
+    'timestamp' => 1469561131,
+    'checksum' => '33ec8bee2db77811e3b25f7df36cfecf',
     'files' => [
         'system/blueprints/config' => [
             'media' => [
@@ -23,6 +23,10 @@ return [
             ]
         ],
         'user/plugins' => [
+            'plugins/simple_form' => [
+                'file' => 'user/plugins/simple_form/blueprints.yaml',
+                'modified' => 1469561112
+            ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/blueprints.yaml',
                 'modified' => 1461744472
@@ -46,6 +50,24 @@ return [
             'plugins' => [
                 'type' => '_parent',
                 'name' => 'plugins'
+            ],
+            'plugins.simple_form' => [
+                'type' => '_parent',
+                'name' => 'plugins.simple_form'
+            ],
+            'plugins.simple_form.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.ENABLED',
+                    0 => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.simple_form.enabled'
             ],
             'plugins.problems' => [
                 'type' => '_parent',
@@ -1438,6 +1460,9 @@ return [
         ],
         'nested' => [
             'plugins' => [
+                'simple_form' => [
+                    'enabled' => 'plugins.simple_form.enabled'
+                ],
                 'problems' => [
                     'enabled' => 'plugins.problems.enabled',
                     'built_in_css' => 'plugins.problems.built_in_css'
