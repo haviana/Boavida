@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/languages/lt.yaml',
-    'modified' => 1461744472,
+    'modified' => 1473793498,
     'data' => [
         'INFLECTOR_UNCOUNTABLE' => [
             2 => 'ryžiai',

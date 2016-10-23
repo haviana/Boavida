@@ -5,7 +5,7 @@ pages:
   theme: agency
   process:
     markdown: true
-    twig: false
+    twig: true
   markdown:
     extra: true  
 
@@ -31,7 +31,7 @@ assets:
 
 debugger:
   enabled: false
-  twig: false
+  twig: true
   shutdown:
     close_connection: false
 

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/blueprints/config/site.yaml',
-    'modified' => 1461744472,
+    'modified' => 1473793498,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SITE',
         'form' => [
@@ -68,6 +68,7 @@ return [
                         'summary.size' => [
                             'type' => 'text',
                             'size' => 'x-small',
+                            'append' => 'PLUGIN_ADMIN.CHARACTERS',
                             'label' => 'PLUGIN_ADMIN.SUMMARY_SIZE',
                             'help' => 'PLUGIN_ADMIN.SUMMARY_SIZE_HELP',
                             'validate' => [

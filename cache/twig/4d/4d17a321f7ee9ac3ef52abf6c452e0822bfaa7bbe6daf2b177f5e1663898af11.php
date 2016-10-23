@@ -67,6 +67,10 @@ class __TwigTemplate_f031ea44c63144c9ff296da6e2d79d73961af9c36b3c78822cadeeedc57
             ob_end_clean();
 
             throw $e;
+        } catch (Throwable $e) {
+            ob_end_clean();
+
+            throw $e;
         }
 
         return ('' === $tmp = ob_get_clean()) ? '' : new Twig_Markup($tmp, $this->env->getCharset());

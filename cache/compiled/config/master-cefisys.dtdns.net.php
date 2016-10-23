@@ -1,13 +1,21 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1469822007,
-    'checksum' => '6bef96de1039e3f64e820a44dbe67b7b',
+    'timestamp' => 1475325409,
+    'checksum' => 'f4df336faffe3b2e5a6c0a5a739a70bb',
     'files' => [
         'user/config' => [
+            'media' => [
+                'file' => 'user/config/media.yaml',
+                'modified' => 1474803141
+            ],
+            'plugins/email' => [
+                'file' => 'user/config/plugins/email.yaml',
+                'modified' => 1475325400
+            ],
             'plugins/form' => [
                 'file' => 'user/config/plugins/form.yaml',
-                'modified' => 1466162221
+                'modified' => 1473974069
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
@@ -17,37 +25,45 @@ return [
                 'file' => 'user/config/site.yaml',
                 'modified' => 1469822006
             ],
+            'streams' => [
+                'file' => 'user/config/streams.yaml',
+                'modified' => 1474803141
+            ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1466950562
+                'modified' => 1474803568
             ]
         ],
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1461744472
+                'modified' => 1473793498
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1467402362
+                'modified' => 1473793498
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1461744472
+                'modified' => 1473793498
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1461744472
+                'modified' => 1473793498
             ]
         ],
         'user/plugins' => [
+            'plugins/email' => [
+                'file' => 'user/plugins/email/email.yaml',
+                'modified' => 1473795050
+            ],
             'plugins/simple_form' => [
                 'file' => 'user/plugins/simple_form/simple_form.yaml',
                 'modified' => 1469561112
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
-                'modified' => 1461744472
+                'modified' => 1474803219
             ],
             'plugins/langswitcher' => [
                 'file' => 'user/plugins/langswitcher/langswitcher.yaml',
@@ -55,16 +71,38 @@ return [
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
-                'modified' => 1461744472
+                'modified' => 1474803231
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1466161779
+                'modified' => 1474803129
             ]
         ]
     ],
     'data' => [
         'plugins' => [
+            'email' => [
+                'enabled' => true,
+                'from' => 'geral@cervejaboavida.pt',
+                'from_name' => 'hugohaviana',
+                'to' => 'geral@cervejaboavida.pt',
+                'to_name' => 'hviana',
+                'mailer' => [
+                    'engine' => 'mail',
+                    'smtp' => [
+                        'server' => 'localhost',
+                        'port' => 25,
+                        'encryption' => 'none',
+                        'user' => 'teste',
+                        'password' => 'teste'
+                    ],
+                    'sendmail' => [
+                        'bin' => '/usr/sbin/sendmail'
+                    ]
+                ],
+                'content_type' => 'text/html',
+                'debug' => true
+            ],
             'simple_form' => [
                 'enabled' => true
             ],
@@ -84,9 +122,14 @@ return [
             ],
             'form' => [
                 'enabled' => true,
+                'built_in_css' => true,
                 'files' => [
                     'multiple' => false,
+                    'limit' => 10,
+                    'filesize' => 5,
                     'destination' => '@self',
+                    'avoid_overwriting' => false,
+                    'random_name' => false,
                     'accept' => [
                         0 => 'image/*'
                     ]
@@ -94,245 +137,257 @@ return [
             ]
         ],
         'media' => [
-            'defaults' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb.png',
-                'mime' => 'application/octet-stream',
-                'image' => [
-                    'filters' => [
-                        'default' => [
-                            0 => 'enableProgressive'
+            'types' => [
+                'defaults' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb.png',
+                    'mime' => 'application/octet-stream',
+                    'image' => [
+                        'filters' => [
+                            'default' => [
+                                0 => 'enableProgressive'
+                            ]
                         ]
                     ]
+                ],
+                'jpg' => [
+                    'type' => 'image',
+                    'thumb' => 'media/thumb-jpg.png',
+                    'mime' => 'image/jpeg'
+                ],
+                'jpe' => [
+                    'type' => 'image',
+                    'thumb' => 'media/thumb-jpg.png',
+                    'mime' => 'image/jpeg'
+                ],
+                'jpeg' => [
+                    'type' => 'image',
+                    'thumb' => 'media/thumb-jpeg.png',
+                    'mime' => 'image/jpeg'
+                ],
+                'png' => [
+                    'type' => 'image',
+                    'thumb' => 'media/thumb-png.png',
+                    'mime' => 'image/png'
+                ],
+                'gif' => [
+                    'type' => 'animated',
+                    'thumb' => 'media/thumb-gif.png',
+                    'mime' => 'image/gif'
+                ],
+                'svg' => [
+                    'type' => 'vector',
+                    'thumb' => 'media/thumb.png',
+                    'mime' => 'image/svg+xml'
+                ],
+                'mp4' => [
+                    'type' => 'video',
+                    'thumb' => 'media/thumb-mp4.png',
+                    'mime' => 'video/mp4'
+                ],
+                'mov' => [
+                    'type' => 'video',
+                    'thumb' => 'media/thumb-mov.png',
+                    'mime' => 'video/quicktime'
+                ],
+                'm4v' => [
+                    'type' => 'video',
+                    'thumb' => 'media/thumb-m4v.png',
+                    'mime' => 'video/x-m4v'
+                ],
+                'swf' => [
+                    'type' => 'video',
+                    'thumb' => 'media/thumb-swf.png',
+                    'mime' => 'video/x-flv'
+                ],
+                'flv' => [
+                    'type' => 'video',
+                    'thumb' => 'media/thumb-flv.png',
+                    'mime' => 'video/x-flv'
+                ],
+                'webm' => [
+                    'type' => 'video',
+                    'thumb' => 'media/thumb.png',
+                    'mime' => 'video/webm'
+                ],
+                'ogv' => [
+                    'type' => 'video',
+                    'thumb' => 'media/thumb-ogg.png',
+                    'mime' => 'video/ogg'
+                ],
+                'mp3' => [
+                    'type' => 'audio',
+                    'thumb' => 'media/thumb-mp3.png',
+                    'mime' => 'audio/mp3'
+                ],
+                'ogg' => [
+                    'type' => 'audio',
+                    'thumb' => 'media/thumb-ogg.png',
+                    'mime' => 'audio/ogg'
+                ],
+                'wma' => [
+                    'type' => 'audio',
+                    'thumb' => 'media/thumb-wma.png',
+                    'mime' => 'audio/wma'
+                ],
+                'm4a' => [
+                    'type' => 'audio',
+                    'thumb' => 'media/thumb-m4a.png',
+                    'mime' => 'audio/m4a'
+                ],
+                'wav' => [
+                    'type' => 'audio',
+                    'thumb' => 'media/thumb-wav.png',
+                    'mime' => 'audio/wav'
+                ],
+                'aiff' => [
+                    'type' => 'audio',
+                    'mime' => 'audio/aiff'
+                ],
+                'aif' => [
+                    'type' => 'audio',
+                    'mime' => 'audio/aif'
+                ],
+                'txt' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-txt.png',
+                    'mime' => 'text/plain'
+                ],
+                'xml' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-xml.png',
+                    'mime' => 'application/xml'
+                ],
+                'doc' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-doc.png',
+                    'mime' => 'application/msword'
+                ],
+                'docx' => [
+                    'type' => 'file',
+                    'mime' => 'application/msword'
+                ],
+                'xls' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
+                'xlt' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
+                'xlm' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
+                'xld' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
+                'xla' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
+                'xlc' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
+                'xlw' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
+                'xll' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
+                'ppt' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-powerpoint'
+                ],
+                'pps' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-powerpoint'
+                ],
+                'rtf' => [
+                    'type' => 'file',
+                    'mime' => 'application/rtf'
+                ],
+                'bmp' => [
+                    'type' => 'file',
+                    'mime' => 'image/bmp'
+                ],
+                'tiff' => [
+                    'type' => 'file',
+                    'mime' => 'image/tiff'
+                ],
+                'mpeg' => [
+                    'type' => 'file',
+                    'mime' => 'video/mpeg'
+                ],
+                'mpg' => [
+                    'type' => 'file',
+                    'mime' => 'video/mpeg'
+                ],
+                'mpe' => [
+                    'type' => 'file',
+                    'mime' => 'video/mpeg'
+                ],
+                'avi' => [
+                    'type' => 'file',
+                    'mime' => 'video/msvideo'
+                ],
+                'wmv' => [
+                    'type' => 'file',
+                    'mime' => 'video/x-ms-wmv'
+                ],
+                'html' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-html.png',
+                    'mime' => 'text/html'
+                ],
+                'htm' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-html.png',
+                    'mime' => 'text/html'
+                ],
+                'pdf' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-pdf.png',
+                    'mime' => 'application/pdf'
+                ],
+                'zip' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-zip.png',
+                    'mime' => 'application/zip'
+                ],
+                '7z' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-7zip.png',
+                    'mime' => 'application/x-7z-compressed'
+                ],
+                'gz' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-gz.png',
+                    'mime' => 'application/gzip'
+                ],
+                'tar' => [
+                    'type' => 'file',
+                    'mime' => 'application/x-tar'
+                ],
+                'css' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-css.png',
+                    'mime' => 'text/css'
+                ],
+                'js' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-js.png',
+                    'mime' => 'application/javascript'
+                ],
+                'json' => [
+                    'type' => 'file',
+                    'thumb' => 'media/thumb-json.png',
+                    'mime' => 'application/json'
                 ]
-            ],
-            'jpg' => [
-                'type' => 'image',
-                'thumb' => 'media/thumb-jpg.png',
-                'mime' => 'image/jpeg'
-            ],
-            'jpe' => [
-                'type' => 'image',
-                'thumb' => 'media/thumb-jpg.png',
-                'mime' => 'image/jpeg'
-            ],
-            'jpeg' => [
-                'type' => 'image',
-                'thumb' => 'media/thumb-jpeg.png',
-                'mime' => 'image/jpeg'
-            ],
-            'png' => [
-                'type' => 'image',
-                'thumb' => 'media/thumb-png.png',
-                'mime' => 'image/png'
-            ],
-            'gif' => [
-                'type' => 'animated',
-                'thumb' => 'media/thumb-gif.png',
-                'mime' => 'image/gif'
-            ],
-            'svg' => [
-                'type' => 'vector',
-                'thumb' => 'media/thumb-gif.png',
-                'mime' => 'image/svg+xml'
-            ],
-            'mp4' => [
-                'type' => 'video',
-                'thumb' => 'media/thumb-mp4.png',
-                'mime' => 'video/mp4'
-            ],
-            'mov' => [
-                'type' => 'video',
-                'thumb' => 'media/thumb-mov.png',
-                'mime' => 'video/quicktime'
-            ],
-            'm4v' => [
-                'type' => 'video',
-                'thumb' => 'media/thumb-m4v.png',
-                'mime' => 'video/x-m4v'
-            ],
-            'swf' => [
-                'type' => 'video',
-                'thumb' => 'media/thumb-swf.png',
-                'mime' => 'video/x-flv'
-            ],
-            'flv' => [
-                'type' => 'video',
-                'thumb' => 'media/thumb-flv.png',
-                'mime' => 'video/x-flv'
-            ],
-            'mp3' => [
-                'type' => 'audio',
-                'thumb' => 'media/thumb-mp3.png',
-                'mime' => 'audio/mp3'
-            ],
-            'ogg' => [
-                'type' => 'audio',
-                'thumb' => 'media/thumb-ogg.png',
-                'mime' => 'audio/ogg'
-            ],
-            'wma' => [
-                'type' => 'audio',
-                'thumb' => 'media/thumb-wma.png',
-                'mime' => 'audio/wma'
-            ],
-            'm4a' => [
-                'type' => 'audio',
-                'thumb' => 'media/thumb-m4a.png',
-                'mime' => 'audio/m4a'
-            ],
-            'wav' => [
-                'type' => 'audio',
-                'thumb' => 'media/thumb-wav.png',
-                'mime' => 'audio/wav'
-            ],
-            'aiff' => [
-                'type' => 'audio',
-                'mime' => 'audio/aiff'
-            ],
-            'aif' => [
-                'type' => 'audio',
-                'mime' => 'audio/aif'
-            ],
-            'txt' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-txt.png',
-                'mime' => 'text/plain'
-            ],
-            'xml' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-xml.png',
-                'mime' => 'application/xml'
-            ],
-            'doc' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-doc.png',
-                'mime' => 'application/msword'
-            ],
-            'docx' => [
-                'type' => 'file',
-                'mime' => 'application/msword'
-            ],
-            'xls' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-excel'
-            ],
-            'xlt' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-excel'
-            ],
-            'xlm' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-excel'
-            ],
-            'xld' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-excel'
-            ],
-            'xla' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-excel'
-            ],
-            'xlc' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-excel'
-            ],
-            'xlw' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-excel'
-            ],
-            'xll' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-excel'
-            ],
-            'ppt' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-powerpoint'
-            ],
-            'pps' => [
-                'type' => 'file',
-                'mime' => 'application/vnd.ms-powerpoint'
-            ],
-            'rtf' => [
-                'type' => 'file',
-                'mime' => 'application/rtf'
-            ],
-            'bmp' => [
-                'type' => 'file',
-                'mime' => 'image/bmp'
-            ],
-            'tiff' => [
-                'type' => 'file',
-                'mime' => 'image/tiff'
-            ],
-            'mpeg' => [
-                'type' => 'file',
-                'mime' => 'video/mpeg'
-            ],
-            'mpg' => [
-                'type' => 'file',
-                'mime' => 'video/mpeg'
-            ],
-            'mpe' => [
-                'type' => 'file',
-                'mime' => 'video/mpeg'
-            ],
-            'avi' => [
-                'type' => 'file',
-                'mime' => 'video/msvideo'
-            ],
-            'wmv' => [
-                'type' => 'file',
-                'mime' => 'video/x-ms-wmv'
-            ],
-            'html' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-html.png',
-                'mime' => 'text/html'
-            ],
-            'htm' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-html.png',
-                'mime' => 'text/html'
-            ],
-            'pdf' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-pdf.png',
-                'mime' => 'application/pdf'
-            ],
-            'zip' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-zip.png',
-                'mime' => 'application/zip'
-            ],
-            '7z' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-7zip.png',
-                'mime' => 'application/x-7z-compressed'
-            ],
-            'gz' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-gz.png',
-                'mime' => 'application/gzip'
-            ],
-            'tar' => [
-                'type' => 'file',
-                'mime' => 'application/x-tar'
-            ],
-            'css' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-css.png',
-                'mime' => 'text/css'
-            ],
-            'js' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-js.png',
-                'mime' => 'application/javascript'
-            ],
-            'json' => [
-                'type' => 'file',
-                'thumb' => 'media/thumb-json.png',
-                'mime' => 'application/json'
             ]
         ],
         'site' => [
@@ -431,7 +486,8 @@ return [
             'param_sep' => ':',
             'wrapped_site' => false,
             'reverse_proxy_setup' => false,
-            'proxy_url' => NULL,
+            'force_ssl' => false,
+            'custom_base_url' => '',
             'languages' => [
                 'supported' => [
                     
@@ -464,7 +520,7 @@ return [
                 'publish_dates' => true,
                 'process' => [
                     'markdown' => true,
-                    'twig' => false
+                    'twig' => true
                 ],
                 'twig_first' => false,
                 'events' => [
@@ -506,7 +562,14 @@ return [
                     1 => '.idea'
                 ],
                 'ignore_hidden' => true,
-                'url_taxonomy_filters' => true
+                'url_taxonomy_filters' => true,
+                'frontmatter' => [
+                    'process_twig' => false,
+                    'ignore_fields' => [
+                        0 => 'form',
+                        1 => 'forms'
+                    ]
+                ]
             ],
             'cache' => [
                 'enabled' => false,
@@ -529,10 +592,14 @@ return [
             ],
             'assets' => [
                 'css_pipeline' => false,
+                'css_pipeline_include_externals' => true,
+                'css_pipeline_before_excludes' => true,
                 'css_minify' => true,
                 'css_minify_windows' => false,
                 'css_rewrite' => true,
                 'js_pipeline' => false,
+                'js_pipeline_include_externals' => true,
+                'js_pipeline_before_excludes' => true,
                 'js_minify' => true,
                 'enable_asset_timestamp' => false,
                 'collections' => [
@@ -544,11 +611,11 @@ return [
                 'log' => true
             ],
             'debugger' => [
-                'enabled' => false,
+                'enabled' => true,
                 'shutdown' => [
                     'close_connection' => false
                 ],
-                'twig' => false
+                'twig' => true
             ],
             'images' => [
                 'default_image_quality' => 85,
@@ -571,7 +638,12 @@ return [
                 'timeout' => 1800,
                 'name' => 'grav-site',
                 'secure' => false,
-                'httponly' => true
+                'httponly' => true,
+                'path' => NULL
+            ],
+            'gpm' => [
+                'releases' => 'stable',
+                'proxy_url' => NULL
             ]
         ],
         'security' => [

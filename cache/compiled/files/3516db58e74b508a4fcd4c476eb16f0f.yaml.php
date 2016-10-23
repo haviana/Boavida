@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/config/site.yaml',
-    'modified' => 1467402362,
+    'modified' => 1473793498,
     'data' => [
         'title' => 'Grav',
         'author' => [

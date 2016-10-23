@@ -2,10 +2,10 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/plugins/problems/blueprints.yaml',
-    'modified' => 1461744472,
+    'modified' => 1474803219,
     'data' => [
         'name' => 'Problems',
-        'version' => '1.4.0',
+        'version' => '1.4.5',
         'description' => 'Detects and reports problems found in the site.',
         'icon' => 'exclamation-circle',
         'author' => [
@@ -22,12 +22,12 @@ return [
             'fields' => [
                 'enabled' => [
                     'type' => 'toggle',
-                    'label' => 'Plugin status',
+                    'label' => 'PLUGIN_ADMIN.PLUGIN_STATUS',
                     'highlight' => 1,
                     'default' => 0,
                     'options' => [
-                        1 => 'Enabled',
-                        0 => 'Disabled'
+                        1 => 'PLUGIN_ADMIN.ENABLED',
+                        0 => 'PLUGIN_ADMIN.DISABLED'
                     ],
                     'validate' => [
                         'type' => 'bool'
@@ -39,8 +39,8 @@ return [
                     'highlight' => 1,
                     'default' => 1,
                     'options' => [
-                        1 => 'Enabled',
-                        0 => 'Disabled'
+                        1 => 'PLUGIN_ADMIN.ENABLED',
+                        0 => 'PLUGIN_ADMIN.DISABLED'
                     ],
                     'validate' => [
                         'type' => 'bool'

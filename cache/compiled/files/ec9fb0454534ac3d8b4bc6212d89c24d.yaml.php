@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/system.yaml',
-    'modified' => 1466950562,
+    'modified' => 1477240327,
     'data' => [
         'home' => [
             'alias' => '/home'
@@ -11,7 +11,7 @@ return [
             'theme' => 'agency',
             'process' => [
                 'markdown' => true,
-                'twig' => false
+                'twig' => true
             ],
             'markdown' => [
                 'extra' => true
@@ -40,7 +40,7 @@ return [
         ],
         'debugger' => [
             'enabled' => false,
-            'twig' => false,
+            'twig' => true,
             'shutdown' => [
                 'close_connection' => false
             ]

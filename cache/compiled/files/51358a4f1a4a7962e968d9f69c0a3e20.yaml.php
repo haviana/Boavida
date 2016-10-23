@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/plugins/form.yaml',
-    'modified' => 1466162221,
+    'modified' => 1473974069,
     'data' => [
         'enabled' => true,
         'files' => [

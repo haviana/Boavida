@@ -9,15 +9,6 @@ people:
           url: 'https://www.linkedin.com/in/cristiano-samagaio-a81292a2/en'
         - title: google-plus
           url: 'https://plus.google.com/u/0/102636771315028529962/' 
-
-    - name: Diogo Teixeira
-      pic: 5.png
-      social:
-        - title: linkedin
-          url: 'https://pt.linkedin.com/in/diogo-teixeira-9b386461/en'
-        - title: google-plus
-          url: 'https://plus.google.com/u/0/103191912386076144528/' 
-
     - name: Hugo Viana
       pic: 6.png
       social:

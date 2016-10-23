@@ -31,6 +31,11 @@ class __TwigTemplate_36019de75d893cbbb56cc03ca7fd031299a01419c430fc9c2604b14294e
         echo "    type=\"email\"
     ";
         // line 5
+        if (twig_in_filter($this->getAttribute((isset($context["field"]) ? $context["field"] : null), "multiple", array()), array(0 => "on", 1 => "true", 2 => 1))) {
+            echo "multiple=\"multiple\"";
+        }
+        // line 6
+        echo "    ";
         $this->displayParentBlock("input_attributes", $context, $blocks);
         echo "
 ";
@@ -48,12 +53,13 @@ class __TwigTemplate_36019de75d893cbbb56cc03ca7fd031299a01419c430fc9c2604b14294e
 
     public function getDebugInfo()
     {
-        return array (  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  38 => 6,  34 => 5,  31 => 4,  28 => 3,  11 => 1,);
     }
 }
 /* {% extends "forms/field.html.twig" %}*/
 /* */
 /* {% block input_attributes %}*/
 /*     type="email"*/
+/*     {% if field.multiple in ['on', 'true', 1] %}multiple="multiple"{% endif %}*/
 /*     {{ parent() }}*/
 /* {% endblock %}*/

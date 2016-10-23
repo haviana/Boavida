@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/languages/el.yaml',
-    'modified' => 1461744472,
+    'modified' => 1473793498,
     'data' => [
         'MONTHS_OF_THE_YEAR' => [
             0 => 'Ιανουάριος',
@@ -20,11 +20,11 @@ return [
         ],
         'DAYS_OF_THE_WEEK' => [
             0 => 'Δευτέρα',
-            1 => 'Τρλιτη',
+            1 => 'Τρίτη',
             2 => 'Τετάρτη',
             3 => 'Πέμπτη',
             4 => 'Παρασκευή',
-            5 => 'Σαββάτο',
+            5 => 'Σάββατο',
             6 => 'Κυριακή'
         ]
     ]

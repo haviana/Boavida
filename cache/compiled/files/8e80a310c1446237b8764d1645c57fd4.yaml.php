@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/languages/nb.yaml',
-    'modified' => 1461744472,
+    'modified' => 1473793498,
     'data' => [
         'MONTHS_OF_THE_YEAR' => [
             0 => 'januar',

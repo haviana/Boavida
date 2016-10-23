@@ -2,12 +2,12 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/site.yaml',
-    'modified' => 1469822006,
+    'modified' => 1477228185,
     'data' => [
         'title' => 'CervejaBoavida',
         'author' => [
             'name' => 'cefisys',
-            'email' => 'cefisys@gmail.com'
+            'email' => 'geral@cervejaboavida.pt'
         ],
         'metadata' => [
             'description' => 'Cerveja Boavida artesanal portuguesa'
