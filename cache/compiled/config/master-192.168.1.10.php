@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1477240330,
-    'checksum' => '8fc7a3a3c2b24a26d304fb1b5b0b9d36',
+    'timestamp' => 1477314372,
+    'checksum' => 'aeabfca2f99c5c7bd76e4c0531700500',
     'files' => [
         'user/config' => [
             'media' => [
@@ -11,7 +11,7 @@ return [
             ],
             'plugins/email' => [
                 'file' => 'user/config/plugins/email.yaml',
-                'modified' => 1475325400
+                'modified' => 1477310708
             ],
             'plugins/form' => [
                 'file' => 'user/config/plugins/form.yaml',
@@ -31,7 +31,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1477240327
+                'modified' => 1477248802
             ]
         ],
         'system/config' => [
@@ -84,13 +84,13 @@ return [
                 'to' => 'geral@cervejaboavida.pt',
                 'to_name' => 'hviana',
                 'mailer' => [
-                    'engine' => 'mail',
+                    'engine' => 'smtp',
                     'smtp' => [
-                        'server' => 'localhost',
-                        'port' => 25,
+                        'server' => 'smtp.gmail.com',
+                        'port' => 465,
                         'encryption' => 'none',
-                        'user' => 'teste',
-                        'password' => 'teste'
+                        'user' => 'cefisys@gmail.com',
+                        'password' => 'Efisisdht2015'
                     ],
                     'sendmail' => [
                         'bin' => '/usr/sbin/sendmail'

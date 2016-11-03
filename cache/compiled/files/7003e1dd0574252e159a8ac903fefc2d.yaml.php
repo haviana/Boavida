@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/plugins/email.yaml',
-    'modified' => 1475325400,
+    'modified' => 1477310708,
     'data' => [
         'enabled' => true,
         'from' => 'geral@cervejaboavida.pt',
@@ -10,16 +10,13 @@ return [
         'to' => 'geral@cervejaboavida.pt',
         'to_name' => 'hviana',
         'mailer' => [
-            'engine' => 'mail',
+            'engine' => 'smtp',
             'smtp' => [
-                'server' => 'localhost',
-                'port' => 25,
+                'server' => 'smtp.gmail.com',
+                'port' => 465,
                 'encryption' => 'none',
-                'user' => 'teste',
-                'password' => 'teste'
-            ],
-            'sendmail' => [
-                'bin' => '/usr/sbin/sendmail'
+                'user' => 'cefisys@gmail.com',
+                'password' => 'Efisisdht2015'
             ]
         ],
         'content_type' => 'text/html',

@@ -1,5 +1,5 @@
 ---
-title: Boavida
+title: Belavida
 menu: Home
 onpage_menu: true
 content:

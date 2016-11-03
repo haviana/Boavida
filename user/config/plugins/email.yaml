@@ -4,14 +4,12 @@ from_name: hugohaviana
 to: geral@cervejaboavida.pt
 to_name: hviana
 mailer:
-  engine: mail
+  engine: smtp
   smtp:
-    server: localhost
-    port: 25
+    server: smtp.gmail.com
+    port: 465
     encryption: none
-    user: 'teste'
-    password: 'teste'
-  sendmail:
-    bin: '/usr/sbin/sendmail'
+    user: 'cefisys@gmail.com'
+    password: 'Efisisdht2015'
 content_type: text/html
 debug: true

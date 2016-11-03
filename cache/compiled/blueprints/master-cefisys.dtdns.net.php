@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1474803576,
-    'checksum' => '1ddd5751be5494591670dde4f3f8d5bf',
+    'timestamp' => 1477492703,
+    'checksum' => '27bdfddd6604a9209e4893830fe542e2',
     'files' => [
         'system/blueprints/config' => [
             'media' => [
@@ -26,10 +26,6 @@ return [
             'plugins/email' => [
                 'file' => 'user/plugins/email/blueprints.yaml',
                 'modified' => 1473795050
-            ],
-            'plugins/simple_form' => [
-                'file' => 'user/plugins/simple_form/blueprints.yaml',
-                'modified' => 1469561112
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/blueprints.yaml',
@@ -1719,28 +1715,6 @@ return [
                 'name' => 'plugins.email.debug',
                 'validation' => 'loose'
             ],
-            'plugins.simple_form' => [
-                'form' => [
-                    'validation' => 'strict'
-                ],
-                'type' => '_root',
-                'form_field' => false
-            ],
-            'plugins.simple_form.enabled' => [
-                'type' => 'toggle',
-                'label' => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.PLUGIN_STATUS',
-                'highlight' => 1,
-                'default' => 1,
-                'options' => [
-                    1 => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.ENABLED',
-                    0 => 'PLUGIN_SIMPLE_FORM.ADMIN.BLUEPRINTS.GLOBAL.DISABLED'
-                ],
-                'validate' => [
-                    'type' => 'bool'
-                ],
-                'name' => 'plugins.simple_form.enabled',
-                'validation' => 'strict'
-            ],
             'plugins.problems' => [
                 'form' => [
                     'validation' => 'strict'
@@ -2148,9 +2122,6 @@ return [
                     'to' => 'plugins.email.to',
                     'to_name' => 'plugins.email.to_name',
                     'debug' => 'plugins.email.debug'
-                ],
-                'simple_form' => [
-                    'enabled' => 'plugins.simple_form.enabled'
                 ],
                 'problems' => [
                     'enabled' => 'plugins.problems.enabled',

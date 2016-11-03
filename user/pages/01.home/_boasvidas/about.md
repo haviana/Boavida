@@ -5,7 +5,7 @@ abouts:
     - img: 33.jpg
       heading: Garrafa de 33CL
       subheading: Para os mais garganeiros.
-      body: Temos &#224; tua disposi&#231;&#227;o a venda de garrafas de 0.33L de modo a poderes degustares da tua cerveja sem a teres que partilhar.
+      body: Temos &#224; tua disposi&#231;&#227;o a venda de garrafas de 0.33L de modo a poderes degustares a tua cerveja sem a teres que partilhar.
       align: image
 
     - img: barril.jpg
@@ -16,8 +16,8 @@ abouts:
     
     - img: pack.jpg
       heading: Packs
-      subheading: Faz o teu pack.
-      body: Personaliza a tua encomenda com o pack Boavida onde podes provar todas as cervejas que disponibilizamos.
+      subheading: Faz o teu pack de 4 ou 6 cervejas.
+      body: Personaliza a tua encomenda com o pack Boavida onde podes provar todos os nossos pecados.
 ---
 
 ## Os pecados Boavida

@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1475325409,
-    'checksum' => 'f4df336faffe3b2e5a6c0a5a739a70bb',
+    'timestamp' => 1477771776,
+    'checksum' => '77fe9ad4c97663ec0cc73d33e4ea50c8',
     'files' => [
         'user/config' => [
             'media' => [
@@ -11,7 +11,7 @@ return [
             ],
             'plugins/email' => [
                 'file' => 'user/config/plugins/email.yaml',
-                'modified' => 1475325400
+                'modified' => 1477310708
             ],
             'plugins/form' => [
                 'file' => 'user/config/plugins/form.yaml',
@@ -23,7 +23,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1469822006
+                'modified' => 1477771752
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
@@ -31,7 +31,7 @@ return [
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1474803568
+                'modified' => 1477248802
             ]
         ],
         'system/config' => [
@@ -56,10 +56,6 @@ return [
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
                 'modified' => 1473795050
-            ],
-            'plugins/simple_form' => [
-                'file' => 'user/plugins/simple_form/simple_form.yaml',
-                'modified' => 1469561112
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
@@ -88,13 +84,13 @@ return [
                 'to' => 'geral@cervejaboavida.pt',
                 'to_name' => 'hviana',
                 'mailer' => [
-                    'engine' => 'mail',
+                    'engine' => 'smtp',
                     'smtp' => [
-                        'server' => 'localhost',
-                        'port' => 25,
+                        'server' => 'smtp.gmail.com',
+                        'port' => 465,
                         'encryption' => 'none',
-                        'user' => 'teste',
-                        'password' => 'teste'
+                        'user' => 'cefisys@gmail.com',
+                        'password' => 'Efisisdht2015'
                     ],
                     'sendmail' => [
                         'bin' => '/usr/sbin/sendmail'
@@ -102,9 +98,6 @@ return [
                 ],
                 'content_type' => 'text/html',
                 'debug' => true
-            ],
-            'simple_form' => [
-                'enabled' => true
             ],
             'problems' => [
                 'enabled' => true,
@@ -391,17 +384,17 @@ return [
             ]
         ],
         'site' => [
-            'title' => 'CervejaBoavida',
+            'title' => 'CervejaBelavida',
             'author' => [
                 'name' => 'cefisys',
-                'email' => 'cefisys@gmail.com'
+                'email' => 'geral@cervejaboavida.pt'
             ],
             'taxonomies' => [
                 0 => 'category',
                 1 => 'tag'
             ],
             'metadata' => [
-                'description' => 'Cerveja Boavida artesanal portuguesa'
+                'description' => 'Cerveja Belavida artesanal portuguesa'
             ],
             'summary' => [
                 'enabled' => true,
@@ -440,19 +433,19 @@ return [
             'social' => [
                 0 => [
                     'title' => 'twitter',
-                    'url' => 'https://twitter.com/boavidacervejaa?edit=true'
+                    'url' => 'https://twitter.com/belavidacervejaa?edit=true'
                 ],
                 1 => [
                     'title' => 'facebook',
-                    'url' => 'https://www.facebook.com/boavidacervejaartesanal/'
+                    'url' => 'https://www.facebook.com/belavidacervejaartesanal/'
                 ],
                 2 => [
                     'title' => 'instagram',
-                    'url' => 'https://www.instagram.com/boavidacervejaartesanal/'
+                    'url' => 'https://www.instagram.com/belavidacervejaartesanal/'
                 ],
                 3 => [
                     'title' => 'github',
-                    'url' => 'https://github.com/haviana/Boavida'
+                    'url' => 'https://github.com/haviana/Belavida'
                 ]
             ]
         ],
@@ -611,7 +604,7 @@ return [
                 'log' => true
             ],
             'debugger' => [
-                'enabled' => true,
+                'enabled' => false,
                 'shutdown' => [
                     'close_connection' => false
                 ],

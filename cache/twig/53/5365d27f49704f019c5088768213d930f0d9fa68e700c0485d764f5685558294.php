@@ -27,17 +27,13 @@ class __TwigTemplate_fae92aa2eb91f56b5979a8147bec11da5ae6c967fe09493fdb25d40a74b
             echo "    ";
             if (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "inline_errors", array()) && $this->getAttribute((isset($context["form"]) ? $context["form"] : null), "messages", array()))) {
                 // line 3
-                echo "        <div class=\"alert notices ";
-                echo (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "message_color", array())) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "message_color", array())) : ("green"));
-                echo "\"><p>";
+                echo "        <div class=\"alert alert-success\"><p>";
                 echo $this->env->getExtension('GravTwigExtension')->translate("FORM.VALIDATION_FAIL");
                 echo "</p></div>
     ";
             } else {
                 // line 5
-                echo "        <div class=\"alert notices ";
-                echo (($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "message_color", array())) ? ($this->getAttribute((isset($context["form"]) ? $context["form"] : null), "message_color", array())) : ("green"));
-                echo "\"><p>";
+                echo "        <div class=\"alert alert-info\"><p>";
                 echo $this->getAttribute((isset($context["form"]) ? $context["form"] : null), "message", array());
                 echo "</p></div>
     ";
@@ -309,14 +305,14 @@ class __TwigTemplate_fae92aa2eb91f56b5979a8147bec11da5ae6c967fe09493fdb25d40a74b
 
     public function getDebugInfo()
     {
-        return array (  296 => 63,  293 => 62,  286 => 54,  283 => 53,  278 => 48,  275 => 47,  270 => 45,  265 => 33,  261 => 30,  254 => 29,  251 => 28,  244 => 66,  241 => 65,  239 => 62,  236 => 61,  219 => 58,  213 => 56,  211 => 53,  208 => 52,  191 => 51,  188 => 50,  186 => 47,  183 => 46,  181 => 45,  178 => 44,  176 => 43,  173 => 42,  159 => 41,  151 => 40,  148 => 39,  145 => 38,  142 => 37,  139 => 36,  122 => 35,  119 => 34,  117 => 33,  113 => 31,  110 => 28,  104 => 27,  98 => 26,  94 => 25,  90 => 24,  87 => 23,  83 => 21,  81 => 20,  78 => 19,  76 => 18,  73 => 17,  66 => 15,  63 => 14,  60 => 13,  56 => 12,  53 => 11,  51 => 10,  49 => 9,  47 => 8,  38 => 5,  30 => 3,  27 => 2,  25 => 1,);
+        return array (  292 => 63,  289 => 62,  282 => 54,  279 => 53,  274 => 48,  271 => 47,  266 => 45,  261 => 33,  257 => 30,  250 => 29,  247 => 28,  240 => 66,  237 => 65,  235 => 62,  232 => 61,  215 => 58,  209 => 56,  207 => 53,  204 => 52,  187 => 51,  184 => 50,  182 => 47,  179 => 46,  177 => 45,  174 => 44,  172 => 43,  169 => 42,  155 => 41,  147 => 40,  144 => 39,  141 => 38,  138 => 37,  135 => 36,  118 => 35,  115 => 34,  113 => 33,  109 => 31,  106 => 28,  100 => 27,  94 => 26,  90 => 25,  86 => 24,  83 => 23,  79 => 21,  77 => 20,  74 => 19,  72 => 18,  69 => 17,  62 => 15,  59 => 14,  56 => 13,  52 => 12,  49 => 11,  47 => 10,  45 => 9,  43 => 8,  36 => 5,  30 => 3,  27 => 2,  25 => 1,);
     }
 }
 /* {% if form.message %}*/
 /*     {% if form.inline_errors and form.messages %}*/
-/*         <div class="alert notices {{ form.message_color ?: 'green' }}"><p>{{ "FORM.VALIDATION_FAIL"|t|raw }}</p></div>*/
+/*         <div class="alert alert-success"><p>{{ "FORM.VALIDATION_FAIL"|t|raw }}</p></div>*/
 /*     {% else %}*/
-/*         <div class="alert notices {{ form.message_color ?: 'green' }}"><p>{{ form.message|raw }}</p></div>*/
+/*         <div class="alert alert-info"><p>{{ form.message|raw }}</p></div>*/
 /*     {% endif %}*/
 /* {% endif %}*/
 /* {% set scope = scope ?: 'data.' %}*/

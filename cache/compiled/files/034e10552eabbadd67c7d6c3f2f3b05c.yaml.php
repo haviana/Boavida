@@ -2,15 +2,15 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/site.yaml',
-    'modified' => 1477228185,
+    'modified' => 1477771752,
     'data' => [
-        'title' => 'CervejaBoavida',
+        'title' => 'CervejaBelavida',
         'author' => [
             'name' => 'cefisys',
             'email' => 'geral@cervejaboavida.pt'
         ],
         'metadata' => [
-            'description' => 'Cerveja Boavida artesanal portuguesa'
+            'description' => 'Cerveja Belavida artesanal portuguesa'
         ],
         'email' => 'geral@cervejaBoavida.com',
         'links' => [
@@ -38,19 +38,19 @@ return [
         'social' => [
             0 => [
                 'title' => 'twitter',
-                'url' => 'https://twitter.com/boavidacervejaa?edit=true'
+                'url' => 'https://twitter.com/belavidacervejaa?edit=true'
             ],
             1 => [
                 'title' => 'facebook',
-                'url' => 'https://www.facebook.com/boavidacervejaartesanal/'
+                'url' => 'https://www.facebook.com/belavidacervejaartesanal/'
             ],
             2 => [
                 'title' => 'instagram',
-                'url' => 'https://www.instagram.com/boavidacervejaartesanal/'
+                'url' => 'https://www.instagram.com/belavidacervejaartesanal/'
             ],
             3 => [
                 'title' => 'github',
-                'url' => 'https://github.com/haviana/Boavida'
+                'url' => 'https://github.com/haviana/Belavida'
             ]
         ],
         'routes' => NULL

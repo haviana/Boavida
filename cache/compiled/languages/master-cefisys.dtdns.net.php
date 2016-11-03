@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledLanguages',
-    'timestamp' => 1474803576,
-    'checksum' => '2616c448fafd58a735ee63b824a3f97a',
+    'timestamp' => 1477492703,
+    'checksum' => '10dc5a4f3c0d2a0d7dd221098f6a1681',
     'files' => [
         'system/languages' => [
             'ar' => [
@@ -123,10 +123,6 @@ return [
                 'file' => 'user/plugins/email/languages.yaml',
                 'modified' => 1473795050
             ],
-            'plugins/simple_form' => [
-                'file' => 'user/plugins/simple_form/languages.yaml',
-                'modified' => 1469561112
-            ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/languages.yaml',
                 'modified' => 1474803231
@@ -145,38 +141,6 @@ return [
                 'PLEASE_CONFIGURE_A_FROM_ADDRESS' => 'Please configure a \'from\' address in the Email Plugin settings, or in the form',
                 'TEST_EMAIL_BODY' => '<h1>Testing Email</h1><p>This test email has been sent based on the following configuration:</p>  <p><pre>%1$s</pre></p>',
                 'EMAIL_FOOTER' => 'GetGrav.org'
-            ],
-            'PLUGIN_SIMPLE_FORM' => [
-                'TEMPLATES' => [
-                    'DEFAULT' => 'Default template from this plugin'
-                ],
-                'ADMIN' => [
-                    'BLUEPRINTS' => [
-                        'GLOBAL' => [
-                            'PLUGIN_STATUS' => 'Plugin status',
-                            'ENABLED' => 'Enabled',
-                            'DISABLED' => 'Disabled'
-                        ],
-                        'TAB' => [
-                            'TITLE' => 'Simple Form',
-                            'FIELDS' => [
-                                'TOKEN' => [
-                                    'LABEL' => 'SimpleForm.com Token',
-                                    'PLACEHOLDER' => 'Insert your API key here.',
-                                    'HELP' => 'API key from https://simpleform.com site.'
-                                ],
-                                'TEMPLATE_FILE' => [
-                                    'LABEL' => 'Template Filename',
-                                    'PLACEHOLDER' => 'Select one template filename'
-                                ],
-                                'REDIRECT_TO' => [
-                                    'LABEL' => 'Redirect to page',
-                                    'PLACEHOLDER' => 'Select one page for redirect'
-                                ]
-                            ]
-                        ]
-                    ]
-                ]
             ],
             'PLUGIN_ERROR' => [
                 'ERROR' => 'Error',
@@ -2759,6 +2723,6 @@ Path: `%2$s`
                 6 => 'Chủ Nhật'
             ]
         ],
-        'checksum' => '2616c448fafd58a735ee63b824a3f97a'
+        'checksum' => '10dc5a4f3c0d2a0d7dd221098f6a1681'
     ]
 ];
