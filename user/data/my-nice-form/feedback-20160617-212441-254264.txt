@@ -1,3 +1,0 @@
-name: hugo
-email: hugo@fd.cos
-message: aknf
