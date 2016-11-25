@@ -1,7 +1,7 @@
 enabled: true
-from: geral@cervejaboavida.pt
+from: geral@cervejabelavida.pt
 from_name: hugohaviana
-to: geral@cervejaboavida.pt
+to: geral@cervejabelavida.pt
 to_name: hviana
 mailer:
   engine: smtp

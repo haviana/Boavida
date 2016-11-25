@@ -17,7 +17,7 @@ links:
     url: '#services'
   - title: Pecados
     url: '#portfolio'
-  - title: Servicos
+  - title: Servi&ccedil;os
     url: '#about'
   - title: Cervejeiros
     url: '#team'
@@ -27,11 +27,11 @@ links:
 # Social networks usernames (many more available: google-plus, flickr, dribbble, pinterest, instagram, tumblr, linkedin, etc.)
 social:
   - title: twitter
-    url: https://twitter.com/belavidacervejaa?edit=true
+    url: https://twitter.com/CervejaBelavida
   - title: facebook
     url: https://www.facebook.com/belavidacervejaartesanal/
   - title: instagram
-    url: https://www.instagram.com/belavidacervejaartesanal/
+    url: https://www.instagram.com/belavida_cerveja_artesanal/
   - title: github
     url: https://github.com/haviana/Belavida
 

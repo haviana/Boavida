@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/site.yaml',
-    'modified' => 1477771752,
+    'modified' => 1480107352,
     'data' => [
         'title' => 'CervejaBelavida',
         'author' => [
@@ -23,7 +23,7 @@ return [
                 'url' => '#portfolio'
             ],
             2 => [
-                'title' => 'Servicos',
+                'title' => 'Servi&ccedil;os',
                 'url' => '#about'
             ],
             3 => [
@@ -38,7 +38,7 @@ return [
         'social' => [
             0 => [
                 'title' => 'twitter',
-                'url' => 'https://twitter.com/belavidacervejaa?edit=true'
+                'url' => 'https://twitter.com/CervejaBelavida'
             ],
             1 => [
                 'title' => 'facebook',
@@ -46,7 +46,7 @@ return [
             ],
             2 => [
                 'title' => 'instagram',
-                'url' => 'https://www.instagram.com/belavidacervejaartesanal/'
+                'url' => 'https://www.instagram.com/belavida_cerveja_artesanal/'
             ],
             3 => [
                 'title' => 'github',

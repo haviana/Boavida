@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1477771776,
-    'checksum' => '77fe9ad4c97663ec0cc73d33e4ea50c8',
+    'timestamp' => 1480107356,
+    'checksum' => '8681f740db88833b2a83e3adad6fbcd0',
     'files' => [
         'user/config' => [
             'media' => [
@@ -11,7 +11,7 @@ return [
             ],
             'plugins/email' => [
                 'file' => 'user/config/plugins/email.yaml',
-                'modified' => 1477310708
+                'modified' => 1479246952
             ],
             'plugins/form' => [
                 'file' => 'user/config/plugins/form.yaml',
@@ -23,7 +23,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1477771752
+                'modified' => 1480107352
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
@@ -79,9 +79,9 @@ return [
         'plugins' => [
             'email' => [
                 'enabled' => true,
-                'from' => 'geral@cervejaboavida.pt',
+                'from' => 'geral@cervejabelavida.pt',
                 'from_name' => 'hugohaviana',
-                'to' => 'geral@cervejaboavida.pt',
+                'to' => 'geral@cervejabelavida.pt',
                 'to_name' => 'hviana',
                 'mailer' => [
                     'engine' => 'smtp',
@@ -418,7 +418,7 @@ return [
                     'url' => '#portfolio'
                 ],
                 2 => [
-                    'title' => 'Servicos',
+                    'title' => 'Servi&ccedil;os',
                     'url' => '#about'
                 ],
                 3 => [
@@ -433,7 +433,7 @@ return [
             'social' => [
                 0 => [
                     'title' => 'twitter',
-                    'url' => 'https://twitter.com/belavidacervejaa?edit=true'
+                    'url' => 'https://twitter.com/CervejaBelavida'
                 ],
                 1 => [
                     'title' => 'facebook',
@@ -441,7 +441,7 @@ return [
                 ],
                 2 => [
                     'title' => 'instagram',
-                    'url' => 'https://www.instagram.com/belavidacervejaartesanal/'
+                    'url' => 'https://www.instagram.com/belavida_cerveja_artesanal/'
                 ],
                 3 => [
                     'title' => 'github',

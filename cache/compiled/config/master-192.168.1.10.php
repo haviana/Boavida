@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1477314372,
-    'checksum' => 'aeabfca2f99c5c7bd76e4c0531700500',
+    'timestamp' => 1478546237,
+    'checksum' => '77fe9ad4c97663ec0cc73d33e4ea50c8',
     'files' => [
         'user/config' => [
             'media' => [
@@ -23,7 +23,7 @@ return [
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1477228185
+                'modified' => 1477771752
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
@@ -384,7 +384,7 @@ return [
             ]
         ],
         'site' => [
-            'title' => 'CervejaBoavida',
+            'title' => 'CervejaBelavida',
             'author' => [
                 'name' => 'cefisys',
                 'email' => 'geral@cervejaboavida.pt'
@@ -394,7 +394,7 @@ return [
                 1 => 'tag'
             ],
             'metadata' => [
-                'description' => 'Cerveja Boavida artesanal portuguesa'
+                'description' => 'Cerveja Belavida artesanal portuguesa'
             ],
             'summary' => [
                 'enabled' => true,
@@ -433,19 +433,19 @@ return [
             'social' => [
                 0 => [
                     'title' => 'twitter',
-                    'url' => 'https://twitter.com/boavidacervejaa?edit=true'
+                    'url' => 'https://twitter.com/belavidacervejaa?edit=true'
                 ],
                 1 => [
                     'title' => 'facebook',
-                    'url' => 'https://www.facebook.com/boavidacervejaartesanal/'
+                    'url' => 'https://www.facebook.com/belavidacervejaartesanal/'
                 ],
                 2 => [
                     'title' => 'instagram',
-                    'url' => 'https://www.instagram.com/boavidacervejaartesanal/'
+                    'url' => 'https://www.instagram.com/belavidacervejaartesanal/'
                 ],
                 3 => [
                     'title' => 'github',
-                    'url' => 'https://github.com/haviana/Boavida'
+                    'url' => 'https://github.com/haviana/Belavida'
                 ]
             ]
         ],

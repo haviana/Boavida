@@ -2,12 +2,12 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/plugins/email.yaml',
-    'modified' => 1477310708,
+    'modified' => 1479246952,
     'data' => [
         'enabled' => true,
-        'from' => 'geral@cervejaboavida.pt',
+        'from' => 'geral@cervejabelavida.pt',
         'from_name' => 'hugohaviana',
-        'to' => 'geral@cervejaboavida.pt',
+        'to' => 'geral@cervejabelavida.pt',
         'to_name' => 'hviana',
         'mailer' => [
             'engine' => 'smtp',
