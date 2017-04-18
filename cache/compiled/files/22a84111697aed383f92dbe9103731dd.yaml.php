@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/languages/ar.yaml',
-    'modified' => 1473793498,
+    'modified' => 1492286179,
     'data' => [
         'FRONTMATTER_ERROR_PAGE' => '---
 العنوان: %1$s

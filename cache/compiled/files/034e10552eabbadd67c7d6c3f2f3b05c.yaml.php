@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/config/site.yaml',
-    'modified' => 1480107352,
+    'modified' => 1492450325,
     'data' => [
         'title' => 'CervejaBelavida',
         'author' => [
@@ -27,10 +27,18 @@ return [
                 'url' => '#about'
             ],
             3 => [
+                'title' => 'Eventos',
+                'url' => '#events'
+            ],
+            4 => [
+                'title' => 'Pontos de venda',
+                'url' => '#store'
+            ],
+            5 => [
                 'title' => 'Cervejeiros',
                 'url' => '#team'
             ],
-            4 => [
+            6 => [
                 'title' => 'Contactos',
                 'url' => '#contact'
             ]

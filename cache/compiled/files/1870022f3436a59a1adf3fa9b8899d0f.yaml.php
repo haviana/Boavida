@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/plugins/langswitcher/blueprints.yaml',
-    'modified' => 1466083473,
+    'modified' => 1492286062,
     'data' => [
         'name' => 'LangSwitcher',
         'version' => '1.2.1',

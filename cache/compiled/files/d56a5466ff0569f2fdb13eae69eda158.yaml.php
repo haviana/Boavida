@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/blueprints/config/streams.yaml',
-    'modified' => 1473793498,
+    'modified' => 1492286179,
     'data' => [
         'title' => 'PLUGIN_ADMIN.FILE_STREAMS',
         'form' => [

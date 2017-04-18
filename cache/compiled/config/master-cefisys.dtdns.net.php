@@ -1,82 +1,109 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1480107356,
-    'checksum' => '8681f740db88833b2a83e3adad6fbcd0',
+    'timestamp' => 1492463232,
+    'checksum' => '858d0f30572e962433247048447b6a95',
     'files' => [
         'user/config' => [
             'media' => [
                 'file' => 'user/config/media.yaml',
-                'modified' => 1474803141
+                'modified' => 1492286062
             ],
             'plugins/email' => [
                 'file' => 'user/config/plugins/email.yaml',
-                'modified' => 1479246952
+                'modified' => 1492286062
             ],
             'plugins/form' => [
                 'file' => 'user/config/plugins/form.yaml',
-                'modified' => 1473974069
+                'modified' => 1492286062
+            ],
+            'plugins/vimeo' => [
+                'file' => 'user/config/plugins/vimeo.yaml',
+                'modified' => 1492286516
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
-                'modified' => 1466004141
+                'modified' => 1492286062
             ],
             'site' => [
                 'file' => 'user/config/site.yaml',
-                'modified' => 1480107352
+                'modified' => 1492450325
             ],
             'streams' => [
                 'file' => 'user/config/streams.yaml',
-                'modified' => 1474803141
+                'modified' => 1492286062
             ],
             'system' => [
                 'file' => 'user/config/system.yaml',
-                'modified' => 1477248802
+                'modified' => 1492462200
             ]
         ],
         'system/config' => [
             'media' => [
                 'file' => 'system/config/media.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'site' => [
                 'file' => 'system/config/site.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'streams' => [
                 'file' => 'system/config/streams.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'system' => [
                 'file' => 'system/config/system.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ]
         ],
         'user/plugins' => [
+            'plugins/vimeo' => [
+                'file' => 'user/plugins/vimeo/vimeo.yaml',
+                'modified' => 1492286225
+            ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/email.yaml',
-                'modified' => 1473795050
+                'modified' => 1492286062
+            ],
+            'plugins/custom-css' => [
+                'file' => 'user/plugins/custom-css/custom-css.yaml',
+                'modified' => 1492462200
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/problems.yaml',
-                'modified' => 1474803219
+                'modified' => 1492286062
             ],
             'plugins/langswitcher' => [
                 'file' => 'user/plugins/langswitcher/langswitcher.yaml',
-                'modified' => 1466083473
+                'modified' => 1492286062
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/error.yaml',
-                'modified' => 1474803231
+                'modified' => 1492286062
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/form.yaml',
-                'modified' => 1474803129
+                'modified' => 1492286062
             ]
         ]
     ],
     'data' => [
         'plugins' => [
+            'vimeo' => [
+                'enabled' => true,
+                'plugin_css' => true,
+                'editor_button' => true,
+                'player_parameters' => [
+                    'autopause' => true,
+                    'autoplay' => true,
+                    'byline' => true,
+                    'color' => '#00adef',
+                    'loop' => false,
+                    'player_id' => '',
+                    'portrait' => true,
+                    'title' => true
+                ]
+            ],
             'email' => [
                 'enabled' => true,
                 'from' => 'geral@cervejabelavida.pt',
@@ -98,6 +125,9 @@ return [
                 ],
                 'content_type' => 'text/html',
                 'debug' => true
+            ],
+            'custom-css' => [
+                'enabled' => true
             ],
             'problems' => [
                 'enabled' => true,
@@ -272,6 +302,10 @@ return [
                     'type' => 'file',
                     'mime' => 'application/vnd.ms-excel'
                 ],
+                'xlsm' => [
+                    'type' => 'file',
+                    'mime' => 'application/vnd.ms-excel'
+                ],
                 'xld' => [
                     'type' => 'file',
                     'mime' => 'application/vnd.ms-excel'
@@ -385,6 +419,7 @@ return [
         ],
         'site' => [
             'title' => 'CervejaBelavida',
+            'default_lang' => 'en',
             'author' => [
                 'name' => 'cefisys',
                 'email' => 'geral@cervejaboavida.pt'
@@ -422,10 +457,18 @@ return [
                     'url' => '#about'
                 ],
                 3 => [
+                    'title' => 'Eventos',
+                    'url' => '#events'
+                ],
+                4 => [
+                    'title' => 'Pontos de venda',
+                    'url' => '#store'
+                ],
+                5 => [
                     'title' => 'Cervejeiros',
                     'url' => '#team'
                 ],
-                4 => [
+                6 => [
                     'title' => 'Contactos',
                     'url' => '#contact'
                 ]
@@ -516,6 +559,7 @@ return [
                     'twig' => true
                 ],
                 'twig_first' => false,
+                'never_cache_twig' => false,
                 'events' => [
                     'page' => true,
                     'twig' => true
@@ -571,8 +615,13 @@ return [
                 ],
                 'driver' => 'auto',
                 'prefix' => 'g',
+                'cli_compatibility' => false,
                 'lifetime' => 604800,
-                'gzip' => false
+                'gzip' => false,
+                'allow_webserver_gzip' => false,
+                'redis' => [
+                    'socket' => false
+                ]
             ],
             'twig' => [
                 'cache' => true,
@@ -614,7 +663,8 @@ return [
                 'default_image_quality' => 85,
                 'cache_all' => false,
                 'cache_perms' => '0755',
-                'debug' => false
+                'debug' => false,
+                'auto_fix_orientation' => false
             ],
             'media' => [
                 'enable_media_timestamp' => false,
@@ -632,11 +682,15 @@ return [
                 'name' => 'grav-site',
                 'secure' => false,
                 'httponly' => true,
+                'split' => true,
                 'path' => NULL
             ],
             'gpm' => [
                 'releases' => 'stable',
-                'proxy_url' => NULL
+                'proxy_url' => NULL,
+                'method' => 'auto',
+                'verify_peer' => true,
+                'official_gpm_only' => true
             ]
         ],
         'security' => [

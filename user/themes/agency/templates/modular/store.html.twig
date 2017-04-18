@@ -1,0 +1,24 @@
+<section id="store">
+  <div class="container">
+    <div class="row">
+        <div class="col-lg-12 text-center">
+            {{ content }}
+        </div>
+    </div>
+    <div class="row text-center">
+        {% for stores in page.header.stores %}
+            <div class="col-md-6">
+                {% if stores.header %}
+                    <h4 class="stores-heading">{{ stores.header }}</h4>
+                {% endif %}
+                {% if stores.text %}
+                    {% set bar = stores.text|split(',') %}
+                    {% for i in 0.. bar|length  %}
+                        <p> {{ bar[i] }}</p>
+                    {% endfor %}
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+</div>
+</section>

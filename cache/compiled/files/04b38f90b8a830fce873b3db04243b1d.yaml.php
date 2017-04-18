@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/languages/nl.yaml',
-    'modified' => 1473793498,
+    'modified' => 1492286179,
     'data' => [
         'INFLECTOR_IRREGULAR' => [
             'person' => 'personen',

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/config/media.yaml',
-    'modified' => 1473793498,
+    'modified' => 1492286179,
     'data' => [
         'types' => [
             'defaults' => [
@@ -143,6 +143,10 @@ return [
                 'mime' => 'application/vnd.ms-excel'
             ],
             'xlm' => [
+                'type' => 'file',
+                'mime' => 'application/vnd.ms-excel'
+            ],
+            'xlsm' => [
                 'type' => 'file',
                 'mime' => 'application/vnd.ms-excel'
             ],

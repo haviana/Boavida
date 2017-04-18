@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/plugins/form/languages.yaml',
-    'modified' => 1474803129,
+    'modified' => 1492286062,
     'data' => [
         'en' => [
             'PLUGIN_FORM' => [

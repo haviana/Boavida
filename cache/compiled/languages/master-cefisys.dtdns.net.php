@@ -1,140 +1,336 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledLanguages',
-    'timestamp' => 1477492703,
-    'checksum' => '10dc5a4f3c0d2a0d7dd221098f6a1681',
+    'timestamp' => 1492463232,
+    'checksum' => '9cfb0f90eaaf418dda7c4fc986f506d4',
     'files' => [
         'system/languages' => [
             'ar' => [
                 'file' => 'system/languages/ar.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'ca' => [
                 'file' => 'system/languages/ca.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'cs' => [
                 'file' => 'system/languages/cs.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'da' => [
                 'file' => 'system/languages/da.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'de' => [
                 'file' => 'system/languages/de.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'el' => [
                 'file' => 'system/languages/el.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'en' => [
                 'file' => 'system/languages/en.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'es' => [
                 'file' => 'system/languages/es.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'fi' => [
                 'file' => 'system/languages/fi.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'fr' => [
                 'file' => 'system/languages/fr.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'hr' => [
                 'file' => 'system/languages/hr.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'hu' => [
                 'file' => 'system/languages/hu.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'it' => [
                 'file' => 'system/languages/it.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'ja' => [
                 'file' => 'system/languages/ja.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'lt' => [
                 'file' => 'system/languages/lt.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'nb' => [
                 'file' => 'system/languages/nb.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'nl' => [
                 'file' => 'system/languages/nl.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'no' => [
                 'file' => 'system/languages/no.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'pl' => [
                 'file' => 'system/languages/pl.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'pt' => [
                 'file' => 'system/languages/pt.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'ro' => [
                 'file' => 'system/languages/ro.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'ru' => [
                 'file' => 'system/languages/ru.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'sk' => [
                 'file' => 'system/languages/sk.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'sv' => [
                 'file' => 'system/languages/sv.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'th' => [
                 'file' => 'system/languages/th.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'tr' => [
                 'file' => 'system/languages/tr.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'uk' => [
                 'file' => 'system/languages/uk.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'vi' => [
                 'file' => 'system/languages/vi.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ]
         ],
         'user/plugins' => [
             'plugins/email' => [
                 'file' => 'user/plugins/email/languages.yaml',
-                'modified' => 1473795050
+                'modified' => 1492286062
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/languages.yaml',
-                'modified' => 1474803231
+                'modified' => 1492286062
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/languages.yaml',
-                'modified' => 1474803129
+                'modified' => 1492286062
+            ]
+        ],
+        'user/plugins/vimeo/languages' => [
+            'de' => [
+                'file' => 'user/plugins/vimeo/languages/de.yaml',
+                'modified' => 1492286225
+            ],
+            'en' => [
+                'file' => 'user/plugins/vimeo/languages/en.yaml',
+                'modified' => 1492286225
+            ],
+            'fr' => [
+                'file' => 'user/plugins/vimeo/languages/fr.yaml',
+                'modified' => 1492286225
             ]
         ]
     ],
     'data' => [
+        'de' => [
+            'PLUGIN_VIMEO' => [
+                'GENERAL' => 'Allgemein',
+                'ENABLED' => 'Aktiviert',
+                'DISABLED' => 'Deaktiviert',
+                'PLUGIN_STATUS' => 'Plugin Status',
+                'PLUGIN_CSS' => 'Plugin CSS',
+                'PLUGIN_CSS_HELP' => 'Das CSS des Plugins wird verwendet.',
+                'EDITOR_BUTTON' => 'Bearbeitungsschaltfläche',
+                'EDITOR_BUTTON_HELP' => 'In der Seitenbearbeitung kann einfach ein Vimeo Video hinzugefügt werden.',
+                'EDITOR_BUTTON_TOOLTIP' => 'Vimeo Video',
+                'EDITOR_BUTTON_PROMPT' => 'Gib bitte eine Vimeo Video ID ein. Die findest du in der Vimeo Video Url.
+Z.B. https://vimeo.com/[123456789] oder https://player.vimeo.com/video/[123456789]',
+                'PLAYER' => 'Player',
+                'PLAYER_VIEW' => 'Ansicht',
+                'PLAYER_VIEW_TEXT' => 'Falls der Video-Eigentümer Plus-Mitglied ist, könnten diese Einstellungen durch ihn überschrieben sein.',
+                'AUTOPAUSE' => 'Automatisches Pausieren',
+                'AUTOPAUSE_HELP' => 'Wenn ein anderes Video abgespielt wird, wird das Video automatisch pausiert.',
+                'AUTOPLAY' => 'Automatische Wiedergabe',
+                'AUTOPLAY_HELP' => 'Wenn der Player geladen wurde, wird das Video automatisch gestartet. Nicht von allen Geräte unterstützt.',
+                'BYLINE' => 'Verfasserangabe',
+                'BYLINE_HELP' => 'Info über den Eigentümer wird angezeigt.',
+                'COLOR' => 'Farbe',
+                'COLOR_HELP' => 'Farbe der Video-Bedienelemente.',
+                'LOOP' => 'Schleifenwiedergabe',
+                'LOOP_HELP' => 'Das Video wird automatisch neugestartet, wenn es zu Ende ist.',
+                'PLAYER_ID' => 'Player ID',
+                'PLAYER_ID_HELP' => 'Eine eindeutige ID für den Player, die mit der Vimeo Javascript API verwendet werden kann.',
+                'PORTRAIT' => 'Benutzerbild',
+                'PORTRAIT_HELP' => 'Benutzerbild des Eigentümers wird angezeigt.',
+                'TITLE' => 'Titel',
+                'TITLE_HELP' => 'Zeigt den Videotitel an.'
+            ],
+            'PLUGIN_EMAIL' => [
+                'EMAIL_NOT_CONFIGURED' => 'E-Mail ist nicht konfiguriert',
+                'PLEASE_CONFIGURE_A_TO_ADDRESS' => 'Bitte konfigurieren sie eine \'An\' (\'to\') Adresse in den Email-Plugin-Einstellungen oder im Formular.',
+                'PLEASE_CONFIGURE_A_FROM_ADDRESS' => 'Bitte konfigurieren sie eine \'Von\' (\'from\') Adresse in den Email-Plugin-Einstellungen oder im Formular.'
+            ],
+            'PLUGIN_ERROR' => [
+                'ERROR' => 'Fehler',
+                'ERROR_MESSAGE' => 'Uuups. Sieht aus als ob diese Seite nicht existiert.'
+            ],
+            'PLUGIN_FORM' => [
+                'NOT_VALIDATED' => 'Formularwerte nicht gültig. Für ein oder mehrere erforderliche Felder fehlen Werte.',
+                'NONCE_NOT_VALIDATED' => 'Ups, es gibt da ein Problem. Eingabewerte bitte noch mal prüfen und das Formular erneut absenden.',
+                'FILES' => 'Dateien hochladen',
+                'ALLOW_MULTIPLE' => 'Erlaube mehr als eine Datei',
+                'ALLOW_MULTIPLE_HELP' => 'Erlaubt es, mehr als eine Datei zum Hochladen auszuwählen.',
+                'DESTINATION' => 'Ziel',
+                'DESTINATION_HELP' => 'Das Ziel, wohin die Dateien hochgeladen werden sollen.',
+                'ACCEPT' => 'Erlaube MIME-Typen',
+                'ACCEPT_HELP' => 'Eine Liste von MIME-Typen, die hochgeladen werden dürfen.',
+                'ERROR_VALIDATING_CAPTCHA' => 'Die Überprüfung des Captcha ist fehlgeschlagen.'
+            ],
+            'FRONTMATTER_ERROR_PAGE' => '---
+title: %1$s
+---
+# Fehler: Frontmatter enthält Fehler
+
+Pfad: `%2$s`
+
+**%3$s ** 
+
+```
+%4$s
+```
+',
+            'INFLECTOR_UNCOUNTABLE' => [
+                1 => 'Informationen',
+                2 => 'Reis',
+                3 => 'Geld'
+            ],
+            'INFLECTOR_IRREGULAR' => [
+                'person' => 'Personen',
+                'man' => 'Menschen',
+                'child' => 'Kinder',
+                'sex' => 'Geschlecht',
+                'move' => 'Züge'
+            ],
+            'INFLECTOR_ORDINALS' => [
+                'default' => '.',
+                'first' => '.',
+                'second' => '.',
+                'third' => '.'
+            ],
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'Kein Datum angegeben',
+                'BAD_DATE' => 'Falsches Datum',
+                'AGO' => 'her',
+                'FROM_NOW' => 'ab jetzt',
+                'SECOND' => 'Sekunde',
+                'MINUTE' => 'Minute',
+                'HOUR' => 'Stunde',
+                'DAY' => 'Tag',
+                'WEEK' => 'Woche',
+                'MONTH' => 'Monat',
+                'YEAR' => 'Jahr',
+                'DECADE' => 'Jahrzehnt',
+                'SEC' => 'Sek.',
+                'MIN' => 'Min.',
+                'HR' => 'Std.',
+                'WK' => 'Wo.',
+                'MO' => 'Mo.',
+                'YR' => 'J.',
+                'DEC' => 'Dek.',
+                'SECOND_PLURAL' => 'Sekunden',
+                'MINUTE_PLURAL' => 'Minuten',
+                'HOUR_PLURAL' => 'Stunden',
+                'DAY_PLURAL' => 'Tage',
+                'WEEK_PLURAL' => 'Wochen',
+                'MONTH_PLURAL' => 'Monate',
+                'YEAR_PLURAL' => 'Jahre',
+                'DECADE_PLURAL' => 'Jahrzehnte',
+                'SEC_PLURAL' => 'Sekunden',
+                'MIN_PLURAL' => 'Minuten',
+                'HR_PLURAL' => 'Stunden',
+                'WK_PLURAL' => 'Wochen',
+                'MO_PLURAL' => 'Monate',
+                'YR_PLURAL' => 'Jahre',
+                'DEC_PLURAL' => 'Jahrzehnten'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>Überprüfung fehlgeschlagen:</b>',
+                'INVALID_INPUT' => 'Ungültige Eingabe in',
+                'MISSING_REQUIRED_FIELD' => 'Erforderliches Feld fehlt:'
+            ],
+            'MONTHS_OF_THE_YEAR' => [
+                0 => 'Januar',
+                1 => 'Februar',
+                2 => 'März',
+                3 => 'April',
+                4 => 'Mai',
+                5 => 'Juni',
+                6 => 'Juli',
+                7 => 'August',
+                8 => 'September',
+                9 => 'Oktober',
+                10 => 'November',
+                11 => 'Dezember'
+            ],
+            'DAYS_OF_THE_WEEK' => [
+                0 => 'Montag',
+                1 => 'Dienstag',
+                2 => 'Mittwoch',
+                3 => 'Donnerstag',
+                4 => 'Freitag',
+                5 => 'Samstag',
+                6 => 'Sonntag'
+            ]
+        ],
         'en' => [
+            'PLUGIN_VIMEO' => [
+                'GENERAL' => 'General',
+                'ENABLED' => 'Enabled',
+                'DISABLED' => 'Disabled',
+                'PLUGIN_STATUS' => 'Plugin status',
+                'PLUGIN_CSS' => 'Plugin CSS',
+                'PLUGIN_CSS_HELP' => 'The built in CSS of the plugin will be used.',
+                'EDITOR_BUTTON' => 'Editor button',
+                'EDITOR_BUTTON_HELP' => 'Allows you to easily add Vimeo videos in the page content.',
+                'EDITOR_BUTTON_TOOLTIP' => 'Vimeo Video',
+                'EDITOR_BUTTON_PROMPT' => 'Please enter a Vimeo Video ID. You\'ll find it in the Vimeo Video URL.
+E.g. https://vimeo.com/[123456789] or https://player.vimeo.com/video/[123456789]',
+                'PLAYER' => 'Player',
+                'PLAYER_VIEW' => 'View',
+                'PLAYER_VIEW_TEXT' => 'If the owner of the video is a Plus member, some of these settings may be overridden by their preferences.',
+                'AUTOPAUSE' => 'Autopause',
+                'AUTOPAUSE_HELP' => 'Enables or disables pausing this video when another video is played.',
+                'AUTOPLAY' => 'Autoplay',
+                'AUTOPLAY_HELP' => 'Plays the video automatically on load. Note that this won’t work on some devices.',
+                'BYLINE' => 'Byline',
+                'BYLINE_HELP' => 'Shows the user’s byline on the video.',
+                'COLOR' => 'Color',
+                'COLOR_HELP' => 'Specifies the color of the video controls.',
+                'LOOP' => 'Loop',
+                'LOOP_HELP' => 'Plays the video again when it reaches the end.',
+                'PLAYER_ID' => 'Player ID',
+                'PLAYER_ID_HELP' => 'A unique id for the player that will be passed back with all Javascript Vimeo API responses.',
+                'PORTRAIT' => 'Portrait',
+                'PORTRAIT_HELP' => 'Shows the user’s portrait on the video.',
+                'TITLE' => 'Title',
+                'TITLE_HELP' => 'Shows the title on the video.'
+            ],
             'PLUGIN_EMAIL' => [
                 'EMAIL_NOT_CONFIGURED' => 'Email not configured',
                 'PLEASE_CONFIGURE_A_TO_ADDRESS' => 'Please configure a \'to\' address in the Email Plugin settings, or in the form',
@@ -328,332 +524,39 @@ Path: `%2$s`
                 6 => 'Sunday'
             ]
         ],
-        'da' => [
-            'PLUGIN_EMAIL' => [
-                'PLEASE_CONFIGURE_A_TO_ADDRESS' => 'Konfigurere venligst en \'til\' email adresse i Email Plugin indstillingerne eller her i formularen',
-                'PLEASE_CONFIGURE_A_FROM_ADDRESS' => 'Konfigurere venligst en \'fra\' email adresse i Email Plugin indstillingerne eller her i formularen'
-            ],
-            'PLUGIN_ERROR' => [
-                'ERROR' => 'Fejl',
-                'ERROR_MESSAGE' => 'Ups. Det ser ud til at siden ikke eksisterer.'
-            ],
-            'FRONTMATTER_ERROR_PAGE' => '---
-Titel: %1$s
----
-
-# Fejl: Ugyldigt frontmatter
-
-Sti: `%2$s`
-
-**%3$s**
-
-```
-%4$s
-```
-',
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'Ingen dato angivet',
-                'BAD_DATE' => 'Ugyldig dato',
-                'AGO' => 'siden',
-                'FROM_NOW' => 'fra nu',
-                'SECOND' => 'sekund',
-                'MINUTE' => 'minut',
-                'HOUR' => 'time',
-                'DAY' => 'dag',
-                'WEEK' => 'uge',
-                'MONTH' => 'måned',
-                'YEAR' => 'år',
-                'DECADE' => 'årti',
-                'SEC' => 'sek',
-                'MIN' => 'min',
-                'HR' => 't',
-                'WK' => 'u',
-                'MO' => 'md',
-                'YR' => 'år',
-                'DEC' => 'årti',
-                'SECOND_PLURAL' => 'sekunder',
-                'MINUTE_PLURAL' => 'minutter',
-                'HOUR_PLURAL' => 'timer',
-                'DAY_PLURAL' => 'dage',
-                'WEEK_PLURAL' => 'uger',
-                'MONTH_PLURAL' => 'måneder',
-                'YEAR_PLURAL' => 'år',
-                'DECADE_PLURAL' => 'årtier',
-                'SEC_PLURAL' => 'sek',
-                'MIN_PLURAL' => 'min',
-                'HR_PLURAL' => 'timer',
-                'WK_PLURAL' => 'uger',
-                'MO_PLURAL' => 'mdr',
-                'YR_PLURAL' => 'år',
-                'DEC_PLURAL' => 'årtier'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>Validering mislykkedes:</b>',
-                'INVALID_INPUT' => 'Ugyldigt input i',
-                'MISSING_REQUIRED_FIELD' => 'Mangler obligatorisk felt:'
-            ],
-            'MONTHS_OF_THE_YEAR' => [
-                0 => 'Januar',
-                1 => 'Februar',
-                2 => 'Marts',
-                3 => 'April',
-                4 => 'Maj',
-                5 => 'Juni',
-                6 => 'Juli',
-                7 => 'August',
-                8 => 'September',
-                9 => 'Oktober',
-                10 => 'November',
-                11 => 'December'
-            ],
-            'DAYS_OF_THE_WEEK' => [
-                0 => 'Mandag',
-                1 => 'Tirsdag',
-                2 => 'Onsdag',
-                3 => 'Torsdag',
-                4 => 'Fredag',
-                5 => 'Lørdag',
-                6 => 'Søndag'
-            ]
-        ],
-        'de' => [
-            'PLUGIN_EMAIL' => [
-                'EMAIL_NOT_CONFIGURED' => 'E-Mail ist nicht konfiguriert',
-                'PLEASE_CONFIGURE_A_TO_ADDRESS' => 'Bitte konfigurieren sie eine \'An\' (\'to\') Adresse in den Email-Plugin-Einstellungen oder im Formular.',
-                'PLEASE_CONFIGURE_A_FROM_ADDRESS' => 'Bitte konfigurieren sie eine \'Von\' (\'from\') Adresse in den Email-Plugin-Einstellungen oder im Formular.'
-            ],
-            'PLUGIN_ERROR' => [
-                'ERROR' => 'Fehler',
-                'ERROR_MESSAGE' => 'Uuups. Sieht aus als ob diese Seite nicht existiert.'
-            ],
-            'PLUGIN_FORM' => [
-                'NOT_VALIDATED' => 'Formularwerte nicht gültig. Für ein oder mehrere erforderliche Felder fehlen Werte.',
-                'NONCE_NOT_VALIDATED' => 'Ups, es gibt da ein Problem. Eingabewerte bitte noch mal prüfen und das Formular erneut absenden.',
-                'FILES' => 'Dateien hochladen',
-                'ALLOW_MULTIPLE' => 'Erlaube mehr als eine Datei',
-                'ALLOW_MULTIPLE_HELP' => 'Erlaubt es, mehr als eine Datei zum Hochladen auszuwählen.',
-                'DESTINATION' => 'Ziel',
-                'DESTINATION_HELP' => 'Das Ziel, wohin die Dateien hochgeladen werden sollen.',
-                'ACCEPT' => 'Erlaube MIME-Typen',
-                'ACCEPT_HELP' => 'Eine Liste von MIME-Typen, die hochgeladen werden dürfen.',
-                'ERROR_VALIDATING_CAPTCHA' => 'Die Überprüfung des Captcha ist fehlgeschlagen.'
-            ],
-            'FRONTMATTER_ERROR_PAGE' => '---
-title: %1$s
----
-# Fehler: Frontmatter enthält Fehler
-
-Pfad: `%2$s`
-
-**%3$s ** 
-
-```
-%4$s
-```
-',
-            'INFLECTOR_UNCOUNTABLE' => [
-                1 => 'Informationen',
-                2 => 'Reis',
-                3 => 'Geld'
-            ],
-            'INFLECTOR_IRREGULAR' => [
-                'person' => 'Personen',
-                'man' => 'Menschen',
-                'child' => 'Kinder',
-                'sex' => 'Geschlecht',
-                'move' => 'Züge'
-            ],
-            'INFLECTOR_ORDINALS' => [
-                'default' => '.',
-                'first' => '.',
-                'second' => '.',
-                'third' => '.'
-            ],
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'Kein Datum angegeben',
-                'BAD_DATE' => 'Falsches Datum',
-                'AGO' => 'her',
-                'FROM_NOW' => 'ab jetzt',
-                'SECOND' => 'Sekunde',
-                'MINUTE' => 'Minute',
-                'HOUR' => 'Stunde',
-                'DAY' => 'Tag',
-                'WEEK' => 'Woche',
-                'MONTH' => 'Monat',
-                'YEAR' => 'Jahr',
-                'DECADE' => 'Jahrzehnt',
-                'SEC' => 'Sek.',
-                'MIN' => 'Min.',
-                'HR' => 'Std.',
-                'WK' => 'Wo.',
-                'MO' => 'Mo.',
-                'YR' => 'J.',
-                'DEC' => 'Dek.',
-                'SECOND_PLURAL' => 'Sekunden',
-                'MINUTE_PLURAL' => 'Minuten',
-                'HOUR_PLURAL' => 'Stunden',
-                'DAY_PLURAL' => 'Tage',
-                'WEEK_PLURAL' => 'Wochen',
-                'MONTH_PLURAL' => 'Monate',
-                'YEAR_PLURAL' => 'Jahre',
-                'DECADE_PLURAL' => 'Jahrzehnte',
-                'SEC_PLURAL' => 'Sekunden',
-                'MIN_PLURAL' => 'Minuten',
-                'HR_PLURAL' => 'Stunden',
-                'WK_PLURAL' => 'Wochen',
-                'MO_PLURAL' => 'Monate',
-                'YR_PLURAL' => 'Jahre',
-                'DEC_PLURAL' => 'Jahrzehnten'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>Überprüfung fehlgeschlagen:</b>',
-                'INVALID_INPUT' => 'Ungültige Eingabe in',
-                'MISSING_REQUIRED_FIELD' => 'Erforderliches Feld fehlt:'
-            ],
-            'MONTHS_OF_THE_YEAR' => [
-                0 => 'Januar',
-                1 => 'Februar',
-                2 => 'März',
-                3 => 'April',
-                4 => 'Mai',
-                5 => 'Juni',
-                6 => 'Juli',
-                7 => 'August',
-                8 => 'September',
-                9 => 'Oktober',
-                10 => 'November',
-                11 => 'Dezember'
-            ],
-            'DAYS_OF_THE_WEEK' => [
-                0 => 'Montag',
-                1 => 'Dienstag',
-                2 => 'Mittwoch',
-                3 => 'Donnerstag',
-                4 => 'Freitag',
-                5 => 'Samstag',
-                6 => 'Sonntag'
-            ]
-        ],
-        'es' => [
-            'PLUGIN_EMAIL' => [
-                'PLEASE_CONFIGURE_A_TO_ADDRESS' => 'Por favor configura una dirección de \'remitente\' en la configuración del Plugin de Email o en el formulario',
-                'PLEASE_CONFIGURE_A_FROM_ADDRESS' => 'Por favor configura una dirección de \'destinatario\' en la configuración del Plugin de Email o en el formulario'
-            ],
-            'PLUGIN_FORM' => [
-                'NOT_VALIDATED' => 'Falló la validación del formulario. Uno o más campos obligatorios no fueron cubiertos.',
-                'NONCE_NOT_VALIDATED' => 'Oops, hay un problema, por favor revise la información e intente enviar el formulario otra vez.',
-                'FILES' => 'Subida de Ficheros',
-                'ALLOW_MULTIPLE' => 'Permitir más de un fichero',
-                'ALLOW_MULTIPLE_HELP' => 'Permitir seleccionar más de un fichero para subir.',
-                'DESTINATION' => 'Destino',
-                'DESTINATION_HELP' => 'El lugar de destino al que subir los ficheros',
-                'ACCEPT' => 'MIME Types permitidos',
-                'ACCEPT_HELP' => 'Una lista de  MIME Types que se permiten subir.',
-                'ERROR_VALIDATING_CAPTCHA' => 'Error al comrobar el Captcha',
-                'RECAPTCHA' => 'ReCaptcha',
-                'RECAPTCHA_SITE_KEY' => 'Site key',
-                'RECAPTCHA_SITE_KEY_HELP' => 'Para más información visita https://developers.google.com/recaptcha',
-                'RECAPTCHA_SECRET_KEY' => 'Secret key',
-                'RECAPTCHA_SECRET_KEY_HELP' => 'Para más información visita https://developers.google.com/recaptcha'
-            ],
-            'FRONTMATTER_ERROR_PAGE' => '---
-title: %1$s
----
-
-# Error: Frontmatter Inválido
-
-Ruta: `%2$s`
-
-**%3$s**
-
-```
-%4$s
-```
-',
-            'INFLECTOR_UNCOUNTABLE' => [
-                0 => 'equipo',
-                1 => 'información',
-                3 => 'dinero',
-                5 => 'series',
-                6 => 'pescado',
-                7 => 'oveja'
-            ],
-            'INFLECTOR_IRREGULAR' => [
-                'man' => 'hombres',
-                'child' => 'niños',
-                'sex' => 'sexos'
-            ],
-            'INFLECTOR_ORDINALS' => [
-                'first' => 'ro',
-                'second' => 'do',
-                'third' => 'ro'
-            ],
-            'NICETIME' => [
-                'NO_DATE_PROVIDED' => 'No se proporcionó fecha',
-                'BAD_DATE' => 'Fecha erronea',
-                'AGO' => 'antes',
-                'FROM_NOW' => 'desde ahora',
-                'SECOND' => 'segundo',
-                'MINUTE' => 'minuto',
-                'HOUR' => 'hora',
-                'DAY' => 'día',
-                'WEEK' => 'semana',
-                'MONTH' => 'mes',
-                'YEAR' => 'año',
-                'DECADE' => 'década',
-                'SEC' => 'seg',
-                'MIN' => 'min',
-                'HR' => 'h',
-                'WK' => 'sem',
-                'MO' => 'mes',
-                'YR' => 'año',
-                'DEC' => 'dec',
-                'SECOND_PLURAL' => 'segundos',
-                'MINUTE_PLURAL' => 'minutos',
-                'HOUR_PLURAL' => 'horas',
-                'DAY_PLURAL' => 'días',
-                'WEEK_PLURAL' => 'semanas',
-                'MONTH_PLURAL' => 'meses',
-                'YEAR_PLURAL' => 'años',
-                'DECADE_PLURAL' => 'décadas',
-                'SEC_PLURAL' => 'segs',
-                'MIN_PLURAL' => 'mins',
-                'HR_PLURAL' => 'hs',
-                'WK_PLURAL' => 'sem',
-                'MO_PLURAL' => 'mes',
-                'YR_PLURAL' => 'años',
-                'DEC_PLURAL' => 'décadas'
-            ],
-            'FORM' => [
-                'VALIDATION_FAIL' => '<b>Falló la validación. </b>',
-                'INVALID_INPUT' => 'Dato inválido en: ',
-                'MISSING_REQUIRED_FIELD' => 'Falta el campo requerido: '
-            ],
-            'MONTHS_OF_THE_YEAR' => [
-                0 => 'Enero',
-                1 => 'Febrero',
-                2 => 'Marzo',
-                3 => 'Abril',
-                4 => 'Mayo',
-                5 => 'Junio',
-                6 => 'Julio',
-                7 => 'Agosto',
-                8 => 'Septiembre',
-                9 => 'Octubre',
-                10 => 'Noviembre',
-                11 => 'Diciembre'
-            ],
-            'DAYS_OF_THE_WEEK' => [
-                0 => 'Lunes',
-                1 => 'Martes',
-                2 => 'Miércoles',
-                3 => 'Jueves',
-                4 => 'Viernes',
-                5 => 'Sábado',
-                6 => 'Domingo'
-            ]
-        ],
         'fr' => [
+            'PLUGIN_VIMEO' => [
+                'GENERAL' => 'Général',
+                'ENABLED' => 'Activé',
+                'DISABLED' => 'Désactivé',
+                'PLUGIN_STATUS' => 'Statut du plugin',
+                'PLUGIN_CSS' => 'Plugin CSS',
+                'PLUGIN_CSS_HELP' => 'Les CSS internes du plugin seront utilisés.',
+                'EDITOR_BUTTON' => 'Bouton éditeur',
+                'EDITOR_BUTTON_HELP' => 'Vous permet d’ajouter facilement des vidéos Vimeo dans le contenu de la page.',
+                'EDITOR_BUTTON_TOOLTIP' => 'Vidéo Vimeo',
+                'EDITOR_BUTTON_PROMPT' => 'Veuillez indiquer l\'ID d\'une vidéo Vimeo. Vous la trouverez dans l’URL de la vidéo Vimeo.
+Ex : https://vimeo.com/[123456789] ou https://player.vimeo.com/video/[123456789]',
+                'PLAYER' => 'Lecteur',
+                'PLAYER_VIEW' => 'Vue',
+                'PLAYER_VIEW_TEXT' => 'Si le propriétaire de la vidéo est un Membre Plus, certains de ces paramètres peuvent être remplacés par leurs préférences utilisateur.',
+                'AUTOPAUSE' => 'Pause automatique',
+                'AUTOPAUSE_HELP' => 'Active ou désactive la pause de cette vidéo lorsque vous en visionnez une autre.',
+                'AUTOPLAY' => 'Lecture automatique',
+                'AUTOPLAY_HELP' => 'Joue la vidéo automatiquement lors du chargement. Notez que cela ne fonctionnera pas sur certains appareils.',
+                'BYLINE' => 'Signature',
+                'BYLINE_HELP' => 'Affiche la signature de l’utilisateur sur la vidéo.',
+                'COLOR' => 'Couleur',
+                'COLOR_HELP' => 'Indique la couleur des contrôles vidéo.',
+                'LOOP' => 'Boucle',
+                'LOOP_HELP' => 'Rejoue la vidéo lorsque la fin est atteinte.',
+                'PLAYER_ID' => 'ID de lecteur',
+                'PLAYER_ID_HELP' => 'Une ID unique pour le lecteur qui sera réutilisée pour toutes les réponses de l\'API Javascript Vimeo.',
+                'PORTRAIT' => 'Portrait',
+                'PORTRAIT_HELP' => 'Affiche le portrait de l’utilisateur sur la vidéo.',
+                'TITLE' => 'Titre',
+                'TITLE_HELP' => 'Affiche le titre sur la vidéo.'
+            ],
             'PLUGIN_EMAIL' => [
                 'EMAIL_NOT_CONFIGURED' => 'L’e-mail n’est pas configuré',
                 'PLEASE_CONFIGURE_A_TO_ADDRESS' => 'Veuillez configurer une adresse de \'destinataire\' dans les paramètres du Plugin ou dans le formulaire.',
@@ -845,6 +748,213 @@ Path: `%2$s`
                 4 => 'Vendredi',
                 5 => 'Samedi',
                 6 => 'Dimanche'
+            ]
+        ],
+        'da' => [
+            'PLUGIN_EMAIL' => [
+                'PLEASE_CONFIGURE_A_TO_ADDRESS' => 'Konfigurere venligst en \'til\' email adresse i Email Plugin indstillingerne eller her i formularen',
+                'PLEASE_CONFIGURE_A_FROM_ADDRESS' => 'Konfigurere venligst en \'fra\' email adresse i Email Plugin indstillingerne eller her i formularen'
+            ],
+            'PLUGIN_ERROR' => [
+                'ERROR' => 'Fejl',
+                'ERROR_MESSAGE' => 'Ups. Det ser ud til at siden ikke eksisterer.'
+            ],
+            'FRONTMATTER_ERROR_PAGE' => '---
+Titel: %1$s
+---
+
+# Fejl: Ugyldigt frontmatter
+
+Sti: `%2$s`
+
+**%3$s**
+
+```
+%4$s
+```
+',
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'Ingen dato angivet',
+                'BAD_DATE' => 'Ugyldig dato',
+                'AGO' => 'siden',
+                'FROM_NOW' => 'fra nu',
+                'SECOND' => 'sekund',
+                'MINUTE' => 'minut',
+                'HOUR' => 'time',
+                'DAY' => 'dag',
+                'WEEK' => 'uge',
+                'MONTH' => 'måned',
+                'YEAR' => 'år',
+                'DECADE' => 'årti',
+                'SEC' => 'sek',
+                'MIN' => 'min',
+                'HR' => 't',
+                'WK' => 'u',
+                'MO' => 'md',
+                'YR' => 'år',
+                'DEC' => 'årti',
+                'SECOND_PLURAL' => 'sekunder',
+                'MINUTE_PLURAL' => 'minutter',
+                'HOUR_PLURAL' => 'timer',
+                'DAY_PLURAL' => 'dage',
+                'WEEK_PLURAL' => 'uger',
+                'MONTH_PLURAL' => 'måneder',
+                'YEAR_PLURAL' => 'år',
+                'DECADE_PLURAL' => 'årtier',
+                'SEC_PLURAL' => 'sek',
+                'MIN_PLURAL' => 'min',
+                'HR_PLURAL' => 'timer',
+                'WK_PLURAL' => 'uger',
+                'MO_PLURAL' => 'mdr',
+                'YR_PLURAL' => 'år',
+                'DEC_PLURAL' => 'årtier'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>Validering mislykkedes:</b>',
+                'INVALID_INPUT' => 'Ugyldigt input i',
+                'MISSING_REQUIRED_FIELD' => 'Mangler obligatorisk felt:'
+            ],
+            'MONTHS_OF_THE_YEAR' => [
+                0 => 'Januar',
+                1 => 'Februar',
+                2 => 'Marts',
+                3 => 'April',
+                4 => 'Maj',
+                5 => 'Juni',
+                6 => 'Juli',
+                7 => 'August',
+                8 => 'September',
+                9 => 'Oktober',
+                10 => 'November',
+                11 => 'December'
+            ],
+            'DAYS_OF_THE_WEEK' => [
+                0 => 'Mandag',
+                1 => 'Tirsdag',
+                2 => 'Onsdag',
+                3 => 'Torsdag',
+                4 => 'Fredag',
+                5 => 'Lørdag',
+                6 => 'Søndag'
+            ]
+        ],
+        'es' => [
+            'PLUGIN_EMAIL' => [
+                'PLEASE_CONFIGURE_A_TO_ADDRESS' => 'Por favor configura una dirección de \'remitente\' en la configuración del Plugin de Email o en el formulario',
+                'PLEASE_CONFIGURE_A_FROM_ADDRESS' => 'Por favor configura una dirección de \'destinatario\' en la configuración del Plugin de Email o en el formulario'
+            ],
+            'PLUGIN_FORM' => [
+                'NOT_VALIDATED' => 'Falló la validación del formulario. Uno o más campos obligatorios no fueron cubiertos.',
+                'NONCE_NOT_VALIDATED' => 'Oops, hay un problema, por favor revise la información e intente enviar el formulario otra vez.',
+                'FILES' => 'Subida de Ficheros',
+                'ALLOW_MULTIPLE' => 'Permitir más de un fichero',
+                'ALLOW_MULTIPLE_HELP' => 'Permitir seleccionar más de un fichero para subir.',
+                'DESTINATION' => 'Destino',
+                'DESTINATION_HELP' => 'El lugar de destino al que subir los ficheros',
+                'ACCEPT' => 'MIME Types permitidos',
+                'ACCEPT_HELP' => 'Una lista de  MIME Types que se permiten subir.',
+                'ERROR_VALIDATING_CAPTCHA' => 'Error al comrobar el Captcha',
+                'RECAPTCHA' => 'ReCaptcha',
+                'RECAPTCHA_SITE_KEY' => 'Site key',
+                'RECAPTCHA_SITE_KEY_HELP' => 'Para más información visita https://developers.google.com/recaptcha',
+                'RECAPTCHA_SECRET_KEY' => 'Secret key',
+                'RECAPTCHA_SECRET_KEY_HELP' => 'Para más información visita https://developers.google.com/recaptcha'
+            ],
+            'FRONTMATTER_ERROR_PAGE' => '---
+title: %1$s
+---
+
+# Error: Frontmatter Inválido
+
+Ruta: `%2$s`
+
+**%3$s**
+
+```
+%4$s
+```
+',
+            'INFLECTOR_UNCOUNTABLE' => [
+                0 => 'equipo',
+                1 => 'información',
+                3 => 'dinero',
+                5 => 'series',
+                6 => 'pescado',
+                7 => 'oveja'
+            ],
+            'INFLECTOR_IRREGULAR' => [
+                'man' => 'hombres',
+                'child' => 'niños',
+                'sex' => 'sexos'
+            ],
+            'INFLECTOR_ORDINALS' => [
+                'first' => 'ro',
+                'second' => 'do',
+                'third' => 'ro'
+            ],
+            'NICETIME' => [
+                'NO_DATE_PROVIDED' => 'No se proporcionó fecha',
+                'BAD_DATE' => 'Fecha erronea',
+                'AGO' => 'antes',
+                'FROM_NOW' => 'desde ahora',
+                'SECOND' => 'segundo',
+                'MINUTE' => 'minuto',
+                'HOUR' => 'hora',
+                'DAY' => 'día',
+                'WEEK' => 'semana',
+                'MONTH' => 'mes',
+                'YEAR' => 'año',
+                'DECADE' => 'década',
+                'SEC' => 'seg',
+                'MIN' => 'min',
+                'HR' => 'h',
+                'WK' => 'sem',
+                'MO' => 'mes',
+                'YR' => 'año',
+                'DEC' => 'dec',
+                'SECOND_PLURAL' => 'segundos',
+                'MINUTE_PLURAL' => 'minutos',
+                'HOUR_PLURAL' => 'horas',
+                'DAY_PLURAL' => 'días',
+                'WEEK_PLURAL' => 'semanas',
+                'MONTH_PLURAL' => 'meses',
+                'YEAR_PLURAL' => 'años',
+                'DECADE_PLURAL' => 'décadas',
+                'SEC_PLURAL' => 'segs',
+                'MIN_PLURAL' => 'mins',
+                'HR_PLURAL' => 'hs',
+                'WK_PLURAL' => 'sem',
+                'MO_PLURAL' => 'mes',
+                'YR_PLURAL' => 'años',
+                'DEC_PLURAL' => 'décadas'
+            ],
+            'FORM' => [
+                'VALIDATION_FAIL' => '<b>Falló la validación. </b>',
+                'INVALID_INPUT' => 'Dato inválido en: ',
+                'MISSING_REQUIRED_FIELD' => 'Falta el campo requerido: '
+            ],
+            'MONTHS_OF_THE_YEAR' => [
+                0 => 'Enero',
+                1 => 'Febrero',
+                2 => 'Marzo',
+                3 => 'Abril',
+                4 => 'Mayo',
+                5 => 'Junio',
+                6 => 'Julio',
+                7 => 'Agosto',
+                8 => 'Septiembre',
+                9 => 'Octubre',
+                10 => 'Noviembre',
+                11 => 'Diciembre'
+            ],
+            'DAYS_OF_THE_WEEK' => [
+                0 => 'Lunes',
+                1 => 'Martes',
+                2 => 'Miércoles',
+                3 => 'Jueves',
+                4 => 'Viernes',
+                5 => 'Sábado',
+                6 => 'Domingo'
             ]
         ],
         'hr' => [
@@ -2723,6 +2833,6 @@ Path: `%2$s`
                 6 => 'Chủ Nhật'
             ]
         ],
-        'checksum' => '10dc5a4f3c0d2a0d7dd221098f6a1681'
+        'checksum' => '9cfb0f90eaaf418dda7c4fc986f506d4'
     ]
 ];

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/blueprints/config/system.yaml',
-    'modified' => 1473793498,
+    'modified' => 1492286179,
     'data' => [
         'title' => 'PLUGIN_ADMIN.SYSTEM',
         'form' => [
@@ -119,7 +119,7 @@ return [
                         ],
                         'pages.order.by' => [
                             'type' => 'select',
-                            'size' => 'long',
+                            'size' => 'large',
                             'classes' => 'fancy',
                             'label' => 'PLUGIN_ADMIN.DEFAULT_ORDERING',
                             'help' => 'PLUGIN_ADMIN.DEFAULT_ORDERING_HELP',
@@ -185,6 +185,7 @@ return [
                         ],
                         'pages.append_url_extension' => [
                             'type' => 'text',
+                            'size' => 'x-small',
                             'placeholder' => 'e.g. .html',
                             'label' => 'PLUGIN_ADMIN.APPEND_URL_EXT',
                             'help' => 'PLUGIN_ADMIN.APPEND_URL_EXT_HELP'
@@ -278,6 +279,19 @@ return [
                             'type' => 'toggle',
                             'label' => 'PLUGIN_ADMIN.TWIG_FIRST',
                             'help' => 'PLUGIN_ADMIN.TWIG_FIRST_HELP',
+                            'highlight' => 0,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
+                        'pages.never_cache_twig' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.NEVER_CACHE_TWIG',
+                            'help' => 'PLUGIN_ADMIN.NEVER_CACHE_TWIG_HELP',
                             'highlight' => 0,
                             'options' => [
                                 1 => 'PLUGIN_ADMIN.YES',
@@ -545,14 +559,15 @@ return [
                         ],
                         'cache.check.method' => [
                             'type' => 'select',
-                            'size' => 'small',
+                            'size' => 'medium',
                             'classes' => 'fancy',
                             'label' => 'PLUGIN_ADMIN.CACHE_CHECK_METHOD',
                             'help' => 'PLUGIN_ADMIN.CACHE_CHECK_METHOD_HELP',
                             'options' => [
-                                'file' => 'File',
-                                'folder' => 'Folder',
-                                'none' => 'None'
+                                'file' => 'Markdown + Yaml file timestamps',
+                                'folder' => 'Folder timestamps',
+                                'hash' => 'All files timestamps',
+                                'none' => 'No timestamp checking'
                             ]
                         ],
                         'cache.driver' => [
@@ -571,6 +586,62 @@ return [
                                 'memcached' => 'Memcached',
                                 'wincache' => 'WinCache',
                                 'redis' => 'Redis'
+                            ]
+                        ],
+                        'cache.prefix' => [
+                            'type' => 'text',
+                            'size' => 'x-small',
+                            'label' => 'PLUGIN_ADMIN.CACHE_PREFIX',
+                            'help' => 'PLUGIN_ADMIN.CACHE_PREFIX_HELP',
+                            'placeholder' => 'PLUGIN_ADMIN.CACHE_PREFIX_PLACEHOLDER'
+                        ],
+                        'cache.cli_compatibility' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.CLI_COMPATIBILITY',
+                            'help' => 'PLUGIN_ADMIN.CLI_COMPATIBILITY_HELP',
+                            'highlight' => 0,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
+                        'cache.lifetime' => [
+                            'type' => 'text',
+                            'size' => 'small',
+                            'append' => 'NICETIME.SECOND_PLURAL',
+                            'label' => 'PLUGIN_ADMIN.LIFETIME',
+                            'help' => 'PLUGIN_ADMIN.LIFETIME_HELP',
+                            'validate' => [
+                                'type' => 'number'
+                            ]
+                        ],
+                        'cache.gzip' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.GZIP_COMPRESSION',
+                            'help' => 'PLUGIN_ADMIN.GZIP_COMPRESSION_HELP',
+                            'highlight' => 0,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
+                        'cache.allow_webserver_gzip' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.ALLOW_WEBSERVER_GZIP',
+                            'help' => 'PLUGIN_ADMIN.ALLOW_WEBSERVER_GZIP_HELP',
+                            'highlight' => 0,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
                             ]
                         ],
                         'cache.memcache.server' => [
@@ -601,6 +672,13 @@ return [
                             'help' => 'PLUGIN_ADMIN.MEMCACHED_PORT_HELP',
                             'placeholder' => '11211'
                         ],
+                        'cache.redis.socket' => [
+                            'type' => 'text',
+                            'size' => 'medium',
+                            'label' => 'PLUGIN_ADMIN.REDIS_SOCKET',
+                            'help' => 'PLUGIN_ADMIN.REDIS_SOCKET_HELP',
+                            'placeholder' => '/var/run/redis/redis.sock'
+                        ],
                         'cache.redis.server' => [
                             'type' => 'text',
                             'size' => 'medium',
@@ -614,36 +692,6 @@ return [
                             'label' => 'PLUGIN_ADMIN.REDIS_PORT',
                             'help' => 'PLUGIN_ADMIN.REDIS_PORT_HELP',
                             'placeholder' => '6379'
-                        ],
-                        'cache.prefix' => [
-                            'type' => 'text',
-                            'size' => 'x-small',
-                            'label' => 'PLUGIN_ADMIN.CACHE_PREFIX',
-                            'help' => 'PLUGIN_ADMIN.CACHE_PREFIX_HELP',
-                            'placeholder' => 'PLUGIN_ADMIN.CACHE_PREFIX_PLACEHOLDER'
-                        ],
-                        'cache.lifetime' => [
-                            'type' => 'text',
-                            'size' => 'small',
-                            'append' => 'NICETIME.SECOND_PLURAL',
-                            'label' => 'PLUGIN_ADMIN.LIFETIME',
-                            'help' => 'PLUGIN_ADMIN.LIFETIME_HELP',
-                            'validate' => [
-                                'type' => 'number'
-                            ]
-                        ],
-                        'cache.gzip' => [
-                            'type' => 'toggle',
-                            'label' => 'PLUGIN_ADMIN.GZIP_COMPRESSION',
-                            'help' => 'PLUGIN_ADMIN.GZIP_COMPRESSION_HELP',
-                            'highlight' => 0,
-                            'options' => [
-                                1 => 'PLUGIN_ADMIN.YES',
-                                0 => 'PLUGIN_ADMIN.NO'
-                            ],
-                            'validate' => [
-                                'type' => 'bool'
-                            ]
                         ]
                     ]
                 ],
@@ -881,16 +929,15 @@ return [
                     'underline' => true,
                     'fields' => [
                         'errors.display' => [
-                            'type' => 'toggle',
+                            'type' => 'select',
                             'label' => 'PLUGIN_ADMIN.DISPLAY_ERRORS',
                             'help' => 'PLUGIN_ADMIN.DISPLAY_ERRORS_HELP',
-                            'highlight' => 0,
+                            'size' => 'medium',
+                            'highlight' => 1,
                             'options' => [
-                                1 => 'PLUGIN_ADMIN.YES',
-                                0 => 'PLUGIN_ADMIN.NO'
-                            ],
-                            'validate' => [
-                                'type' => 'bool'
+                                -1 => 'PLUGIN_ADMIN.ERROR_SYSTEM',
+                                0 => 'PLUGIN_ADMIN.ERROR_SIMPLE',
+                                1 => 'PLUGIN_ADMIN.ERROR_FULL_BACKTRACE'
                             ]
                         ],
                         'errors.log' => [
@@ -947,13 +994,12 @@ return [
                     'underline' => true,
                     'fields' => [
                         'images.default_image_quality' => [
-                            'type' => 'text',
+                            'type' => 'range',
                             'append' => '%',
                             'label' => 'PLUGIN_ADMIN.DEFAULT_IMAGE_QUALITY',
                             'help' => 'PLUGIN_ADMIN.DEFAULT_IMAGE_QUALITY_HELP',
                             'classes' => 'x-small',
                             'validate' => [
-                                'type' => 'number',
                                 'min' => 1,
                                 'max' => 100
                             ]
@@ -986,6 +1032,19 @@ return [
                             'type' => 'toggle',
                             'label' => 'PLUGIN_ADMIN.IMAGES_DEBUG',
                             'help' => 'PLUGIN_ADMIN.IMAGES_DEBUG_HELP',
+                            'highlight' => 0,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
+                        'images.auto_fix_orientation' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.IMAGES_AUTO_FIX_ORIENTATION',
+                            'help' => 'PLUGIN_ADMIN.IMAGES_AUTO_FIX_ORIENTATION_HELP',
                             'highlight' => 0,
                             'options' => [
                                 1 => 'PLUGIN_ADMIN.YES',
@@ -1109,6 +1168,20 @@ return [
                             'size' => 'small',
                             'label' => 'PLUGIN_ADMIN.SESSION_PATH',
                             'help' => 'PLUGIN_ADMIN.SESSION_PATH_HELP'
+                        ],
+                        'session.split' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.SESSION_SPLIT',
+                            'help' => 'PLUGIN_ADMIN.SESSION_SPLIT_HELP',
+                            'highlight' => 1,
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'default' => true,
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
                         ]
                     ]
                 ],
@@ -1133,6 +1206,44 @@ return [
                             'placeholder' => 'e.g. 127.0.0.1:3128',
                             'label' => 'PLUGIN_ADMIN.PROXY_URL',
                             'help' => 'PLUGIN_ADMIN.PROXY_URL_HELP'
+                        ],
+                        'gpm.method' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.GPM_METHOD',
+                            'highlight' => 'auto',
+                            'help' => 'PLUGIN_ADMIN.GPM_METHOD_HELP',
+                            'options' => [
+                                'auto' => 'PLUGIN_ADMIN.AUTO',
+                                'fopen' => 'PLUGIN_ADMIN.FOPEN',
+                                'curl' => 'PLUGIN_ADMIN.CURL'
+                            ]
+                        ],
+                        'gpm.official_gpm_only' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.GPM_OFFICIAL_ONLY',
+                            'highlight' => 'auto',
+                            'help' => 'PLUGIN_ADMIN.GPM_OFFICIAL_ONLY_HELP',
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'default' => true,
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
+                        ],
+                        'gpm.verify_peer' => [
+                            'type' => 'toggle',
+                            'label' => 'PLUGIN_ADMIN.GPM_VERIFY_PEER',
+                            'highlight' => 1,
+                            'help' => 'PLUGIN_ADMIN.GPM_VERIFY_PEER_HELP',
+                            'options' => [
+                                1 => 'PLUGIN_ADMIN.YES',
+                                0 => 'PLUGIN_ADMIN.NO'
+                            ],
+                            'validate' => [
+                                'type' => 'bool'
+                            ]
                         ],
                         'reverse_proxy_setup' => [
                             'type' => 'toggle',
@@ -1201,7 +1312,7 @@ return [
                         'custom_base_url' => [
                             'type' => 'text',
                             'size' => 'medium',
-                            'placeholder' => 'e.g. http://localhost:8080',
+                            'placeholder' => 'e.g. http://yoursite.com/yourpath',
                             'label' => 'PLUGIN_ADMIN.CUSTOM_BASE_URL',
                             'help' => 'PLUGIN_ADMIN.CUSTOM_BASE_URL_HELP'
                         ]

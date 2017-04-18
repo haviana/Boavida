@@ -1,47 +1,55 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledBlueprints',
-    'timestamp' => 1477492703,
-    'checksum' => '27bdfddd6604a9209e4893830fe542e2',
+    'timestamp' => 1492463232,
+    'checksum' => '4fc19e966237f83ba3aedb00cab31883',
     'files' => [
         'system/blueprints/config' => [
             'media' => [
                 'file' => 'system/blueprints/config/media.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'site' => [
                 'file' => 'system/blueprints/config/site.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'streams' => [
                 'file' => 'system/blueprints/config/streams.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ],
             'system' => [
                 'file' => 'system/blueprints/config/system.yaml',
-                'modified' => 1473793498
+                'modified' => 1492286179
             ]
         ],
         'user/plugins' => [
+            'plugins/vimeo' => [
+                'file' => 'user/plugins/vimeo/blueprints.yaml',
+                'modified' => 1492286225
+            ],
             'plugins/email' => [
                 'file' => 'user/plugins/email/blueprints.yaml',
-                'modified' => 1473795050
+                'modified' => 1492286062
+            ],
+            'plugins/custom-css' => [
+                'file' => 'user/plugins/custom-css/blueprints.yaml',
+                'modified' => 1492462200
             ],
             'plugins/problems' => [
                 'file' => 'user/plugins/problems/blueprints.yaml',
-                'modified' => 1474803219
+                'modified' => 1492286062
             ],
             'plugins/langswitcher' => [
                 'file' => 'user/plugins/langswitcher/blueprints.yaml',
-                'modified' => 1466083473
+                'modified' => 1492286062
             ],
             'plugins/error' => [
                 'file' => 'user/plugins/error/blueprints.yaml',
-                'modified' => 1474803231
+                'modified' => 1492286062
             ],
             'plugins/form' => [
                 'file' => 'user/plugins/form/blueprints.yaml',
-                'modified' => 1474803129
+                'modified' => 1492286062
             ]
         ]
     ],
@@ -66,6 +74,13 @@ return [
                 'label' => 'PLUGIN_ADMIN.SITE_TITLE',
                 'size' => 'large',
                 'name' => 'site.title',
+                'validation' => 'loose'
+            ],
+            'site.default_lang' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_ADMIN.SITE_DEFAULT_LANG',
+                'size' => 'x-small',
+                'name' => 'site.default_lang',
                 'validation' => 'loose'
             ],
             'site.author' => [
@@ -335,7 +350,7 @@ return [
             ],
             'system.pages.order.by' => [
                 'type' => 'select',
-                'size' => 'long',
+                'size' => 'large',
                 'classes' => 'fancy',
                 'label' => 'PLUGIN_ADMIN.DEFAULT_ORDERING',
                 'options' => [
@@ -411,6 +426,7 @@ return [
             ],
             'system.pages.append_url_extension' => [
                 'type' => 'text',
+                'size' => 'x-small',
                 'label' => 'PLUGIN_ADMIN.APPEND_URL_EXT',
                 'name' => 'system.pages.append_url_extension',
                 'validation' => 'loose'
@@ -519,6 +535,20 @@ return [
                     'type' => 'bool'
                 ],
                 'name' => 'system.pages.twig_first',
+                'validation' => 'loose'
+            ],
+            'system.pages.never_cache_twig' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.NEVER_CACHE_TWIG',
+                'highlight' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.pages.never_cache_twig',
                 'validation' => 'loose'
             ],
             'system.pages.frontmatter' => [
@@ -811,13 +841,14 @@ return [
             ],
             'system.cache.check.method' => [
                 'type' => 'select',
-                'size' => 'small',
+                'size' => 'medium',
                 'classes' => 'fancy',
                 'label' => 'PLUGIN_ADMIN.CACHE_CHECK_METHOD',
                 'options' => [
-                    'file' => 'File',
-                    'folder' => 'Folder',
-                    'none' => 'None'
+                    'file' => 'Markdown + Yaml file timestamps',
+                    'folder' => 'Folder timestamps',
+                    'hash' => 'All files timestamps',
+                    'none' => 'No timestamp checking'
                 ],
                 'name' => 'system.cache.check.method',
                 'validation' => 'loose'
@@ -839,6 +870,66 @@ return [
                     'redis' => 'Redis'
                 ],
                 'name' => 'system.cache.driver',
+                'validation' => 'loose'
+            ],
+            'system.cache.prefix' => [
+                'type' => 'text',
+                'size' => 'x-small',
+                'label' => 'PLUGIN_ADMIN.CACHE_PREFIX',
+                'name' => 'system.cache.prefix',
+                'validation' => 'loose'
+            ],
+            'system.cache.cli_compatibility' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.CLI_COMPATIBILITY',
+                'highlight' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.cache.cli_compatibility',
+                'validation' => 'loose'
+            ],
+            'system.cache.lifetime' => [
+                'type' => 'text',
+                'size' => 'small',
+                'append' => 'NICETIME.SECOND_PLURAL',
+                'label' => 'PLUGIN_ADMIN.LIFETIME',
+                'validate' => [
+                    'type' => 'number'
+                ],
+                'name' => 'system.cache.lifetime',
+                'validation' => 'loose'
+            ],
+            'system.cache.gzip' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.GZIP_COMPRESSION',
+                'highlight' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.cache.gzip',
+                'validation' => 'loose'
+            ],
+            'system.cache.allow_webserver_gzip' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.ALLOW_WEBSERVER_GZIP',
+                'highlight' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.cache.allow_webserver_gzip',
                 'validation' => 'loose'
             ],
             'system.cache.memcache' => [
@@ -884,6 +975,13 @@ return [
                 'name' => 'system.cache.redis',
                 'form_field' => false
             ],
+            'system.cache.redis.socket' => [
+                'type' => 'text',
+                'size' => 'medium',
+                'label' => 'PLUGIN_ADMIN.REDIS_SOCKET',
+                'name' => 'system.cache.redis.socket',
+                'validation' => 'loose'
+            ],
             'system.cache.redis.server' => [
                 'type' => 'text',
                 'size' => 'medium',
@@ -896,38 +994,6 @@ return [
                 'size' => 'small',
                 'label' => 'PLUGIN_ADMIN.REDIS_PORT',
                 'name' => 'system.cache.redis.port',
-                'validation' => 'loose'
-            ],
-            'system.cache.prefix' => [
-                'type' => 'text',
-                'size' => 'x-small',
-                'label' => 'PLUGIN_ADMIN.CACHE_PREFIX',
-                'name' => 'system.cache.prefix',
-                'validation' => 'loose'
-            ],
-            'system.cache.lifetime' => [
-                'type' => 'text',
-                'size' => 'small',
-                'append' => 'NICETIME.SECOND_PLURAL',
-                'label' => 'PLUGIN_ADMIN.LIFETIME',
-                'validate' => [
-                    'type' => 'number'
-                ],
-                'name' => 'system.cache.lifetime',
-                'validation' => 'loose'
-            ],
-            'system.cache.gzip' => [
-                'type' => 'toggle',
-                'label' => 'PLUGIN_ADMIN.GZIP_COMPRESSION',
-                'highlight' => 0,
-                'options' => [
-                    1 => 'PLUGIN_ADMIN.YES',
-                    0 => 'PLUGIN_ADMIN.NO'
-                ],
-                'validate' => [
-                    'type' => 'bool'
-                ],
-                'name' => 'system.cache.gzip',
                 'validation' => 'loose'
             ],
             'system.caching' => [
@@ -1185,15 +1251,14 @@ return [
                 'validation' => 'loose'
             ],
             'system.errors.display' => [
-                'type' => 'toggle',
+                'type' => 'select',
                 'label' => 'PLUGIN_ADMIN.DISPLAY_ERRORS',
-                'highlight' => 0,
+                'size' => 'medium',
+                'highlight' => 1,
                 'options' => [
-                    1 => 'PLUGIN_ADMIN.YES',
-                    0 => 'PLUGIN_ADMIN.NO'
-                ],
-                'validate' => [
-                    'type' => 'bool'
+                    -1 => 'PLUGIN_ADMIN.ERROR_SYSTEM',
+                    0 => 'PLUGIN_ADMIN.ERROR_SIMPLE',
+                    1 => 'PLUGIN_ADMIN.ERROR_FULL_BACKTRACE'
                 ],
                 'name' => 'system.errors.display',
                 'validation' => 'loose'
@@ -1257,12 +1322,11 @@ return [
                 'form_field' => false
             ],
             'system.images.default_image_quality' => [
-                'type' => 'text',
+                'type' => 'range',
                 'append' => '%',
                 'label' => 'PLUGIN_ADMIN.DEFAULT_IMAGE_QUALITY',
                 'classes' => 'x-small',
                 'validate' => [
-                    'type' => 'number',
                     'min' => 1,
                     'max' => 100
                 ],
@@ -1307,6 +1371,20 @@ return [
                     'type' => 'bool'
                 ],
                 'name' => 'system.images.debug',
+                'validation' => 'loose'
+            ],
+            'system.images.auto_fix_orientation' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.IMAGES_AUTO_FIX_ORIENTATION',
+                'highlight' => 0,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.images.auto_fix_orientation',
                 'validation' => 'loose'
             ],
             'system.media' => [
@@ -1439,6 +1517,21 @@ return [
                 'name' => 'system.session.path',
                 'validation' => 'loose'
             ],
+            'system.session.split' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.SESSION_SPLIT',
+                'highlight' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'default' => true,
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.session.split',
+                'validation' => 'loose'
+            ],
             'system.gpm' => [
                 'type' => '_parent',
                 'name' => 'system.gpm',
@@ -1460,6 +1553,47 @@ return [
                 'size' => 'medium',
                 'label' => 'PLUGIN_ADMIN.PROXY_URL',
                 'name' => 'system.gpm.proxy_url',
+                'validation' => 'loose'
+            ],
+            'system.gpm.method' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.GPM_METHOD',
+                'highlight' => 'auto',
+                'options' => [
+                    'auto' => 'PLUGIN_ADMIN.AUTO',
+                    'fopen' => 'PLUGIN_ADMIN.FOPEN',
+                    'curl' => 'PLUGIN_ADMIN.CURL'
+                ],
+                'name' => 'system.gpm.method',
+                'validation' => 'loose'
+            ],
+            'system.gpm.official_gpm_only' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.GPM_OFFICIAL_ONLY',
+                'highlight' => 'auto',
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'default' => true,
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.gpm.official_gpm_only',
+                'validation' => 'loose'
+            ],
+            'system.gpm.verify_peer' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_ADMIN.GPM_VERIFY_PEER',
+                'highlight' => 1,
+                'options' => [
+                    1 => 'PLUGIN_ADMIN.YES',
+                    0 => 'PLUGIN_ADMIN.NO'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'system.gpm.verify_peer',
                 'validation' => 'loose'
             ],
             'system.reverse_proxy_setup' => [
@@ -1544,9 +1678,9 @@ return [
                 'name' => 'system.advanced',
                 'validation' => 'loose'
             ],
-            'plugins.email' => [
+            'plugins.vimeo' => [
                 'form' => [
-                    'validation' => 'loose'
+                    'validation' => 'strict'
                 ],
                 'type' => '_root',
                 'form_field' => false
@@ -1554,6 +1688,187 @@ return [
             'plugins' => [
                 'type' => '_parent',
                 'name' => 'plugins',
+                'form_field' => false
+            ],
+            'plugins.vimeo.enabled' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.PLUGIN_STATUS',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.plugin_css' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.PLUGIN_CSS',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.plugin_css',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.editor_button' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.EDITOR_BUTTON',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.editor_button',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.general' => [
+                'type' => 'tab',
+                'name' => 'plugins.vimeo.general',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters' => [
+                'type' => 'tab',
+                'name' => 'plugins.vimeo.player_parameters',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.autoplay' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.AUTOPLAY',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.player_parameters.autoplay',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.autopause' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.AUTOPAUSE',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.player_parameters.autopause',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.loop' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.LOOP',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.player_parameters.loop',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.player_id' => [
+                'type' => 'text',
+                'label' => 'PLUGIN_VIMEO.PLAYER_ID',
+                'size' => 'medium',
+                'name' => 'plugins.vimeo.player_parameters.player_id',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.title' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.TITLE',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.player_parameters.title',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.portrait' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.PORTRAIT',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.player_parameters.portrait',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.byline' => [
+                'type' => 'toggle',
+                'label' => 'PLUGIN_VIMEO.BYLINE',
+                'highlight' => 1,
+                'default' => 1,
+                'options' => [
+                    1 => 'PLUGIN_VIMEO.ENABLED',
+                    0 => 'PLUGIN_VIMEO.DISABLED'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.vimeo.player_parameters.byline',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.color' => [
+                'type' => 'colorpicker',
+                'label' => 'PLUGIN_VIMEO.COLOR',
+                'highlight' => 1,
+                'default' => '#00adef',
+                'name' => 'plugins.vimeo.player_parameters.color',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.player_parameters.view' => [
+                'type' => 'section',
+                'text' => 'PLUGIN_VIMEO.PLAYER_VIEW_TEXT',
+                'underline' => true,
+                'name' => 'plugins.vimeo.player_parameters.view',
+                'validation' => 'strict'
+            ],
+            'plugins.vimeo.tabs' => [
+                'type' => 'tabs',
+                'active' => 1,
+                'class' => 'subtle',
+                'name' => 'plugins.vimeo.tabs',
+                'validation' => 'strict'
+            ],
+            'plugins.email' => [
+                'form' => [
+                    'validation' => 'loose'
+                ],
+                'type' => '_root',
                 'form_field' => false
             ],
             'plugins.email.enabled' => [
@@ -1714,6 +2029,53 @@ return [
                 ],
                 'name' => 'plugins.email.debug',
                 'validation' => 'loose'
+            ],
+            'plugins.custom-css' => [
+                'form' => [
+                    'validation' => 'strict'
+                ],
+                'type' => '_root',
+                'form_field' => false
+            ],
+            'plugins.custom-css.enabled' => [
+                'type' => 'toggle',
+                'label' => 'Plugin status',
+                'highlight' => 1,
+                'default' => 0,
+                'options' => [
+                    1 => 'Enabled',
+                    0 => 'Disabled'
+                ],
+                'validate' => [
+                    'type' => 'bool'
+                ],
+                'name' => 'plugins.custom-css.enabled',
+                'validation' => 'strict'
+            ],
+            'plugins.custom-css.css_inline' => [
+                'type' => 'textarea',
+                'label' => 'Inline CSS',
+                'name' => 'plugins.custom-css.css_inline',
+                'validation' => 'strict'
+            ],
+            'plugins.custom-css.css_files' => [
+                'type' => 'list',
+                'label' => 'CSS Files',
+                'name' => 'plugins.custom-css.css_files',
+                'validation' => 'strict'
+            ],
+            'plugins.custom-css.css_files.path' => [
+                'type' => 'text',
+                'label' => 'File path',
+                'name' => 'plugins.custom-css.css_files.path',
+                'validation' => 'strict'
+            ],
+            'plugins.custom-css.css_files.priority' => [
+                'type' => 'int',
+                'label' => 'Priority (0=Default)',
+                'default' => 0,
+                'name' => 'plugins.custom-css.css_files.priority',
+                'validation' => 'strict'
             ],
             'plugins.problems' => [
                 'form' => [
@@ -1935,6 +2297,7 @@ return [
             'site' => [
                 'content' => 'site.content',
                 'title' => 'site.title',
+                'default_lang' => 'site.default_lang',
                 'author' => [
                     'name' => 'site.author.name',
                     'email' => 'site.author.email'
@@ -1987,6 +2350,7 @@ return [
                     'ignore_folders' => 'system.pages.ignore_folders',
                     'url_taxonomy_filters' => 'system.pages.url_taxonomy_filters',
                     'twig_first' => 'system.pages.twig_first',
+                    'never_cache_twig' => 'system.pages.never_cache_twig',
                     'frontmatter' => [
                         'process_twig' => 'system.pages.frontmatter.process_twig',
                         'ignore_fields' => 'system.pages.frontmatter.ignore_fields'
@@ -2021,6 +2385,11 @@ return [
                         'method' => 'system.cache.check.method'
                     ],
                     'driver' => 'system.cache.driver',
+                    'prefix' => 'system.cache.prefix',
+                    'cli_compatibility' => 'system.cache.cli_compatibility',
+                    'lifetime' => 'system.cache.lifetime',
+                    'gzip' => 'system.cache.gzip',
+                    'allow_webserver_gzip' => 'system.cache.allow_webserver_gzip',
                     'memcache' => [
                         'server' => 'system.cache.memcache.server',
                         'port' => 'system.cache.memcache.port'
@@ -2030,12 +2399,10 @@ return [
                         'port' => 'system.cache.memcached.port'
                     ],
                     'redis' => [
+                        'socket' => 'system.cache.redis.socket',
                         'server' => 'system.cache.redis.server',
                         'port' => 'system.cache.redis.port'
-                    ],
-                    'prefix' => 'system.cache.prefix',
-                    'lifetime' => 'system.cache.lifetime',
-                    'gzip' => 'system.cache.gzip'
+                    ]
                 ],
                 'twig' => [
                     'cache' => 'system.twig.cache',
@@ -2078,7 +2445,8 @@ return [
                     'default_image_quality' => 'system.images.default_image_quality',
                     'cache_all' => 'system.images.cache_all',
                     'cache_perms' => 'system.images.cache_perms',
-                    'debug' => 'system.images.debug'
+                    'debug' => 'system.images.debug',
+                    'auto_fix_orientation' => 'system.images.auto_fix_orientation'
                 ],
                 'session' => [
                     'enabled' => 'system.session.enabled',
@@ -2086,12 +2454,16 @@ return [
                     'name' => 'system.session.name',
                     'secure' => 'system.session.secure',
                     'httponly' => 'system.session.httponly',
-                    'path' => 'system.session.path'
+                    'path' => 'system.session.path',
+                    'split' => 'system.session.split'
                 ],
                 'advanced' => 'system.advanced',
                 'gpm' => [
                     'releases' => 'system.gpm.releases',
-                    'proxy_url' => 'system.gpm.proxy_url'
+                    'proxy_url' => 'system.gpm.proxy_url',
+                    'method' => 'system.gpm.method',
+                    'official_gpm_only' => 'system.gpm.official_gpm_only',
+                    'verify_peer' => 'system.gpm.verify_peer'
                 ],
                 'reverse_proxy_setup' => 'system.reverse_proxy_setup',
                 'wrapped_site' => 'system.wrapped_site',
@@ -2101,6 +2473,24 @@ return [
                 'custom_base_url' => 'system.custom_base_url'
             ],
             'plugins' => [
+                'vimeo' => [
+                    'tabs' => 'plugins.vimeo.tabs',
+                    'general' => 'plugins.vimeo.general',
+                    'enabled' => 'plugins.vimeo.enabled',
+                    'plugin_css' => 'plugins.vimeo.plugin_css',
+                    'editor_button' => 'plugins.vimeo.editor_button',
+                    'player_parameters' => [
+                        'autoplay' => 'plugins.vimeo.player_parameters.autoplay',
+                        'autopause' => 'plugins.vimeo.player_parameters.autopause',
+                        'loop' => 'plugins.vimeo.player_parameters.loop',
+                        'player_id' => 'plugins.vimeo.player_parameters.player_id',
+                        'view' => 'plugins.vimeo.player_parameters.view',
+                        'title' => 'plugins.vimeo.player_parameters.title',
+                        'portrait' => 'plugins.vimeo.player_parameters.portrait',
+                        'byline' => 'plugins.vimeo.player_parameters.byline',
+                        'color' => 'plugins.vimeo.player_parameters.color'
+                    ]
+                ],
                 'email' => [
                     'enabled' => 'plugins.email.enabled',
                     'mailer' => [
@@ -2122,6 +2512,14 @@ return [
                     'to' => 'plugins.email.to',
                     'to_name' => 'plugins.email.to_name',
                     'debug' => 'plugins.email.debug'
+                ],
+                'custom-css' => [
+                    'enabled' => 'plugins.custom-css.enabled',
+                    'css_inline' => 'plugins.custom-css.css_inline',
+                    'css_files' => [
+                        'path' => 'plugins.custom-css.css_files.path',
+                        'priority' => 'plugins.custom-css.css_files.priority'
+                    ]
                 ],
                 'problems' => [
                     'enabled' => 'plugins.problems.enabled',

@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/system/languages/tr.yaml',
-    'modified' => 1473793498,
+    'modified' => 1492286179,
     'data' => [
         'NICETIME' => [
             'NO_DATE_PROVIDED' => 'Tarih yok',

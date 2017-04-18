@@ -12,6 +12,8 @@ content:
             - _services
             - _pecados
             - _boasvidas
+            - _events
+            - _store
             - _team
             - _form
 form:

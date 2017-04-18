@@ -2,7 +2,7 @@
 return [
     '@class' => 'Grav\\Common\\File\\CompiledYamlFile',
     'filename' => '/home/hviana/Boavida/user/plugins/email/email.yaml',
-    'modified' => 1473795050,
+    'modified' => 1492286062,
     'data' => [
         'enabled' => true,
         'from' => NULL,

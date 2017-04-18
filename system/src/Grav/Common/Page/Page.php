@@ -85,6 +85,8 @@ class Page
     protected $home_route;
     protected $hide_home_route;
     protected $ssl;
+    protected $template_format;
+    protected $debugger;
 
     /**
      * @var Page Unmodified (original) version of the page. Used for copying and moving the page.
@@ -163,8 +165,8 @@ class Page
                     unset($process_fields[$field]);
                 }
             }
-            $text_header = Grav::instance()['twig']->processString(json_encode($process_fields), ['page'=>$this]);
-            $this->header((object) (json_decode($text_header, true) + $ignored_fields));
+            $text_header = Grav::instance()['twig']->processString(json_encode($process_fields), ['page' => $this]);
+            $this->header((object)(json_decode($text_header, true) + $ignored_fields));
         }
     }
 
@@ -223,7 +225,7 @@ class Page
      *
      * @param  string $var Raw content string
      *
-     * @return Object      Raw content string
+     * @return string      Raw content string
      */
     public function raw($var = null)
     {
@@ -418,7 +420,13 @@ class Page
                 $this->last_modified = (bool)$this->header->last_modified;
             }
             if (isset($this->header->ssl)) {
-                $this->ssl = (bool) $this->header->ssl;
+                $this->ssl = (bool)$this->header->ssl;
+            }
+            if (isset($this->header->template_format)) {
+                $this->template_format = $this->header->template_format;
+            }
+            if (isset($this->header->debugger)) {
+                $this->debugger = (bool)$this->header->debugger;
             }
         }
 
@@ -503,6 +511,7 @@ class Page
         }
 
         $summary = Utils::truncateHTML($content, $size);
+
         return html_entity_decode($summary);
     }
 
@@ -561,22 +570,23 @@ class Page
 
 
             $process_markdown = $this->shouldProcess('markdown');
-            $process_twig = $this->shouldProcess('twig');
+            $process_twig = $this->shouldProcess('twig') || $this->modularTwig() ;
+
             $cache_enable = isset($this->header->cache_enable) ? $this->header->cache_enable : $config->get('system.cache.enabled',
                 true);
             $twig_first = isset($this->header->twig_first) ? $this->header->twig_first : $config->get('system.pages.twig_first',
                 true);
 
+            // never cache twig means it's always run after content
+            $never_cache_twig = isset($this->header->never_cache_twig) ? $this->header->never_cache_twig : $config->get('system.pages.never_cache_twig',
+                false);
 
             // if no cached-content run everything
-            if ($this->content === false || $cache_enable === false) {
-                $this->content = $this->raw_content;
-                Grav::instance()->fireEvent('onPageContentRaw', new Event(['page' => $this]));
+            if ($never_cache_twig) {
+                if ($this->content === false || $cache_enable === false) {
+                    $this->content = $this->raw_content;
+                    Grav::instance()->fireEvent('onPageContentRaw', new Event(['page' => $this]));
 
-                if ($twig_first) {
-                    if ($process_twig) {
-                        $this->processTwig();
-                    }
                     if ($process_markdown) {
                         $this->processMarkdown();
                     }
@@ -584,21 +594,47 @@ class Page
                     // Content Processed but not cached yet
                     Grav::instance()->fireEvent('onPageContentProcessed', new Event(['page' => $this]));
 
-                } else {
-                    if ($process_markdown) {
-                        $this->processMarkdown();
-                    }
-
-                    // Content Processed but not cached yet
-                    Grav::instance()->fireEvent('onPageContentProcessed', new Event(['page' => $this]));
-
-                    if ($process_twig) {
-                        $this->processTwig();
+                    if ($cache_enable) {
+                        $this->cachePageContent();
                     }
                 }
 
-                if ($cache_enable) {
-                    $this->cachePageContent();
+                if ($process_twig) {
+                    $this->processTwig();
+                }
+
+            } else {
+                if ($this->content === false || $cache_enable === false) {
+                    $this->content = $this->raw_content;
+                    Grav::instance()->fireEvent('onPageContentRaw', new Event(['page' => $this]));
+
+                    if ($twig_first) {
+                        if ($process_twig) {
+                            $this->processTwig();
+                        }
+                        if ($process_markdown) {
+                            $this->processMarkdown();
+                        }
+
+                        // Content Processed but not cached yet
+                        Grav::instance()->fireEvent('onPageContentProcessed', new Event(['page' => $this]));
+
+                    } else {
+                        if ($process_markdown) {
+                            $this->processMarkdown();
+                        }
+
+                        // Content Processed but not cached yet
+                        Grav::instance()->fireEvent('onPageContentProcessed', new Event(['page' => $this]));
+
+                        if ($process_twig) {
+                            $this->processTwig();
+                        }
+                    }
+
+                    if ($cache_enable) {
+                        $this->cachePageContent();
+                    }
                 }
             }
 
@@ -625,6 +661,7 @@ class Page
         if ($this->content === null) {
             $this->content();
         }
+
         return $this->getContentMeta();
     }
 
@@ -643,18 +680,20 @@ class Page
      * Return the whole contentMeta array as it currently stands
      *
      * @param null $name
+     *
      * @return mixed
      */
     public function getContentMeta($name = null)
     {
         if ($name) {
-            if(isset($this->content_meta[$name])) {
+            if (isset($this->content_meta[$name])) {
                 return $this->content_meta[$name];
             } else {
                 return null;
             }
 
         }
+
         return $this->content_meta;
     }
 
@@ -662,6 +701,7 @@ class Page
      * Sets the whole content meta array in one shot
      *
      * @param $content_meta
+     *
      * @return mixed
      */
     public function setContentMeta($content_meta)
@@ -762,9 +802,10 @@ class Page
             return (bool)$this->order();
         }
         if ($name == 'folder') {
-            $regex = '/^[0-9]+\./u';
-
-            return preg_replace($regex, '', $this->folder);
+            return preg_replace(PAGE_ORDER_PREFIX_REGEX, '', $this->folder);
+        }
+        if ($name == 'slug') {
+            return $this->slug();
         }
         if ($name == 'name') {
             $language = $this->language() ? '.' . $this->language() : '';
@@ -849,12 +890,12 @@ class Page
     /**
      * Save page if there's a file assigned to it.
      *
-     * @param bool $reorder Internal use.
+     * @param bool|mixed $reorder Internal use.
      */
     public function save($reorder = true)
     {
-        // Perform move, copy or reordering if needed.
-        $this->doRelocation($reorder);
+        // Perform move, copy [or reordering] if needed.
+        $this->doRelocation();
 
         $file = $this->file();
         if ($file) {
@@ -863,6 +904,13 @@ class Page
             $file->markdown($this->raw_content);
             $file->save();
         }
+
+        // Perform reorder if required
+        if ($reorder && is_array($reorder)) {
+            $this->doReorder($reorder);
+        }
+
+        $this->_original = null;
     }
 
     /**
@@ -894,6 +942,8 @@ class Page
         } else {
             $this->route(Grav::instance()['pages']->root()->route() . '/' . $this->slug());
         }
+
+        $this->raw_route = null;
 
         return $this;
     }
@@ -1100,6 +1150,27 @@ class Page
     }
 
     /**
+     * Allows a page to override the output render format, usually the extension provided
+     * in the URL. (e.g. `html`, `json`, `xml`, etc).
+     *
+     * @param null $var
+     *
+     * @return null
+     */
+    public function templateFormat($var = null)
+    {
+        if ($var !== null) {
+            $this->template_format = $var;
+        }
+
+        if (empty($this->template_format)) {
+            $this->template_format = Grav::instance()['uri']->extension('html');
+        }
+
+        return $this->template_format;
+    }
+
+    /**
      * Gets and sets the extension field.
      *
      * @param null $var
@@ -1132,7 +1203,8 @@ class Page
 
         // if not set in the page get the value from system config
         if (empty($this->url_extension)) {
-            $this->url_extension = trim(isset($this->header->append_url_extension) ? $this->header->append_url_extension : Grav::instance()['config']->get('system.pages.append_url_extension', false));
+            $this->url_extension = trim(isset($this->header->append_url_extension) ? $this->header->append_url_extension : Grav::instance()['config']->get('system.pages.append_url_extension',
+                false));
         }
 
         return $this->url_extension;
@@ -1151,7 +1223,7 @@ class Page
             $this->expires = $var;
         }
 
-        return empty($this->expires) ? Grav::instance()['config']->get('system.pages.expires') : $this->expires;
+        return !isset($this->expires) ? Grav::instance()['config']->get('system.pages.expires') : $this->expires;
     }
 
     /**
@@ -1209,8 +1281,7 @@ class Page
         if ($this->visible === null) {
             // Set item visibility in menu if folder is different from slug
             // eg folder = 01.Home and slug = Home
-            $regex = '/^[0-9]+\./u';
-            if (preg_match($regex, $this->folder)) {
+            if (preg_match(PAGE_ORDER_PREFIX_REGEX, $this->folder)) {
                 $this->visible = true;
             } else {
                 $this->visible = false;
@@ -1294,7 +1365,7 @@ class Page
     public function ssl($var = null)
     {
         if ($var !== null) {
-            $this->ssl = (bool) $var;
+            $this->ssl = (bool)$var;
         }
 
         return $this->ssl;
@@ -1315,6 +1386,20 @@ class Page
         }
 
         return $this->process;
+    }
+
+    /**
+     * Returns the state of the debugger override etting for this page
+     *
+     * @return mixed
+     */
+    public function debugger()
+    {
+        if (isset($this->debugger) && $this->debugger === false) {
+            return false;
+        } else {
+            return true;
+        }
     }
 
     /**
@@ -1355,21 +1440,28 @@ class Page
                 // Backward compatibility for nested arrays in metas
                 if (is_array($value)) {
                     foreach ($value as $property => $prop_value) {
-                        $prop_key                  = $key . ":" . $property;
-                        $this->metadata[$prop_key] = ['name' => $prop_key, 'property' => $prop_key, 'content' => htmlspecialchars($prop_value, ENT_QUOTES, 'UTF-8')];
+                        $prop_key = $key . ":" . $property;
+                        $this->metadata[$prop_key] = [
+                            'name'     => $prop_key,
+                            'property' => $prop_key,
+                            'content'  => htmlspecialchars($prop_value, ENT_QUOTES, 'UTF-8')
+                        ];
                     }
                 } else {
                     // If it this is a standard meta data type
                     if ($value) {
                         if (in_array($key, $header_tag_http_equivs)) {
-                            $this->metadata[$key] = ['http_equiv' => $key, 'content' => htmlspecialchars($value, ENT_QUOTES, 'UTF-8')];
+                            $this->metadata[$key] = [
+                                'http_equiv' => $key,
+                                'content'    => htmlspecialchars($value, ENT_QUOTES, 'UTF-8')
+                            ];
                         } elseif ($key == 'charset') {
                             $this->metadata[$key] = ['charset' => htmlspecialchars($value, ENT_QUOTES, 'UTF-8')];
                         } else {
                             // if it's a social metadata with separator, render as property
-                            $separator    = strpos($key, ':');
+                            $separator = strpos($key, ':');
                             $hasSeparator = $separator && $separator < strlen($key) - 1;
-                            $entry        = ['name' => $key, 'content' => htmlspecialchars($value, ENT_QUOTES, 'UTF-8')];
+                            $entry = ['name' => $key, 'content' => htmlspecialchars($value, ENT_QUOTES, 'UTF-8')];
 
                             if ($hasSeparator) {
                                 $entry['property'] = $key;
@@ -1397,15 +1489,14 @@ class Page
     {
         if ($var !== null && $var !== "") {
             $this->slug = $var;
-            if(!preg_match('/^[a-z0-9][-a-z0-9]*$/', $this->slug)){
-                Grav::instance()['log']->notice("Invalid slug set in YAML frontmatter: " . $this->rawRoute() . " => ".  $this->slug);
+            if (!preg_match('/^[a-z0-9][-a-z0-9]*$/', $this->slug)) {
+                Grav::instance()['log']->notice("Invalid slug set in YAML frontmatter: " . $this->rawRoute() . " => " . $this->slug);
             }
         }
 
         if (empty($this->slug)) {
             $this->slug = strtolower(preg_replace(PAGE_ORDER_PREFIX_REGEX, '', $this->folder));
         }
-
 
 
         return $this->slug;
@@ -1422,20 +1513,14 @@ class Page
     {
         if ($var !== null) {
             $order = !empty($var) ? sprintf('%02d.', (int)$var) : '';
-            $this->folder($order . $this->slug());
+            $this->folder($order . preg_replace(PAGE_ORDER_PREFIX_REGEX, '', $this->folder));
+
+            return $order;
         }
+
         preg_match(PAGE_ORDER_PREFIX_REGEX, $this->folder, $order);
 
         return isset($order[0]) ? $order[0] : false;
-    }
-
-    /**
-     * Gets the URL with host information, aka Permalink.
-     * @return string The permalink.
-     */
-    public function permalink()
-    {
-        return $this->url(true);
     }
 
     /**
@@ -1451,15 +1536,35 @@ class Page
     }
 
     /**
+     * Gets the URL with host information, aka Permalink.
+     * @return string The permalink.
+     */
+    public function permalink()
+    {
+        return $this->url(true, false, true, true);
+    }
+
+    /**
+     * Returns the canonical URL for a page
+     *
+     * @param bool $include_lang
+     * @return string
+     */
+    public function canonical($include_lang = true)
+    {
+        return $this->url(true, true, $include_lang);
+    }
+
+    /**
      * Gets the url for the Page.
      *
      * @param bool $include_host Defaults false, but true would include http://yourhost.com
-     * @param bool $canonical    true to return the canonical URL
+     * @param bool $canonical true to return the canonical URL
      * @param bool $include_lang
-     *
+     * @param bool $raw_route
      * @return string The url.
      */
-    public function url($include_host = false, $canonical = false, $include_lang = true)
+    public function url($include_host = false, $canonical = false, $include_lang = true, $raw_route = false)
     {
         $grav = Grav::instance();
 
@@ -1495,6 +1600,8 @@ class Page
         // get canonical route if requested
         if ($canonical) {
             $route = $pre_route . $this->routeCanonical();
+        } elseif ($raw_route) {
+            $route = $pre_route . $this->rawRoute();
         } else {
             $route = $pre_route . $this->route();
         }
@@ -1576,8 +1683,7 @@ class Page
         if (empty($this->raw_route)) {
             $baseRoute = $this->parent ? (string)$this->parent()->rawRoute() : null;
 
-            $regex = '/^[0-9]+\./u';
-            $slug = preg_replace($regex, '', $this->folder);
+            $slug = preg_replace(PAGE_ORDER_PREFIX_REGEX, '', $this->folder);
 
             $this->raw_route = isset($baseRoute) ? $baseRoute . '/' . $slug : null;
         }
@@ -1636,7 +1742,10 @@ class Page
     public function id($var = null)
     {
         if ($var !== null) {
-            $this->id = $var;
+            // store unique per language
+            $active_lang = Grav::instance()['language']->getLanguage() ?: '';
+            $id = $active_lang . $var;
+            $this->id = $id;
         }
 
         return $this->id;
@@ -1663,7 +1772,7 @@ class Page
      *
      * @param  string $var redirect url
      *
-     * @return array
+     * @return string
      */
     public function redirect($var = null)
     {
@@ -1947,7 +2056,6 @@ class Page
         if ($var !== null) {
             $this->modular_twig = (bool)$var;
             if ($var) {
-                $this->process['twig'] = true;
                 $this->visible(false);
                 // some routable logic
                 if (empty($this->header->routable)) {
@@ -2086,7 +2194,7 @@ class Page
      *
      * @param  integer $direction either -1 or +1
      *
-     * @return Page             the sibling page
+     * @return Page|bool             the sibling page
      */
     public function adjacentSibling($direction = 1)
     {
@@ -2156,6 +2264,7 @@ class Page
     {
         $home = Grav::instance()['config']->get('system.home.alias');
         $is_home = ($this->route() == $home || $this->rawRoute() == $home);
+
         return $is_home;
     }
 
@@ -2171,6 +2280,74 @@ class Page
         } else {
             return false;
         }
+    }
+
+    /**
+     * Helper method to return an ancestor page.
+     *
+     * @param string $url The url of the page
+     * @param bool   $lookup Name of the parent folder
+     *
+     * @return \Grav\Common\Page\Page page you were looking for if it exists
+     */
+    public function ancestor($lookup = null)
+    {
+        /** @var Pages $pages */
+        $pages = Grav::instance()['pages'];
+
+        return $pages->ancestor($this->route, $lookup);
+    }
+
+    /**
+     * Helper method to return an ancestor page to inherit from. The current
+     * page object is returned.
+     *
+     * @param string   $field Name of the parent folder
+     *
+     * @return Page
+     */
+    public function inherited($field)
+    {
+        list($inherited, $currentParams) = $this->getInheritedParams($field);
+
+        $this->modifyHeader($field, $currentParams);
+
+        return $inherited;
+    }
+    /**
+     * Helper method to return an ancestor field only to inherit from. The
+     * first occurrence of an ancestor field will be returned if at all.
+     *
+     * @param string   $field Name of the parent folder
+     *
+     * @return array
+     */
+    public function inheritedField($field)
+    {
+        list($inherited, $currentParams) = $this->getInheritedParams($field);
+
+        return $currentParams;
+    }
+
+    /**
+     * Method that contains shared logic for inherited() and inheritedField()
+     *
+     * @param string   $field Name of the parent folder
+     *
+     * @return array
+     */
+    protected function getInheritedParams($field)
+    {
+        $pages = Grav::instance()['pages'];
+
+        /** @var Pages $pages */
+        $inherited = $pages->inherited($this->route, $field);
+        $inheritedParams = (array) $inherited->value('header.' . $field);
+        $currentParams = (array) $this->value('header.' . $field);
+        if($inheritedParams && is_array($inheritedParams)) {
+            $currentParams = array_replace_recursive($inheritedParams, $currentParams);
+        }
+        return [$inherited, $currentParams];
     }
 
     /**
@@ -2207,7 +2384,7 @@ class Page
         }
 
         if (!isset($params['items'])) {
-            return [];
+            return new Collection();
         }
 
         $collection = $this->evaluate($params['items']);
@@ -2235,6 +2412,7 @@ class Page
                             continue;
                         }
                         foreach ($items as $item) {
+                            $item = rawurldecode($item);
                             if (empty($page->taxonomy[$taxonomy]) || !in_array(htmlspecialchars_decode($item,
                                     ENT_QUOTES), $page->taxonomy[$taxonomy])
                             ) {
@@ -2257,7 +2435,16 @@ class Page
             $by = isset($params['order']['by']) ? $params['order']['by'] : 'default';
             $dir = isset($params['order']['dir']) ? $params['order']['dir'] : 'asc';
             $custom = isset($params['order']['custom']) ? $params['order']['custom'] : null;
-            $collection->order($by, $dir, $custom);
+            $sort_flags = isset($params['order']['sort_flags']) ? $params['order']['sort_flags'] : null;
+
+            if (is_array($sort_flags)) {
+                $sort_flags = array_map('constant', $sort_flags); //transform strings to constant value
+                $sort_flags = array_reduce($sort_flags, function ($a, $b) {
+                    return $a | $b;
+                }, 0); //merge constant values using bit or
+            }
+
+            $collection->order($by, $dir, $custom, $sort_flags);
         }
 
         /** @var Grav $grav */
@@ -2377,7 +2564,10 @@ class Page
                     switch ($parts[0]) {
                         case 'modular':
                             $results = new Collection();
-                            $results = $results->addPage($page)->Modular();
+                            foreach ($page->children() as $child) {
+                                $results = $results->addPage($child);
+                            }
+                            $results->modular();
                             break;
                         case 'page':
                         case 'self':
@@ -2467,6 +2657,16 @@ class Page
     }
 
     /**
+     * Returns whether or not the current folder exists
+     *
+     * @return bool
+     */
+    public function folderExists()
+    {
+        return file_exists($this->path());
+    }
+
+    /**
      * Cleans the path.
      *
      * @param  string $path the path
@@ -2484,65 +2684,62 @@ class Page
     }
 
     /**
-     * Moves or copies the page in filesystem.
+     * Reorders all siblings according to a defined order
      *
-     * @internal
-     *
-     * @param bool $reorder
-     *
-     * @throws Exception
+     * @param $new_order
      */
-    protected function doRelocation($reorder)
+    protected function doReorder($new_order)
     {
         if (!$this->_original) {
             return;
         }
 
-        // Do reordering.
-        if ($reorder && $this->order() != $this->_original->order()) {
-            /** @var Pages $pages */
-            $pages = Grav::instance()['pages'];
+        $pages = Grav::instance()['pages'];
+        $pages->init();
 
-            $parent = $this->parent();
+        $this->_original->path($this->path());
 
-            // Extract visible children from the parent page.
-            $list = [];
-            /** @var Page $page */
-            foreach ($parent->children()->visible() as $page) {
-                if ($page->order()) {
-                    $list[$page->slug] = $page->path();
-                }
-            }
+        $siblings = $this->parent()->children();
+        $siblings->order('slug', 'asc', $new_order);
 
-            // If page was moved, take it out of the list.
-            if ($this->_action == 'move') {
-                unset($list[$this->slug()]);
-            }
+        $counter = 0;
 
-            $list = array_values($list);
+        // Reorder all moved pages.
+        foreach ($siblings as $slug => $page) {
+            $order = intval(trim($page->order(),'.'));
+            $counter++;
 
-            // Then add it back to the new location (if needed).
-            if ($this->order()) {
-                array_splice($list, min($this->order() - 1, count($list)), 0, [$this->path()]);
-            }
-
-            // Reorder all moved pages.
-            foreach ($list as $order => $path) {
-                if ($path == $this->path()) {
+            if ($order) {
+                if ($page->path() == $this->path() && $this->folderExists()) {
                     // Handle current page; we do want to change ordering number, but nothing else.
-                    $this->order($order + 1);
+                    $this->order($counter);
+                    $this->save(false);
                 } else {
                     // Handle all the other pages.
-                    $page = $pages->get($path);
-
-                    if ($page && $page->exists() && !$page->_action && $page->order() != $order + 1) {
-                        $page = $page->move($parent);
-                        $page->order($order + 1);
+                    $page = $pages->get($page->path());
+                    if ($page && $page->folderExists() && !$page->_action) {
+                        $page = $page->move($this->parent());
+                        $page->order($counter);
                         $page->save(false);
                     }
                 }
             }
         }
+    }
+
+    /**
+     * Moves or copies the page in filesystem.
+     *
+     * @internal
+     *
+     * @throws Exception
+     */
+    protected function doRelocation()
+    {
+        if (!$this->_original) {
+            return;
+        }
+
         if (is_dir($this->_original->path())) {
             if ($this->_action == 'move') {
                 Folder::move($this->_original->path(), $this->path());
@@ -2558,12 +2755,11 @@ class Page
             }
         }
 
-        $this->_original = null;
     }
 
     protected function setPublishState()
     {
-        // Handle publishing dates if no explict published option set
+        // Handle publishing dates if no explicit published option set
         if (Grav::instance()['config']->get('system.pages.publish_dates') && !isset($this->header->published)) {
             // unpublish if required, if not clear cache right before page should be unpublished
             if ($this->unpublishDate()) {
