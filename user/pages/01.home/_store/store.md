@@ -4,11 +4,11 @@ menu: Stores
 class: small
 stores:
     - header: Margem Sul do Tejo
-      text: Fun Friends n' Fandango , Hamburgueria Alfaite
+      text: Fun Friends n' Fandango , Hamburgueria Alfaite, Rustik Azeitão, MegaDive
 
 
     - header: Grande Porto
-      text: 
+      text: TapaBento S. Bento, TapaBento Trindade
     
 ---
 

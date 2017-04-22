@@ -5,9 +5,9 @@ editor_button: true
 player_parameters:
   autopause: true
   autoplay: true
-  byline: true
+  byline: false
   color: "#00adef"
-  loop: false
+  loop: true
   player_id: ""
   portrait: true
   title: true

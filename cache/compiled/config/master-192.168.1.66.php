@@ -1,8 +1,8 @@
 <?php
 return [
     '@class' => 'Grav\\Common\\Config\\CompiledConfig',
-    'timestamp' => 1492541323,
-    'checksum' => '858d0f30572e962433247048447b6a95',
+    'timestamp' => 1492903184,
+    'checksum' => 'c65e7c4dbdc90689aea6901bc7d6036d',
     'files' => [
         'user/config' => [
             'media' => [
@@ -19,7 +19,7 @@ return [
             ],
             'plugins/vimeo' => [
                 'file' => 'user/config/plugins/vimeo.yaml',
-                'modified' => 1492286516
+                'modified' => 1492903181
             ],
             'security' => [
                 'file' => 'user/config/security.yaml',
@@ -96,9 +96,9 @@ return [
                 'player_parameters' => [
                     'autopause' => true,
                     'autoplay' => true,
-                    'byline' => true,
+                    'byline' => false,
                     'color' => '#00adef',
-                    'loop' => false,
+                    'loop' => true,
                     'player_id' => '',
                     'portrait' => true,
                     'title' => true

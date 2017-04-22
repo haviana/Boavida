@@ -1,7 +1,7 @@
 <?php
 
-/* modular/events.html.twig */
-class __TwigTemplate_6a81f9cb53f20fb09816d83773e0f674dd6369c6ffd07c72844f5d7eabdea68c extends Twig_Template
+/* @Page:/home/hviana/Boavida/user/pages/01.home/_events */
+class __TwigTemplate_996247c7434e25a1d62e4a620e8489e2d945a761a14753b57ede6fd10734ff72 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
     {
@@ -19,10 +19,8 @@ class __TwigTemplate_6a81f9cb53f20fb09816d83773e0f674dd6369c6ffd07c72844f5d7eabd
         echo "<section id=\"events\" class=\"bg-light-gray\">
 <div class=\"row\">
     <div class=\"col-lg-12 text-center\">
-        ";
-        // line 4
-        echo (isset($context["content"]) ? $context["content"] : null);
-        echo "
+        <h2>Eventos</h2>
+<h3></h3>
     </div>
 </div>
       <div class=\"container\">
@@ -97,17 +95,12 @@ class __TwigTemplate_6a81f9cb53f20fb09816d83773e0f674dd6369c6ffd07c72844f5d7eabd
 
     public function getTemplateName()
     {
-        return "modular/events.html.twig";
-    }
-
-    public function isTraitable()
-    {
-        return false;
+        return "@Page:/home/hviana/Boavida/user/pages/01.home/_events";
     }
 
     public function getDebugInfo()
     {
-        return array (  24 => 4,  19 => 1,);
+        return array (  19 => 1,);
     }
 
     /** @deprecated since 1.27 (to be removed in 2.0). Use getSourceContext() instead */
@@ -123,7 +116,8 @@ class __TwigTemplate_6a81f9cb53f20fb09816d83773e0f674dd6369c6ffd07c72844f5d7eabd
         return new Twig_Source("<section id=\"events\" class=\"bg-light-gray\">
 <div class=\"row\">
     <div class=\"col-lg-12 text-center\">
-        {{ content }}
+        <h2>Eventos</h2>
+<h3></h3>
     </div>
 </div>
       <div class=\"container\">
@@ -193,6 +187,6 @@ class __TwigTemplate_6a81f9cb53f20fb09816d83773e0f674dd6369c6ffd07c72844f5d7eabd
         </div>
     </div>
 </section>
-", "modular/events.html.twig", "/home/hviana/Boavida/user/themes/agency/templates/modular/events.html.twig");
+", "@Page:/home/hviana/Boavida/user/pages/01.home/_events", "");
     }
 }
